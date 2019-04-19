@@ -1,0 +1,266 @@
+<!doctype html>
+ <html>
+ <head>
+				<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta name="viewport" content="width=device-width,initial-scale=1.0">
+				<title>Firebase Login</title>
+
+				<link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+				<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+				<link rel="stylesheet" href="assets/css/newpage-print.css" type="text/css" media="print">
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+				<link rel="stylesheet" href="assets/css/style.css" />
+				<link rel="stylesheet" href="assets/css/newpage.css" />
+				<link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.css" rel="stylesheet" />
+				<link href="assets/css/intro.css" rel="stylesheet" type="text/css" />
+				<link href="assets/maps/jsmaps/jsmaps.css" rel="stylesheet" type="text/css" />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+				<!-- jQuery library -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+				<script>
+				  //mobile-menu jquery
+				  jQuery( document ).ready(function() {
+				  jQuery(document).on('click','.toggle,.mobilemenu ul.menus li a',function(){      
+					jQuery(".nav").toggleClass("mobilemenu");
+					jQuery("html").toggleClass("nav-open");
+				  });
+				   });
+				  //
+				</script>
+	</head>
+<body>
+		 <div class="container">
+		 <div id="loader"></div>
+
+		 <div class="toggllee">
+		 <div class="desprective-content">
+		<!-- <div class="top-section">
+			<h4>
+				State Telehealth Laws and Medicaid Policies: <br> 50-State Survey Findings
+			</h4>
+			<span class="date">Date:13.11.2018</span>
+		   
+		</div>-->
+				<ul class="research-img">
+				   <li>
+				   <a href="#">
+					  <img src="assets/images/Marks_Jacqueline.jpg">
+				   </a>
+					  <div class="research_info">
+						  <h6>Jacqueline D. Marks</h6>  
+						  <p>MANAGER</p>
+					  </div>
+				   </li>
+				   <li>
+				   <a href="#">
+					  <img src="assets/images/Augenstein_Jared.jpg">
+				   </a>
+					  <div class="research_info">
+						  <h6>Jared Augenstein</h6>  
+						  <p> SR MANAGER</p>
+					  </div>
+				   </li>
+				   <li>
+				   <a href="#">
+					  <img src="assets/images/Seigel_Randi.jpg">
+				   </a>
+					  <div class="research_info">
+						  <h6>Randi Seigel</h6>  
+						  <p>Partner</p>
+					  </div>
+				   </li>
+				</ul>
+			   <p>The use of telemedicine services is growing nationwide as providers and payors seek to improve access and better manage patient care, while reducing health care spending. State laws and Medicaid<sup><a style="color:undefined" href="javascript:void(0)" class="state_check" data-tab="sourcepara">[1]</a></sup> policies related to reimbursement, licensure and practice standards are rapidly evolving in response to the proliferation of technology and the growing evidence base that demonstrates the impact of telemedicine on access, quality and cost of care. Some states have been proactive in encouraging the use of telemedicine as a means to enhance services in rural areas, increase access to care for members with complex conditions, and reduce costs associated with unnecessary emergency department visits.</p>
+			<p>In light of this rapidly changing landscape, Manatt Health has conducted a 50-state survey of state laws and Medicaid program policies related to telemedicine in the following key areas:</p>
+			<ul>
+			<li>Practice standards and licensure</li>
+			<li>Coverage and reimbursement</li>
+			<li>Eligible patient settings</li>
+			<li>Eligible provider types</li>
+			<li>Eligible technologies, and</li>
+			<li>Service limitations.</li>
+			</ul>
+			<p>Based on survey results, we classified state telemedicine policies as 
+			 "progressive," "moderate," or "restrictive" across each of these categories, as captured in the state map below.</p>
+			<p>Our analysis suggests that telemedicine will be critical to delivering health care in the future, and state Medicaid policies are evolving - in some states more quickly than others - to accelerate adoption of telemedicine models. As technology advances and the evidence base for telemedicine expands, state policy will continue to evolve to integrate telemedicine into payment and delivery reforms that support overarching program objectives related to access, quality, and cost of care.</p>
+			<p>Additional findings from our analysis can be found here.</p>
+			<p>To access a detailed summary profile of a state's telehealth laws and Medicaid policies, click the state on the map below. To explore state classifications across survey categories, use the State Classification Category drop down menu or hover your mouse over a state of interest. Explore further by using the controls at the top left of the map that allow you to zoom in/out, pan or type a state name in the search bar to quickly access a state of interest.</p>
+		</div>
+		   
+		<div class="drops">
+			<div class="left">
+				<select id="states" data-step="1" data-intro="Select state"></select>
+				<select id="category"></select>
+				<div class="ryt">
+				<div id="generate" data-step="4" data-intro="Download PDF File" >
+
+          
+
+            <a href="http://survey.paradisetechsoft.com/api/downloadata/Alabama" target="_blank" id="generate" title="Export to PDF"><i class="fa fa-file-pdf-o"></i></a>
+
+        </div>
+					<a class="intro-c" href="javascript:void(0);" onclick="javascript:startTour();"><i class="fa fa-info-circle"></i></a>
+					
+					<span data-step="3" data-intro="Click to show hide map" class="my_toggle" id="click-map"><i class="fa fa-globe"></i></span>
+				</div>
+			</div>
+		</div>
+		   
+		<div class="jsmaps-wrapper-box " id="jsmaps">
+				<div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div>
+			</div>
+			<ul class="sources">
+				  <li data-tab="sourcepara" id="sourcepara">1. Unless indicated otherwise, all references to state Medicaid programs refer to Medicaid FFS. Select Medicaid managed care plans from some states were reviewed as part of this survey effort. Generally, Manatt found that these select Medicaid managed care plans encouraged the use of telemedicine and considered Medicaid FFS policies as a foundation for reimbursement.</li>
+				   <li>2. Survey results are current as of April 2018.</li>
+			</ul>
+		</div>
+		<div id="bypass" ></div>
+		<div id="state_data"></div>
+		</div>
+
+		
+		<script src="assets/js/intro.js"></script>
+		<script src="assets/js/jquery.sticky.js"></script>
+		<script src="assets/js/states.js"></script>
+		<script src="assets/maps/jsmaps/jsmaps-libs.js" type="text/javascript"></script>
+		<script src="assets/maps/jsmaps/jsmaps-panzoom.js"></script>
+		<script src="assets/maps/jsmaps/jsmaps.min.js" type="text/javascript"></script>
+		<script src="assets/maps/maps/usaTerritories.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			
+
+		var value, introJ = '', step = false;
+
+		jQuery(document).on('change', '#states', function() {
+
+			var val = jQuery(this).val();
+			checkJson(val);
+			jQuery(".jsmaps-wrapper-box").hide();
+			jQuery(".jsmaps-wrapper-box").removeClass("slow");
+			var url = "http://survey.paradisetechsoft.com/api/downloadata/"+val;
+                    jQuery("#generate a").attr('href', url)
+
+		});
+
+		if (!readCookie('introjs')) {
+			startTour();
+			createCookie('introjs', $.now(), '365');
+		}
+		jQuery(document).ready(function(){ 
+		 
+		jQuery('#usaTerritories-map').JSMaps({
+			map: 'usaTerritories',
+			mapWidth: 800,
+			mapHeight: 600,
+			stateClickAction: "none",
+			onStateClick: function(res) {
+				checkJson(res.abbreviation);
+var url = "//survey.paradisetechsoft.com/api/downloadata/"+res.abbreviation;
+                    jQuery("#generate a").attr('href', url);
+
+				if (step) {
+					introJ.goToStep(3).start().previousStep();
+					step = false;
+				}
+				jQuery(".jsmaps-wrapper-box").removeClass("slow");
+			}
+		});
+		});
+
+		jQuery(".my_toggle").click(function(){
+			jQuery(".desprective-content").show();
+			jQuery(".sources").show();
+			jQuery("span.my_toggle i").css("color","#7ab800");
+			jQuery(".jsmaps-wrapper-box").toggleClass("slow");
+			jQuery("#category").show();
+			jQuery("#state_data").hide();
+		});
+
+
+
+		function startTour() {
+			introJ = introJs().onchange(function(targetElement) {
+				switch (jQuery(targetElement).attr("data-step")) {
+					case "2":
+						step = true;
+						jQuery(".jsmaps-wrapper-box").show();
+						break;
+				}
+			}).start();
+		}
+
+		// Cookies
+		function createCookie(name, value, days) {
+			if (readCookie('introjs')) {
+				return;
+			}
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				var expires = "; expires=" + date.toGMTString();
+			} else var expires = "";
+
+			document.cookie = name + "=" + value + expires + "; path=/";
+		}
+
+		function readCookie(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+			}
+			return null;
+		}
+
+
+
+		 var abb = [];
+					var color = [];
+					var hoverColor = [];
+					 jQuery(document).on('change', '#category', function(){
+						jQuery(".jsmaps-wrapper-box").addClass("slow");
+						jQuery("#state_data").hide();
+						
+						var val = jQuery(this).val();
+						var cat_color =  checkCategory(val);
+						jQuery.each( cat_color, function( key, value ) {
+							abb[key]=value.abbreviation;
+							color[key] = value.color;
+							hoverColor[key] = value.hoverColor;
+
+						});
+						 mapData = window.JSMaps.maps.usaTerritories;
+						
+							 var mapPaths = window.JSMaps.maps.usaTerritories.paths;
+							 var i=0;
+							  for (property in mapPaths) {
+				if (mapPaths.hasOwnProperty(property)) {
+
+					var StateName=mapData.paths[property].name.trim();
+					var abbreviation = mapData.paths[property].abbreviation.trim();
+					if(abbreviation == "AL"){
+						mapData.paths[property].color = color[i];
+							 mapData.paths[property].hoverColor = hoverColor[i];
+					}
+					if(abbreviation == "WY"){
+						mapData.paths[property].color = color[i];
+							 mapData.paths[property].hoverColor = hoverColor[i];
+					}
+						if ($.inArray(abbreviation, abb)){
+
+							 mapData.paths[property].color = color[i];
+							 mapData.paths[property].hoverColor = hoverColor[i];
+						}
+					}
+					  i++;
+					}
+				$('#usaTerritories-map').trigger('reDraw', mapData);
+		      });
+		</script>
+</body>
+</html>

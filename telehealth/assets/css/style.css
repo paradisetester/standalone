@@ -1,0 +1,295 @@
+body {
+	background: #fff;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+}
+
+input, button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.main-div, .loggedin-div {
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 150px;
+  padding: 20px;
+  display: none;
+}
+
+.main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+.main-div button, .loggedin-div button {
+  background: #5d8ffc;
+  color: #fff;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div button:hover, .loggedin-div button:hover {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
+}
+
+.login-sec {
+    max-width: 500px;
+    margin:47px auto 0;
+}
+
+h6 {
+    text-align: center;
+}
+.loginn, .register {
+    background: #7AB800;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+button.btn.btn-block.btn-default.login-google {
+    background: #ff3737 !important;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+}
+
+button.btn.btn-block.btn-default.login-google i {
+    padding-right: 15px;
+}
+.loginn:hover, .register:hover {
+    background: #587d13;
+    color: #fff;
+}
+button.btn.btn-block.btn-default.login-google:hover {
+    background: #d22e2f !important;
+}
+.prof-mail {
+    text-align: center;
+    margin: 20px 0;
+    color: #000;
+}
+button#fs-exit-doc-button {
+    display: none;
+}
+button#fs-doc-button, button#fs-exit-doc-button {
+    background: transparent;
+    border: none;
+}
+section.section2 {
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+#example-table-theme-semantic-ui .tabulator-header .tabulator-col {
+    padding: 0 !important;
+    height: 92px !important;
+}
+
+.slow {
+    display: block !important;
+}
+.pdf-download {
+    display: inline-block;
+}
+.file {
+    margin-right: 10px;
+    display: block;
+}
+/***********13/11/2018****************/
+
+ul.research-img {
+    margin: 26px 0;
+    padding: 0;
+    display: flex;
+}
+ul.research-img li {
+    width: 16%;
+    list-style: none;
+    position: relative;
+    margin-right: 10px;
+}
+ul.research-img li img {
+    width: 100%;
+    max-width: 100%;
+}
+.research_info h6 {
+    color: #fff;
+    font-size: 14px;
+    text-align: center !important;
+    margin: 0;
+    text-transform: capitalize;
+}
+.research_info p {
+    text-align: center !important;
+    color: #fff !important;
+    font-weight: 400;
+    margin: 0;
+	font-size:15px;
+	text-transform:uppercase;
+}
+.research_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.22);
+    padding: 10px 0;
+}
+ul.research-img li a {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.desprective-content h4 {
+    color: #72a212;
+    font-size: 30px;
+    margin: 36px 0 10px;
+}
+
+span.date {
+    color: #a0a0a0;
+}
+.toggllee {
+    width: 990px;
+    margin: auto;
+}
+.toggllee i {
+    font-size: 40px !important;
+}
+.desprective-content sup {
+    color: #72a212;
+    font-size: 13px;
+}
+.toggllee #usaTerritories-map {
+    margin: 50px auto 30px !important;
+}
+.toggllee ul.sources {
+    margin: 0 0 30px;
+}
+.research_info p {
+    font-size: 12px !important;
+}
+.top-section a {
+    text-align: right;
+    background: #7ab800;
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 14px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+
+.top-section a i {
+    color: #fff;
+    font-size: 17px !important;
+    padding-right: 5px;
+}
+
+.top-section {
+    position: relative;
+}
+.desprective-content p{
+  margin: 0;
+}
+.content-bio p {
+    margin-bottom: 30px;
+}
+
+.header1:after {
+    width: 100%;
+    content: "";
+    display: block;
+    clear: both;
+    float: :none !important;
+}
+.content {
+    width: 990px;
+    margin: auto;
+    height: 100%;
+}
+div#generate i {
+    font-size: 32px !important;
+}
+
+div#generate {
+    display: inline-block;
+	vertical-align: 3px;
+}
+@media (max-width:992px){
+	.toggllee {
+    width: auto !important;
+}
+.top-section a {
+    position: unset;
+    display: inline-block;
+    margin: 20px 0;
+    padding: 7px;
+    font-size: 12px;
+}
+
+span.date {
+    display: block;
+}
+
+.desprective-content ul li {
+    width: 100%;
+}
+.content {
+    width: auto !important;
+    margin: auto;
+    height: 100%;
+}
+}
+@media (max-width:450px){
+	ul.research-img {
+    display: block;
+    margin: 20px;
+}
+
+.desprective-content ul li {
+    margin-bottom: 16px;
+}
+
+}
+div#generate i {
+    font-size: 32px !important;
+}
+.table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
+    white-space: inherit !important;
+}
+table.table tr {
+    display: flex;
+}
+
+table.table tr td, table.table tr th {
+    width: 35%;
+}

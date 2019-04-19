@@ -1,0 +1,63 @@
+@media print {
+	body {-webkit-print-color-adjust: exact !important;}
+}
+@media print {
+		.col-lg-6.col-md-6.col-6 .brand-box, span.brand-box.fillColorBrandGoldLighter {
+             width:150px !important;
+			 height:30px;
+			 border-radius:4px;
+			 padding:3px 10px;
+}
+.col-lg-6.col-md-6.col-6 {
+    margin-bottom: 20px !important;
+}
+.grade-cols a {
+    color: rgb(0, 0, 0) !important;
+	 -webkit-print-color-adjust: exact;
+    font-weight: normal;
+}
+.sidenav-wrapper {
+    background: rgb(247, 247, 247) !important;
+	padding:15px;
+}
+.mainNav.sidenav li a {
+    color: rgb(102, 102, 102) !important;
+}
+.mainNav.sidenav li {
+    list-style: none !important;
+}
+}
+@media print {
+.bg-warning {
+    background-color: yellow !important;
+   -webkit-print-color-adjust: exact;
+}}
+@media print {
+.bg-success {
+    background-color: rgb(155, 202, 64) !important;
+-webkit-print-color-adjust: exact;
+}
+.sources-section a {
+    color: rgb(0, 128, 0) !important;
+   -webkit-print-color-adjust: exact;
+}
+.section-title h1, .section-title h2, .section-title h3 {
+    color: rgb(0, 65, 87) !important;
+}
+.style-title {
+    background-color: rgb(255, 255, 255) !important;
+    border: 1px solid rgb(233, 233, 233) !important;
+	    display: inline-block !important;
+		padding:15px !important;
+		margin-bottom:30px;
+}
+}
+@media print {
+tr.bg-warning{
+  background-color:#999999 !important;
+   -webkit-print-color-adjust: exact; 
+   }
+   .sidenav-wrapper{
+    display: none;
+   }
+   }
