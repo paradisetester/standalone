@@ -101,24 +101,24 @@ function createData(arr) {
     var trback = "";
 	 var title = arr.wavier_status;
     if(title.match(/SPA/g)){
-    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #e0516c !important; } .state-head h5 { color: #e0516c;} </style>';
-         thback = 'background-color: #e0516c; !important;';
-         stehead = "color: #e0516c; !important"; 
-         trback = "background-color: #e0516c2e; !important;";
+    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #F39C12; !important;  } .table100.ver1 th { background-color: #F39C12 !important; } .state-head h5 { color: #e0516c;} </style>';
+         thback = 'background-color: #F39C12; !important;';
+         stehead = "color: #F39C12; !important"; 
+         trback = "background-color: ##F39C12; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }
     
     if(title.match(/SFO/g)){
-     thback = 'background-color: #1f6ccc; !important;';
-         stehead = "color:#1f6ccc; !important"; 
-         trback = "background-color: #1f6ccc26; !important;";
+     thback = 'background-color: #28B463; !important;';
+         stehead = "color:#28B463; !important"; 
+         trback = "background-color: #28B463; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }
  
 if(title.match(/RFP/g)){
-     thback = 'background-color: #6824D6; !important;';
-         stehead = "color:#6824D6; !important"; 
-         trback = "background-color: #6824D6; !important;";
+     thback = 'background-color: #EC7063; !important;';
+         stehead = "color:#EC7063; !important"; 
+         trback = "background-color: #EC7063; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }         
 	
