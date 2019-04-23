@@ -72,7 +72,6 @@ function checkJson(abb){
     $("#state_data").show();
     //$(".top-section").show();
     jQuery("#usaTerritories-map").hide();
-    jQuery(".legend").hide();
     jQuery(".chart_outrss").hide();
      jQuery(".content-section").show();
         $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -102,45 +101,91 @@ function createData(arr) {
     var trback = "";
 	 var title = arr.wavier_status;
     if(title.match(/SPA/g)){
-    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #004157 !important; } .state-head h5 { color: #004157;} </style>';
-         thback = 'background-color: #004157; !important;';
-         stehead = "color: #004157; !important"; 
+    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #e0516c !important; } .state-head h5 { color: #e0516c;} </style>';
+         thback = 'background-color: #e0516c; !important;';
+         stehead = "color: #e0516c; !important"; 
          trback = "background-color: #e0516c2e; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }
     
     if(title.match(/SFO/g)){
-     thback = 'background-color: #4B1326; !important;';
-         stehead = "color:#4B1326; !important"; 
+     thback = 'background-color: #1f6ccc; !important;';
+         stehead = "color:#1f6ccc; !important"; 
          trback = "background-color: #1f6ccc26; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }
  
 if(title.match(/RFP/g)){
-     thback = 'background-color: #d66f1c; !important;';
-         stehead = "color:#d66f1c; !important"; 
-         trback = "background-color: #d66f1c; !important;";
+     thback = 'background-color: #6824D6; !important;';
+         stehead = "color:#6824D6; !important"; 
+         trback = "background-color: #6824D6; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }         
 	
     html +='\
     <div class="chart_outr content_outr">\
 	<div class="limiter">\
-	<div class="container">\
+	<div class="container-table100">\
 	<div class="state-head">\
         <div class="state_headings" style="border-color: '+arr.color+';">\
            <h3 style="'+stehead+'">'+arr.state_name+'</h3>\
                 <h5>'+arr.status+'</h5>';
                
-            html +='</div><div class="card_section">';
-				jQuery.each( arr.faqs, function( key, value ) {
+            html +='</div>\
+    <div class="wrap-table100"> <div class="table100 ver1 m-b-110"> <div class="table100-head"><table>';
+             html += '<tr class="row100 head" ><th class="cell100 column" style="'+thback+'"></th><th class="cell100 column2" style="'+thback+'">'+ arr.state_name+'</th>';
+           
+			 html+='</tr></table></div><div class="table100-body js-pscroll"><table><tbody>';
+                    jQuery.each( arr.faqs, function( key, value ) {
                         var str = value.description;
+
                          var string =value.description;
-                     html +='<div class="card-outr"><div class="col s12 m6 l4 xl3"> <div class="demo-card  colour11 value-based" data-color="colour11" data-date="2015"><div class="panel" style="'+thback+'"><div class="card white front  box "><div class="card-content white-black center colour1 box_top gradient1">  <h2 class="card-title">Manufacturer</h2> <p>'+value.manufacturer+'</p> <div class="card-content"><span class="card-title txt">Waiver</span> <p>'+value.waiver_other+' </p> <span class="card-title txt">Status</span> <p>'+value.status+' </p> <span class="card-title txt">Duration of Contract </span> <p>'+value.duration_contact+' </p> <span class="card-title txt">Year of Implementation </span> <p>'+value.year_implementation+' </p> <span class="card-title txt">Drug</span> <p>'+value.drug+' </p> <span class="card-title txt">Therapeutic Area</span>  <p>'+value.therapeuticarea+'</p></div> </div> </div></div><div class="back-card"><div class="demo-card__secondary">  '+value.description+'<span class="source_cls">'+value.source+'</span></div></div></div></div></div>';
+                         //string = abbrivationstring(string);
+                       //var new_string = string.replace('&#8226;','<br/>&#8226;');
+                       //var new_string = string.replace(/•/g,'<br/>•');
+
+                   if(m % 2 == 0){
+                    html +='<tr class="row100 body" style="'+trback+'">';
+                    }else{
+                         html +='<tr class="row100 body">';
+                    }
+                    html +='<td class="cell100 column1" >Manufacturer</td>\
+                        <td class="cell100 column2" >'+value.manufacturer+'\
+                        ';
+		
+			 html +='</td>';
+                     html +='</tr>';
+                     html +='<td class="cell100 column1" >Drug</td>\
+                        <td class="cell100 column2" >'+value.drug+'\
+                        ';    
+            html +='</td>';
+                       
+                    html +='</tr>';
+		 html +='<td class="cell100 column1" >Therapeutic Area</td>\
+                        <td class="cell100 column2" >'+value.therapeuticarea+'\
+                        ';    
+            html +='</td>';
+                       
+                    html +='</tr>';
+		
+		 html +='<td class="cell100 column1" >Description</td>\
+                        <td class="cell100 column2" >'+value.description+'\
+                        ';    
+            html +='</td>';
+                       
+                    html +='</tr>';
+		html +='<td class="cell100 column1" >source</td>\
+                        <td class="cell100 column2" >'+value.source+'\
+                        ';    
+            html +='</td>';
+                       
+                    html +='</tr>';
 					m++;
                     });
-	
-			html +='</div></div>\
+					html +='</tbody></table></div>\
+            </div>\
+        </div>\
+		</div>\
 		</div>\
    ';
 

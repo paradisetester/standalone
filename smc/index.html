@@ -26,7 +26,13 @@
         <div class="toggllee">
           <div class="jsmaps-wrapper-box"><div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div>
         </div>
-		
+		  <div class="legend">
+		     <ul>
+			   <li><span class="rfp"></span> RFP</li>
+			   <li><span class="spa"></span> SPA</li>
+			   <li><span class="spo"></span> SFO</li>
+			 </ul>
+		  </div>
 		 </div>
         
         
@@ -37,6 +43,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
 	<link href="assetes/css/table.css" rel="stylesheet">
+	<link href="assetes/css/card.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="assetes/css/jsmaps.css" rel="stylesheet" type="text/css" />
@@ -113,11 +120,13 @@ jQuery(window).on('load',function(){
      jQuery(document).ready(function(){
     jQuery(".my_toggle").click(function(){
         $('#usaTerritories-map').show();
+		 $('.legend').show();
         $('#usaTerritories-map').addClass('animated zoomin');
         $(".table_hide").show();
         $("#state_data").hide();
 		 $(".table_hidee").hide();
 		 $(".content-section").hide();
+
 		 
     });
 
