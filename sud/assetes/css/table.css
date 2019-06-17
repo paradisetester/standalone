@@ -1472,7 +1472,12 @@ td.cell100.column2 {
 .guide ul li h5 {
     padding: 3px 0;
 }
-
+tr.row100.body:first-child td {
+    padding: 88px 33px;
+}
+li ul {
+    padding: 0 30px;
+}
 /********11/16/18*********/
 
 #example-table-theme-semantic-ui .tabulator-row .tabulator-frozen.tabulator-frozen-left{

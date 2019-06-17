@@ -523,6 +523,7 @@ th.cell100.column {
 .state-head {
     text-align: center;
     padding: 24px 0;
+	width: 100%;
 }
 
 .state-head h5 {

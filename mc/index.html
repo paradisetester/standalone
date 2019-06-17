@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+<link rel = "stylesheet" type = "text/css" href="css/style.css"/>
+<link rel = "stylesheet" type = "text/css" href="https://rawgit.com/vpassapera/jqPlot/master/jquery.jqplot.min.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<style>
+.timelineeinner {
+    width: 250px;
+    margin: auto;
+}
+
+.charts {
+    height: 200px;
+    width: 300px;
+    border: 1px solid black;
+	font-size:6px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="page_outr"> 
+     <div class="content-sec">
+	     <div class="row">
+		    <div class="col-md-8">
+			    <div class="content-left">
+				  <h4>Procurement Forecast: State's Comprehensive <br> Medicaid Managed Care Contracts</h4>
+				  <h6>Date:9/5/19</h6>
+				</div>
+			</div>
+			<div class="col-md-4">
+			    <div class="content-right">
+				     <a href="#" class="download-btn">Download Attachment</a>
+				</div>
+			</div>
+		 </div>
+         <div class="con-sec">
+					  <div class="row">
+					     <div class="col-md-6">
+						    <div class="image">
+							    <img src="./images/alice.jpg">
+								<h5>Alice J. Lam</h5>
+								<h6>Director</h6>
+							</div>
+						 </div>
+					     <div class="col-md-6">
+						  <div class="image">
+						     <img src="./images/Torres.jpg">
+							 <h5>Bryant M. Torres</h5>
+							 <h6>Torres</h6>
+						 </div>
+					  </div>
+					</div>
+				  
+					   <p>Managed care is the dominant delivery system for the Medicaid program today. Thirty eight states, the District of Columbia and Puerto Rico contract with risk-based managed care organizations (MCOs) to deliver the majority of benefits to their Medicaid beneficiaries. Comprehensive MCOs typically provide all acute, primary and specialty medical services; some also cover behavioral health (BH) and long-term services and supports (LTSS). </p> 
+					   <p>This forecast is designed to help understand the timing of states' current Medicaid managed care contracts and anticipated procurement. The forecast will be updated periodically.</p> 
+					   <p>The data included in the forecast were obtained through a review of active comprehensive Medicaid managed care contracts and additional state research. A number of these comprehensive managed care programs integrate LTSS and BH benefits. We have reflected where LTSS and BH benefits are provided through the comprehensive, risk-based managed care program where known, but this forecast does not attempt to capture separate managed care contracts for LTSS and BH.</p> 
+		 </div>
+	 </div>
+	 <div class="map-section">
+	     <h5>State's Comprehensive Medicaid:State Profiles</h5>
+		 <div class="row">
+		    <div class="col-md-5">
+			   <div class="custom_select">
+			      <select class="custom-select" id="states" data-step="1" data-intro="Select state"> </select>
+			   </div>
+			</div>
+		    <div class="col-md-5">
+			  <div class="custom_select">
+			      <select class="custom-select" id="category"></select>
+			   </div>
+			  </div>
+			  <div class="col-md-2 icon-sec">
+			  <div class="custom_btn-chart">
+                   <i class="fas fa-chart-pie"></i>
+			   </div>
+			   <div class="map-btn">
+			     <i class="fa fa-globe-europe"></i>
+			   </div>
+			  </div>
+		 </div>
+		 <div class="row">
+		    <div id="map" style="width:1600px; height:800px;"></div>
+		 </div>
+	 </div>
+	 
+</div>
+</div>
+ <div class="timeline-table">
+	      <div class="table-inner fadeInRight">
+		      <ul>
+			     <li>State</li>
+			     <li>Program Name</li>
+			     <li>Services Provided</li>
+			     <li>Contract Start</li>
+			     <li class="timeline-sec"><span>Project Re-Procurement Window</span>
+				     <ul>
+					   <li>2018</li>
+					   <li>2021</li>
+					   <li>2024</li>
+					   <li>2027</li>
+					   <li>2030</li>			   
+					 </ul>
+				 </li>
+				 <li>Unclear</li>
+			  </ul>
+			 <div id="bind-table">
+			 
+			 </div>
+		   
+		  </div>
+	  </div>
+	  
+	  <div class="single-card">
+	  <div class="container" id="bind-single-state">
+	        
+	  </div>
+
+
+<!---responsive---->
+<div class="responv-design">
+    <ul>
+	   <li class="res-title">State</li>
+	   <li>CA</li>
+	</ul>
+	<ul>
+	   <li class="res-title">Program Name</li>
+	   <li>Acute/BH</li>
+	</ul>
+	 <ul>
+	   <li class="res-title">Services Provided</li>
+	   <li>Various Regional Models</li>
+	</ul>
+	 <ul>
+	   <li class="res-title">Contract Start</li>
+	   <li>12/3/19</li>
+	</ul>
+	 <ul>
+	   <li class="res-title">Contract End</li>
+	   <li>12/4/22</li>
+	</ul>
+	 <ul>	   
+		<li class="timeline-sec res-title"><span>Project Re-Procurement Window</span>
+			 <ul>
+			    <li>2018</li>
+			   <li>2021</li>
+			   <li>2024</li>
+			   <li>2027</li>
+			   <li>2030</li>				   
+			 </ul>
+		 </li>	
+		 <li class="timelinee">
+			 <div class="timeln" style="width:200px; height: 11px; border-radius:25px;background:#7f9bff;margin:0 20px;"></div>
+		 </li>
+	</ul>
+	<ul>
+	   <li class="res-title">Unclear</li>
+	   <li><div class="unclear"><span class="true" style="background:;"></span></div></li>
+	</ul>
+</div>
+</div>
+	
+<!---responsive---->
+	  
+<script src="js/jquery.min.js"></script>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/raphael.js"></script>
+<script src="js/jsmaps-libs.js" type="text/javascript"></script>
+<script src="js/jsmaps-panzoom.js"></script>
+<script src="js/jsmaps.min.js" type="text/javascript"></script>
+<script src="js/jquery.usmap.js"></script>
+
+<!--script src="https://rawgit.com/vpassapera/jqPlot/master/jquery.jqplot.min.js"></script>
+<script src="https://rawgit.com/vpassapera/jqPlot/master/plugins/jqplot.pieRenderer.min.js"></script--->
+
+<script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+	
+<script src="js/circles.min.js"></script>
+<script src="js/customcode.js"></script>
+<script src="js/custom.js"></script>
+
+
+</body>
+
+</html>
