@@ -101,50 +101,42 @@ function createData(arr) {
     var stehead = ""; 
     var trback = "";
 	 var title = arr.wavier_status;
-	 var cardCount ='';
     if(title.match(/SPA/g)){
-    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #E4A11B !important; } .state-head h5 { color: #E4A11B;} </style>';
-         thback = 'background-color: #E4A11B; !important;';
-         stehead = "color: #E4A11B; !important"; 
+    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #004157 !important; } .state-head h5 { color: #004157;} </style>';
+         thback = 'background-color: #004157; !important;';
+         stehead = "color: #004157; !important"; 
          trback = "background-color: #e0516c2e; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }
     
     if(title.match(/SFO/g)){
-     thback = 'background-color: #00A9E0; !important;';
-         stehead = "color:#00A9E0; !important"; 
-         trback = "background-color: #00A9E0; !important;";
+     thback = 'background-color: #4B1326; !important;';
+         stehead = "color:#4B1326; !important"; 
+         trback = "background-color: #1f6ccc26; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }
  
 if(title.match(/RFP/g)){
-     thback = 'background-color: #004157; !important;';
-         stehead = "color:#004157; !important"; 
-         trback = "background-color: #004157; !important;";
+     thback = 'background-color: #d66f1c; !important;';
+         stehead = "color:#d66f1c; !important"; 
+         trback = "background-color: #d66f1c; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
     }         
 	
-	console.log(' size : ');
-	if(arr.faqs.length > 1){
-		 cardCount ='more';		
-	}else{
-		cardCount ='one';
-		}
-		console.log(arr);
     html +='\
     <div class="chart_outr content_outr">\
-	<div class="limiter '+arr.state_name+'">\
+	<div class="limiter">\
 	<div class="container">\
 	<div class="state-head">\
         <div class="state_headings" style="border-color: '+arr.color+';">\
-           <h3 style="color:'+arr.color+'">'+arr.state_name+'</h3>\
+           <h3 style="'+stehead+'">'+arr.state_name+'</h3>\
                 <h5>'+arr.status+'</h5>';
                
             html +='</div><div class="card_section">';
 				jQuery.each( arr.faqs, function( key, value ) {
                         var str = value.description;
                          var string =value.description;
-                     html +='<div class="card-outr '+cardCount+'"><div class="col s12 m6 l4 xl3"> <div class="demo-card  colour11 value-based" data-color="colour11" data-date="2015"><div class="panel" style="border-color:'+arr.color+'"><div class="pann"><div class="front card"><div class="card white front  box "><div class="card-content white-black center colour1 box_top gradient1">  <div class="card-content"><div class="des-back card"><h2 class="card-title"  style="color:'+arr.color+'">Manufacturer</h2> <p style="border-color:'+arr.color+'">'+value.manufacturer+'</p> <span class="card-title txt"  style="color:'+arr.color+'">Drug</span> <p style="border-color:'+arr.color+'">'+value.drug+' </p></div><div class="back-card"><div class="demo-card__secondary" style="border-color:'+arr.color+'">  '+value.description+'<span class="source_cls">'+value.source+'</span></div></div><span class="card-title txt" style="color:'+arr.color+'">Waiver</span> <p style="border-color:'+arr.color+'">'+value.waiver_other+' </p> <span class="card-title txt"  style="color:'+arr.color+'">Status</span> <p style="border-color:'+arr.color+'">'+value.status+' </p> <span class="card-title txt"  style="color:'+arr.color+'">Duration of Contract </span> <p style="border-color:'+arr.color+'">'+value.duration_contact+' </p> <span class="card-title txt"  style="color:'+arr.color+'">Year of Implementation </span> <p style="border-color:'+arr.color+'">'+value.year_implementation+' </p><span class="card-title txt"  style="color:'+arr.color+'">Therapeutic Area</span>  <p class="therap">'+value.therapeuticarea+'</p></div> </div> </div></div></div></div></div></div></div>';
+                     html +='<div class="card-outr"><div class="col s12 m6 l4 xl3"> <div class="demo-card  colour11 value-based" data-color="colour11" data-date="2015"><div class="panel" style="'+thback+'"><div class="card white front  box "><div class="card-content white-black center colour1 box_top gradient1">  <h2 class="card-title">Manufacturer</h2> <p>'+value.manufacturer+'</p> <div class="card-content"><span class="card-title txt">Waiver</span> <p>'+value.waiver_other+' </p> <span class="card-title txt">Status</span> <p>'+value.status+' </p> <span class="card-title txt">Duration of Contract </span> <p>'+value.duration_contact+' </p> <span class="card-title txt">Year of Implementation </span> <p>'+value.year_implementation+' </p> <span class="card-title txt">Drug</span> <p>'+value.drug+' </p> <span class="card-title txt">Therapeutic Area</span>  <p>'+value.therapeuticarea+'</p></div> </div> </div></div><div class="back-card"><div class="demo-card__secondary">  '+value.description+'<span class="source_cls">'+value.source+'</span></div></div></div></div></div>';
 					m++;
                     });
 	
@@ -152,7 +144,7 @@ if(title.match(/RFP/g)){
 		</div>\
    ';
 
-   
+    
     jQuery('#state_data').html(html);
 }
 

@@ -17,7 +17,7 @@
         <select id="states" data-step="1" data-intro="Select state"></select>
         <!-- <a class="intro-c" href="javascript:void(0);" onclick="javascript:startTour();"><i class="fa fa-info-circle"></i></a> -->
         <!-- <a class="charttt"><i class="fa fa-line-chart"></i></a> -->
-		<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i>Map</span>
+		<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i></span>
         </div>
 		
          <div id="state_data">
@@ -27,12 +27,10 @@
           <div class="jsmaps-wrapper-box"><div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div>
         </div>
 		  <div class="legend">
-		  <h4>Status</h4>
 		     <ul>
-			   <li><span class="rfp"></span>  Approved</li>
-			   <li><span class="spa"></span> Approved (Details TBD)</li>
-			   <li><span class="spo"></span> Solicitation For Offers (SFO) Released</li>
-			   <li><span class="wa"></span> Request for Proposal (RFP) released</li>
+			   <li><span class="rfp"></span> RFP</li>
+			   <li><span class="spa"></span> SPA</li>
+			   <li><span class="spo"></span> SFO</li>
 			 </ul>
 		  </div>
 		 </div>
@@ -135,7 +133,7 @@ jQuery(window).on('load',function(){
    jQuery(".my_togglee").click(function(){
        $('#usaTerritories-map').hide();
        $(".table_hide").hide();
-  jQuery(".chart_outr").show("main");
+	jQuery(".chart_outr").show("main");
   $("#state_data").hide();
 
     });
