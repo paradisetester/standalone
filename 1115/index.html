@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<div class="container-fluid">
+<div class="container">
            
         <div id="loader"></div>
            <div class="desprective-content state-content">
@@ -53,7 +53,11 @@
         <li><h6>I/DD</h6> = Intellectual and developmental disability IMD = Institutions for mental disease </li>
         <li><h6>IMD</h6>= Institutions for mental disease </li>
         <li><h6>MAT</h6> = Medication-assisted treatment </li>
-        <li><h6>MCO</h6> = Managed care organization</li>
+        
+        
+    </ul>
+	<ul>
+	<li><h6>MCO</h6> = Managed care organization</li>
         <li><h6>MH</h6> = Mental health</li>
         <li><h6>MLTSS</h6> = Managed long-term services and supports</li>
         <li><h6>MMC</h6> = Medicaid managed care </li>
@@ -74,8 +78,7 @@
         <li><h6>TBI</h6> = Traumatic brain injury</li>
         <li><h6>TMA</h6> = Transitional Medical Assistance  </li>
         <li><h6>WM</h6>= Withdrawal management </li>
-        
-    </ul>
+	</ul>
 </div>
 </div>
 		
@@ -96,7 +99,7 @@
                      </tr>
                      <tr>
                      <th></th>
-                      <th>AZ</th>
+                     <th>AZ</th>
                      <th colspan="">AR</th>
                      <th colspan="">IN</th>
                      <th colspan="">IA</th>
@@ -813,6 +816,18 @@
      
 		  </section>   
      </div>
+	 <div class="footer-note">
+			<ul>
+				<li><sup>1</sup>  On January 22, 2019, Maine’s Governor submitted a letter to CMS Administrator Verma rejecting the waiver’s special
+terms and conditions approved by CMS. As a result, Maine will not implement work and community engagement
+requirements or the other waiver features approved by CMS. </li>
+				<li><sup>2</sup> In December 2018, CMS approved a waiver in Maine that authorized premiums, work and community engagement requirements, and a
+retroactive eligibility waiver. Since Maine’s governor announced the state would not implement the waiver, a summary is not reflected in
+this chart.  </li>
+				<li><sup>3</sup> Utah has three pending waiver amendments. This column refers to the August 2017 request.   </li>
+				<li><sup>4</sup> Utah has three pending waiver amendments. This column refers to the two June 2018 requests.   </li>
+			</ul>
+		</div>
 	 <div class="guide">
 	  <ul>
 	     <li><span><img src="blue.png"></span><h5>= Waiver obtained </h5></li>
@@ -867,6 +882,7 @@
 	<script  src="assetes/js/bootstrap/js/bootstrap.min.js"></script>-->
 <!--===============================================================================================-->
 	<script src="assetes/js/select2.min.js"></script>
+	<script src="assetes/js/jquery.freezeheader.js"></script>
 <!--===============================================================================================-->
 	<script src="assetes/js/perfect-scrollbar.min.js"></script>
 	<script>
@@ -890,11 +906,7 @@ jQuery(window).on('load',function(){
 <!--===============================================================================================-->
 
 
-<script>
 
-
-
-</script>
 <script>
   
   //toggle
@@ -947,4 +959,10 @@ $(document).on("click",".charttt",function() {
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
+</script>
+<script>
+$('table').freezeHeader({
+height:"100%"
+});
+
 </script>

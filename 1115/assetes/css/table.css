@@ -1448,10 +1448,10 @@ span.date {
 }
 .table100.ver1 td:nth-child(1),.table100.ver1 th:nth-child(1) {
     width: 20%;
-    padding:34px 20px 20px;
+    padding:20px 20px 20px;
 }
 .table100.ver1 td:nth-child(2),.table100.ver1 th:nth-child(2)  {
-    width: 40%;
+    width: 70%;
 }
 .table100.ver1 td:nth-child(3),.table100.ver1 th:nth-child(3)  {
     width: 40%;
@@ -1477,7 +1477,10 @@ td.cell100.column2 {
 .tabulator-row.tabulator-selectable.tabulator-row-even {
     padding-left: 0 !important;
 }
-
+div#hdexample {
+    z-index: 9999;
+    
+}
 
 @media (max-width:992px){
 	.toggllee {

@@ -87,7 +87,11 @@ table.dataTable tbody td {
 
 .guide span {
     padding: 3px 0;
-    display: block;
+    display: inline-block;
+}
+.guide h5 {
+    display: inline;
+    font-weight: bold;
 }
 .cir_purple {
     background: #6824d6;

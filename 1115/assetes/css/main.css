@@ -24,7 +24,7 @@
 
 body, html {
 	height: 100%;
-	font-family: sans-serif;
+	 font-family: Lato-Regular;
 }
 
 /* ------------------------------------ */
@@ -553,6 +553,7 @@ td.cell100.column1 {
 td.cell100.column2 {
     padding-right: 30px;
 line-height: 24px;
+    padding: 20px;
 }
 .column2 {
     width: 39%;
@@ -590,12 +591,14 @@ line-height: 24px;
 .abbrevation ul {
     margin: 0;
     padding: 0;
+	width: 50%;
+    float: left;
 }
 
 .abbrevation ul li {
     list-style: none;
     display: inline-block;
-    width: 49%;
+    width: 100%;
     margin: 6px 0;
     font-size: 14px;
 }
@@ -697,5 +700,14 @@ background-image: url('../images/tick4.png');
     border: 1px solid #f2e5e5;
 	    max-width: 100% !important;
 }
+/*21-jun-19*/
+.footer-note {
+    width: 100%;
+    margin-bottom: 20px;
+}
 
+.footer-note li {
+    display: block;
+    padding: 4px 0;
+}
 
