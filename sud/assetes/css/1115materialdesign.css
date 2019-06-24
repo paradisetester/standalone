@@ -194,8 +194,12 @@ select#states {
     float: left;
     margin: auto;
     max-width: 500px;
-    border:1px solid rgb(208, 207, 207) !important;
+    border: 1px solid #77c398 !important;
     margin-right: 12px !important;
+    color: #000000;
+    font-family: Lato-Regular;
+    padding: 0 6px;
+   font-size: 18px;
 }
 .outr_states {
     width: 600px;
@@ -428,19 +432,19 @@ svg {
 .drops a {
     display: inline-block;
     padding: 5px 20px;
+    font-size: 18px !important;
+    background: #77c398;
     color: #000;
-    font-size: 20px !important;
-    background: #7ab800;
-    color: #fff;
     border-radius: 4px;
     margin-right: 10px;
 }
 .drops a i {
-    color: #fff;
+    color: #000;
     font-size: 23px !important;
 	padding-right:5px;
 }
 .drops a {
     vertical-align: top;
+	cursor: pointer;
 }
 

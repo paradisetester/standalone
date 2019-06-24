@@ -94,20 +94,13 @@ function createData(arr) {
     var trback='';
     var stehead = "";
     var title = arr.title;
-    if(title.match(/Waiver Request/g)){
-    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #e0516c; !important; } .state-head h5 { color: #e0516c;} </style>';
-         thback = 'background-color: #e0516c; !important;';
-         stehead = "color: #e0516c; !important"; 
-         trback = "background-color: #e0516c2e; !important;";
+   
+    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: '+arr.color+'; !important; } .state-head h5 { color: '+arr.color+';} </style>';
+         thback = 'background-color: '+arr.color+'; !important;';
+         stehead = 'color: '+arr.color+'; !important'; 
+         trback = 'background-color: '+arr.color+'; !important;';
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
-    }
-    
-    if(title.match(/Approved Through/g)){
-     thback = 'background-color: #1f6ccc; !important;';
-         stehead = "color:#1f6ccc; !important"; 
-         trback = "background-color: #1f6ccc26; !important;";
-         //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
-    }           
+       
                
     var ab = new Array();
     var abcolor = "";
