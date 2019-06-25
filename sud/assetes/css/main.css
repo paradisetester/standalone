@@ -24,7 +24,7 @@
 
 body, html {
 	height: 100%;
-	font-family: Lato-Regular;
+	font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
 }
 
 /* ------------------------------------ */
@@ -86,7 +86,43 @@ iframe {
 	border: none !important;
 }
 
+/*new formating 25-june-19*/
+h1 {
+    color: #4b4b4b !important;
+    font-size: 40px !important;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+}
+h2 {
+    color: #4b4b4b !important;
+    font-size: 32px !important;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+}
+h3 {
+    color: #4b4b4b !important;
+    font-size: 28px !important;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+}
+h4 {
+    color: #4b4b4b !important;
+    font-size: 24px !important;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+}
+h5 {
+    color: #4b4b4b !important;
+    font-size: 20px !important;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+}
+h6 {
+    color: #4b4b4b !important;
+    font-size: 16px !important;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+}
 
+p {
+    color: #4b4b4b !important;
+    font-size: 16px !important;
+    font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+}
 /*//////////////////////////////////////////////////////////////////
 [ Scroll bar ]*/
 .js-pscroll {
@@ -227,16 +263,16 @@ th.cell100.column {
 [ Ver1 ]*/
 
 .table100.ver1 th {
-    font-family: Lato-Bold;
-    font-size: 18px;
-    color: #000;
+        font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-size: 20px;
+    color: #4b4b4b;
     line-height: 1.4;
     background-color: #1caf8d;
     z-index: 9;
     position: relative;
+	font-weight:bold;
 }
 .table100.ver1 td {
-  font-family: Lato-Regular;
   font-size: 15px;
   color: #808080;
   line-height: 1.4;
@@ -648,6 +684,7 @@ border: none;
     padding: 2px 10px;
     border-right: 1px solid #d2d2d2;
     border-bottom: 1px solid #d2d2d2;
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 #vertical-ticker  tbody td{
 	color: #000;
@@ -661,6 +698,7 @@ border: none;
     background-color: transparent;
     color: #383838;
     text-align: center;
+	font-family: Georgia, Times, "Times New Roman", serif;
 	cursor: pointer;
 }
 #vertical-ticker  .cr {
@@ -705,6 +743,25 @@ background-image: url('../images/tick2.png');
     display: block;
     padding: 4px 0;
 	color: #000;
+}
+.map-categories {
+		float: right;
+	    margin-bottom: 40px;
+}
+.map-categories li {
+    display: block;
+    padding: 3px 0;
+}
+.map-categories li span {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+}
+
+.map-categories h3 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
 }
 
 

@@ -1445,9 +1445,11 @@ span.date {
 .table100.ver1 td:nth-child(1),.table100.ver1 th:nth-child(1) {
     width: 20%;
     padding:20px 20px 20px;
+	font-family: Georgia, Times, "Times New Roman", serif !important;
+
 }
 .table100.ver1 td:nth-child(2),.table100.ver1 th:nth-child(2)  {
-    width: 70%;
+    width: 40%;
 }
 .table100.ver1 td:nth-child(3),.table100.ver1 th:nth-child(3)  {
     width: 40%;
@@ -1469,7 +1471,7 @@ td.cell100.column2 {
     padding-right: 7px;
 }
 
-.guide ul li h5 {
+.guide ul li h6 {
     padding: 3px 0;
     font-weight: bold;
     color: #000;
@@ -1478,6 +1480,7 @@ td.cell100.column2 {
 tr.row100.body:first-child td {
     padding: 30px 33px;
 }
+
 li ul {
     padding: 0 30px;
 }
@@ -1499,7 +1502,14 @@ li ul {
 /*21-june-19*/
 div#hdexample {
     z-index: 9999;
-    top: 97px !important;
+    
+}
+
+.table100-body.js-pscroll ul, li {
+    margin: 0px;
+    color: #4b4b4b !important;
+    font-size: 16px !important;
+    font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
 }
 /*****************/
 @media (max-width:992px){

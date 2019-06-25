@@ -1,0 +1,156 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container-fluid">
+           
+        <div id="loader"></div>
+           <div class="desprective-content state-content">
+    <div class="top-section">
+    <h4>
+        State Medicaid Contract: State Profiles
+    </h4>
+    <span class="date">Date:01.04.2019</span>
+   
+    </div>
+  
+      
+   </div>
+        <div class="drops">
+        <select id="states" data-step="1" data-intro="Select state"></select>
+        <!-- <a class="intro-c" href="javascript:void(0);" onclick="javascript:startTour();"><i class="fa fa-info-circle"></i></a> -->
+        <!-- <a class="charttt"><i class="fa fa-line-chart"></i></a> -->
+		<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i>Map</span>
+        </div>
+		
+         <div id="state_data">
+          </div>
+             
+        <div class="toggllee">
+          <div class="jsmaps-wrapper-box"><div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div>
+        </div>
+		  <div class="legend">
+		  <h4>Status</h4>
+		     <ul>
+			   <li><span class="rfp"></span>  Approved</li>
+			   <li><span class="spa"></span> Approved (Details TBD)</li>
+			   <li><span class="spo"></span> Solicitation For Offers (SFO) Released</li>
+			   <li><span class="wa"></span> Request for Proposal (RFP) released</li>
+			 </ul>
+		  </div>
+		 </div>
+        
+        
+        
+        </div> 
+<!--===============================================================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link href="assetes/css/table.css" rel="stylesheet">
+	<link href="assetes/css/card.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="assetes/css/jsmaps.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assetes/css/1115materialdesign.css">
+    <link rel="stylesheet" type="text/css" href="assetes/css/animate.css">
+    
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assetes/css/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assetes/css/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assetes/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assetes/css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <script src="assetes/js/jsmaps-libs.js" type="text/javascript"></script>
+    <script src="assetes/js/jsmaps-panzoom.js"></script>
+    <script src="assetes/js/jsmaps.min.js" type="text/javascript"></script>
+    <script src="assetes/js/usaTerritories.js" type="text/javascript"></script>
+    <script src="assetes/js/states.js"></script>
+
+
+	
+<!--===============================================================================================-->
+	<script src="assetes/js/popper.js"></script>
+	<!--
+	<script  src="assetes/js/bootstrap/js/bootstrap.min.js"></script>-->
+<!--===============================================================================================-->
+	<script src="assetes/js/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assetes/js/perfect-scrollbar.min.js"></script>
+	<script>
+jQuery(window).on('load',function(){
+    jQuery('.table_hidee').hide();
+	      // table.setData(tabledata);
+		jQuery(".table_hidee").addClass("chart-tog");	
+
+});
+
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+
+
+
+<script>
+  
+  //toggle
+  
+   jQuery('#usaTerritories-map').JSMaps({
+        map: 'usaTerritories',
+        mapWidth: 800, 
+        mapHeight: 600,
+        stateClickAction : "none",
+        onStateClick : function(res) {
+          checkJson(res.abbreviation);
+         var dataLayer = window.dataLayer = window.dataLayer || [];
+         dataLayer.push({'event': 'ClickonMap'});
+               ({'event': '5Sec Event'}); 
+               ({'event':'Track UserID','userID': '<?php echo auth()->user()->id;?>'});
+
+        }
+    });
+     jQuery(document).ready(function(){
+    jQuery(".my_toggle").click(function(){
+        $('#usaTerritories-map').show();
+		 $('.legend').show();
+        $('#usaTerritories-map').addClass('animated zoomin');
+        $(".table_hide").show();
+        $("#state_data").hide();
+		 $(".table_hidee").hide();
+		 $(".content-section").hide();
+
+		 
+    });
+
+   jQuery(".my_togglee").click(function(){
+       $('#usaTerritories-map').hide();
+       $(".table_hide").hide();
+  jQuery(".chart_outr").show("main");
+  $("#state_data").hide();
+
+    });
+
+$(document).on("click",".charttt",function() {
+		jQuery(".table_hidee").toggleClass("chart-tog");
+		 $(".table_hidee").show();
+		$("#usaTerritories-map").hide();
+		$("#state_data").hide();
+		$(".content-section").hide();
+		 table.setData(tabledata);
+    });
+});
+	
+
+
+
+</script>

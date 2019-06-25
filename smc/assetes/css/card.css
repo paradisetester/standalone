@@ -424,6 +424,10 @@ span.source_cls:before {
     color: #131313;
     border-bottom: 1px solid #e6a82b;
     padding: 0 0 14px;
+    min-height: 580px;
+}
+p.drug-text {
+    min-height: 66px;
 }
 .card-outr {
     width: 100%;
@@ -518,9 +522,7 @@ span.source_cls:before {
 .card-outr.more .panel,.card-outr.more .back-card {
     width: 100%;
 }
-.card-outr.more  .back-card {
-    /* height: 555px; */
-}
+
 .card-outr.more .panel {
     /* height: 955px; */
 }

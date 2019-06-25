@@ -71,6 +71,7 @@ function checkJson(abb){
     }
     createData(thisData);
     $("#state_data").show();
+	$('.map-categories').hide();
     jQuery("#usaTerritories-map").hide();
     jQuery(".table_hide").hide();
     jQuery(".chart_outrss").hide();

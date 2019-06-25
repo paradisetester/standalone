@@ -197,9 +197,9 @@ select#states {
     border: 1px solid #77c398 !important;
     margin-right: 12px !important;
     color: #000000;
-    font-family: Lato-Regular;
     padding: 0 6px;
    font-size: 18px;
+   font-family: Georgia, Times, "Times New Roman", serif;
 }
 .outr_states {
     width: 600px;
@@ -437,6 +437,7 @@ svg {
     color: #000;
     border-radius: 4px;
     margin-right: 10px;
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 .drops a i {
     color: #000;

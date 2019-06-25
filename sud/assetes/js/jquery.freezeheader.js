@@ -123,7 +123,7 @@ Version: 1.0.8
             obj.container.height(obj.header.height);
             obj.container.find('th').each(function (index) {
                 var cellWidth = obj.grid.find('th').eq(index).width();
-                $(this).css('width', cellWidth);
+                $(this).css('width', cellWidth+20);
             });
 
             obj.container.css("visibility", "visible");
