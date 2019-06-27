@@ -1,156 +1,283 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="container-fluid">
-           
-        <div id="loader"></div>
-           <div class="desprective-content state-content">
-    <div class="top-section">
-    <h4>
-        State Medicaid Contract: State Profiles
-    </h4>
-    <span class="date">Date:01.04.2019</span>
-   
-    </div>
-  
-      
-   </div>
-        <div class="drops">
-        <select id="states" data-step="1" data-intro="Select state"></select>
-        <!-- <a class="intro-c" href="javascript:void(0);" onclick="javascript:startTour();"><i class="fa fa-info-circle"></i></a> -->
-        <!-- <a class="charttt"><i class="fa fa-line-chart"></i></a> -->
-		<span data-step="3" data-intro="Click to show hide map" class="my_toggle"><i class="fa fa-globe"></i>Map</span>
-        </div>
-		
-         <div id="state_data">
-          </div>
-             
-        <div class="toggllee">
-          <div class="jsmaps-wrapper-box"><div data-step="2" data-intro="Click on state" class="jsmaps-wrapper" id="usaTerritories-map"></div>
-        </div>
-		  <div class="legend">
-		  <h4>Status</h4>
-		     <ul>
-			   <li><span class="rfp"></span>  Approved</li>
-			   <li><span class="spa"></span> Approved (Details TBD)</li>
-			   <li><span class="spo"></span> Solicitation For Offers (SFO) Released</li>
-			   <li><span class="wa"></span> Request for Proposal (RFP) released</li>
-			 </ul>
-		  </div>
-		 </div>
-        
-        
-        
-        </div> 
-<!--===============================================================================================-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
-	<link href="assetes/css/table.css" rel="stylesheet">
-	<link href="assetes/css/card.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="assetes/css/jsmaps.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assetes/css/1115materialdesign.css">
-    <link rel="stylesheet" type="text/css" href="assetes/css/animate.css">
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!--Import Google Icon Font-->
+      <meta charset="utf-8"/>
+      <title>Qa</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css">
+      <link rel="stylesheet" href="https://cdn.datatables.net/responsive/1.0.0/css/dataTables.responsive.css">
+      <link type="text/css" rel="stylesheet" href="css/style.css"/>
     
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetes/css/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetes/css/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetes/css/util.css">
-	<link rel="stylesheet" type="text/css" href="assetes/css/main.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
-    <script src="assetes/js/jsmaps-libs.js" type="text/javascript"></script>
-    <script src="assetes/js/jsmaps-panzoom.js"></script>
-    <script src="assetes/js/jsmaps.min.js" type="text/javascript"></script>
-    <script src="assetes/js/usaTerritories.js" type="text/javascript"></script>
-    <script src="assetes/js/states.js"></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <style>
+   #subcategories a.active_list {
+    display: inline-block;
+    position: relative;
+}
+#subcategories a {
+    display: none;
+}
 
 
-	
-<!--===============================================================================================-->
-	<script src="assetes/js/popper.js"></script>
-	<!--
-	<script  src="assetes/js/bootstrap/js/bootstrap.min.js"></script>-->
-<!--===============================================================================================-->
-	<script src="assetes/js/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="assetes/js/perfect-scrollbar.min.js"></script>
-	<script>
-jQuery(window).on('load',function(){
-    jQuery('.table_hidee').hide();
-	      // table.setData(tabledata);
-		jQuery(".table_hidee").addClass("chart-tog");	
-
+      </style>
+   </head>
+   <body id="pr-main">
+     <div class="page-outr">
+      <div id="overlay">
+     <img src="https://blog.fluance.com/wp-content/plugins/crazy-call-to-action-box/css/loader.gif" alt="Loading" />
+</div>
+      <section class="banner-sec">
+         <div class="banner-content">
+            <div class="container">
+               <div class="row">
+                  <div class="col s12 m12 l7  mauto banner-right">
+                     <div class="white-text banner-txt">
+                        <h5>EXPLORE BY SELECTING ONE</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum ante a nulla maximus aliquet. Nulla facilisi. Donec ac enim eget nunc gravida imperdiet. Proin eget orci laoreet, scelerisque eros egestas, scelerisque</p>
+                     </div>
+                  </div>
+                  <div class="col s12 l5 m12 banner-left">
+                     <div class="left-img">
+                        <img src="img/bk2.png" alt="" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--EXPLORE SECTION-->
+      <section class="explore-sec" id="explore-secc"> 
+         <div class="container">
+         <h3 class="center title-txt">EXPLORE BY SELECTING ONE</h3>
+         <div class="explore-tabs">
+            <div class="row">
+               <div class="col s12 active  m12 com-pad" id="categories">
+                  <ul class="tabs"> 
+                  </ul>
+               </div>
+               <div id="Company" class="col s12 m12" >
+                   <div id="categories_list">
+                  <div class="categories br-clr1" id="subcategories">
+                      </div>
+                  </div>
+               </div>
+               <!--div id="Drug" class="col s12 m12">
+                  <div class="categories br-clr2" id="subcategories">
+                  </div>
+               </div>
+               <div id="HealthPlan" class="col s12 m12" >
+                  <div class="categories br-clr3" id="subcategories">
+                  </div>
+               </div--> 
+            </div>
+         </div>
+         <div class="row">
+            <div class="col s12 m12 l12 date_type_filter">
+               <div class="date-div">
+                  <a class="waves-effect  btn-small waves-light btn  bg-btn bg-clr1  all-btn " data-sort-direction="asc" data-sort-value="filedate" type="">Date</a>
+                  <a class="waves-effect  btn-small waves-light btn  bg-btn  bg-clr2 all-btn" data-sort-direction="asc" data-sort-value="filetype" type="">Type<i class=" Medium material-icons">expand_more </i></a>          
+               </div>
+            </div>
+         </div>
+         <div class="cardd-outr">
+         <div class="row">
+        <div class="col-md-9">
+         <div class="inner_sec" id="cards-sec">
+            <div class="row" id="data">
+			   
+            </div>
+         </div>
+         </div>
+         <div class="col-md-3">
+         <div class="side-bar">
+             
+         </div>
+         </div>
+         </div>
+         </div>
+      </section>
+      <section class="list-sec">
+         <div class="container">
+            <h3 class="center title-txt">LIST</h3>
+            <div class="list-table" id="start_table">
+               <table id="dataSet"   class="highlight mdl-data-table dataTable no-footer dtr-inline collapsed" style="width:100%;">
+                  <thead>
+                     <tr>
+                        <th>
+                           COMAPNY 
+                        </th>
+                        <th>
+                           DRUG 
+                        </th>
+                        <th>
+                           HEALTH PLAN/PBM 
+                        </th>
+                        <th>
+                           THERAPEUTIC AREA  
+                        </th>
+                        <th>
+                           YEAR
+                        </th>
+                        <th>
+                           TYPE 
+                        </th>
+                     </tr>
+                  </thead>
+               </table>
+            </div>
+         </div>
+      </section>
+      <section class="source-sec" id="source_data">
+         <div class="container">
+            <div class="row">
+               <h3 class="center title-txt">SOURCES</h3>
+               <ul id="source" class="source-list">
+               </ul>
+            </div>
+         </div>
+      </section>
+      <div class="card-hover">
+        <div class="left-card-data">
+              <div class="col s12 m6 l4 xl3">         
+<div class="demo-card  colour1 outcomes-based" data-color="colour1" data-date="2017">           
+<div class="panel">               
+<div class="card white front  box "><span class="tri-div">A</span>                  
+<div class="card-content white-black center colour1 box_top gradient1">                    
+<h2 class="card-title">Amgen</h2>                      
+<p>Enbrel (etanercept)</p>                      
+<p>Outcomes-Based Contracting</p>      
+<p>2017</p>                  
+</div>   
+<div class="card-content">                      
+<span class="card-title txt">Health Plan/PBM</span>                
+<p>Harvard Pilgrim </p>                      
+<span class="card-title txt">Therapeutic Area</span>  
+<p>Rheumatoid Arthritis</p>                    
+</div>                  
+</div>        
+<div class="back card">
+<div class="demo-card__secondary">        
+Harvard Pilgrim's payment for Enbrel will depend on six effectiveness criteria, including patient compliance, switching or adding drugs, steroid interventions, and dose escalation. If patients taking Enbrel score below a specified level in the six effectiveness criteria, Harvard Pilgrim will pay les <a class="source_cls" data-tab="source1">[1]</a><a class="show-desc" href="#more_Data_1">read more</a>                      
+</div>                 
+</div>
+</div>
+</div>
+</div>
+        </div>
+	  <div class="card-hover-data">
+	     <p>Harvard Pilgrim's payment for Enbrel will depend on six effectiveness criteria, including patient compliance, switching or adding drugs, steroid interventions, and dose escalation. If patients taking Enbrel score below a specified level in the six effectiveness criteria, Harvard Pilgrim will pay les </p>
+	  </div>
+	  </div>
+	  </div>
+	  
+	  <div class="side-bar">
+	     <div class="side-bar-sec">
+		   <ul>
+		      <li><a data-toggle="tooltip" data-placement="left" data-md-tooltip="Top of Page"><span class="blue1"><img src="img/top_page.png"></span><span class="title">Top of Page</span></span></a></li>
+			  <li><a data-toggle="tooltip" data-placement="left" data-md-tooltip="Card Controls"><span class="orange1"><img src="img/card_control.png"></span><span class="title">Card Controls</span></a></li>
+			  <li>
+			   <!-- <a data-toggle="tooltip" data-placement="left" data-md-tooltip="Card"><span class="yellow1"><img src="img/card.png"></span></a>-->
+			    <ul><li class="refer-cardd"><a data-toggle="tooltip" data-placement="left" data-md-tooltip="Return to Referring Card" class="reffer_card"><span class="green1"><img src="img/referring_card.png"></span><span class="title">Return to <br> Referring Card</span></a></li></ul>
+			  </li>
+			  <li><a data-toggle="tooltip" data-placement="left" data-md-tooltip="Table"><span class="red1"><img src="img/table.png"></span><span class="title">Table</span></a></li>
+			  <li><a data-md-tooltip="Sources"><span class="black1"><img src="img/source.png"></span><span class="title">Sources</span></a></li>
+		   </ul>
+		 </div>
+	  </div>
+	  
+        <script  src="js/jquery.js"></script> 
+        <!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+      <script src="https://cdn.datatables.net/responsive/1.0.0/js/dataTables.responsive.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
+      <script  src="js/materialize.min.js"></script>
+      <script  src="js/isotope.js"></script>
+     <script  src="js/custom.js"></script>
+      
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript">  
+        $(document).ready(function(){
+         $('.tabs').tabs();
+     });             
+         $(document).on('click', 'a.source_cls', function (event) {
+            event.preventDefault();
+            $('#myData').hide();
+             $(jQuery(this).attr('href')).hide();
+             var tab_id = $(this).attr('data-tab');
+             $("#source li").removeClass('selected');
+            $("#" + tab_id).addClass('selected ');
+             
+             goTo(tab_id);
+         });
+         
+         function goTo(id){
+             $('html, body').animate({
+                 scrollTop: $("#" + id).offset().top
+             }, 1500);
+         }
+         jQuery('.refer-cardd').hide();
+jQuery(document).on('click','.demo-card',function(){
+         jQuery('.card-outr-row').show();
+         jQuery('.refer-cardd').show();
 });
 
-		$('.js-pscroll').each(function(){
-			var ps = new PerfectScrollbar(this);
 
-			$(window).on('resize', function(){
-				ps.update();
-			})
-		});
-			
-		
-	</script>
-<!--===============================================================================================-->
-
-
-
-<script>
-  
-  //toggle
-  
-   jQuery('#usaTerritories-map').JSMaps({
-        map: 'usaTerritories',
-        mapWidth: 800, 
-        mapHeight: 600,
-        stateClickAction : "none",
-        onStateClick : function(res) {
-          checkJson(res.abbreviation);
-         var dataLayer = window.dataLayer = window.dataLayer || [];
-         dataLayer.push({'event': 'ClickonMap'});
-               ({'event': '5Sec Event'}); 
-               ({'event':'Track UserID','userID': '<?php echo auth()->user()->id;?>'});
-
-        }
-    });
-     jQuery(document).ready(function(){
-    jQuery(".my_toggle").click(function(){
-        $('#usaTerritories-map').show();
-		 $('.legend').show();
-        $('#usaTerritories-map').addClass('animated zoomin');
-        $(".table_hide").show();
-        $("#state_data").hide();
-		 $(".table_hidee").hide();
-		 $(".content-section").hide();
-
-		 
-    });
-
-   jQuery(".my_togglee").click(function(){
-       $('#usaTerritories-map').hide();
-       $(".table_hide").hide();
-  jQuery(".chart_outr").show("main");
-  $("#state_data").hide();
-
-    });
-
-$(document).on("click",".charttt",function() {
-		jQuery(".table_hidee").toggleClass("chart-tog");
-		 $(".table_hidee").show();
-		$("#usaTerritories-map").hide();
-		$("#state_data").hide();
-		$(".content-section").hide();
-		 table.setData(tabledata);
-    });
+jQuery(document).on('click','.demo-card',function(){
+    jQuery('.reffer_card').attr('data-id',jQuery(this).parents('.card-outr').attr('data-section'));
+    jQuery('.card-outr-row').html('').hide();
+    var offset = $( this ).offset();
+     jQuery('.card-outr-row:before').css({'left': +offset.left  });
+    var data = jQuery(this).parents('.card-outr').find('.demo-card__secondary').html();
+     jQuery('.card-hover-data').html(data);
+    var carddata = jQuery(this).parents('.card-outr').find('.col').html();
+    jQuery('.left-card-data').html(carddata);
+    var data_section = jQuery(this).parents('.card-outr').attr('data-section');
+     var data_tipclass = jQuery(this).parents('.card-outr').attr('data-tipclass');
+    var cardclick = jQuery(this).parents('body').find('.card-hover').html();
+    jQuery('.data_skip'+data_section).html(cardclick+'<span class="tipclass'+data_tipclass+'"></span>').show();
+    
 });
-	
 
+window.onload = function() {
+ document.getElementById('overlay').style.display = 'none';
+};
 
+  jQuery(".black1").click(function() {
+    jQuery('html,body').animate({
+       scrollTop: jQuery("#source_data").offset().top},
+        'slow');
+})
+ jQuery(".blue1").click(function() {
+     
+    jQuery('html,body').animate({
+       scrollTop: jQuery("#explore-secc").offset().top},
+        'slow');
+})
+ jQuery(".orange1").click(function() {
+    jQuery('html,body').animate({
+       scrollTop: jQuery("#cards-sec").offset().top},
+        'slow');
+})
+ jQuery(".red1").click(function() {
+    jQuery('html,body').animate({
+       scrollTop: jQuery("#start_table").offset().top},
+        'slow');
+})
+jQuery(".reffer_card").click(function() {
+    console.log(jQuery(this).attr("data-id"));
+   jQuery('html,body').animate({
+       scrollTop: jQuery(".data_skip"+jQuery(this).attr("data-id")).offset().top},
+        'slow');
+})
 
 </script>
+      
+   </body>
+</html>
+

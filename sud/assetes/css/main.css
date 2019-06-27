@@ -746,7 +746,11 @@ background-image: url('../images/tick2.png');
 }
 .map-categories {
 		float: right;
-	    margin-bottom: 40px;
+	  margin-bottom: 40px;
+    position: absolute;
+    bottom: 26px;
+    right: 26px;
+
 }
 .map-categories li {
     display: block;
@@ -763,7 +767,6 @@ background-image: url('../images/tick2.png');
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
 }
-
 
 
 
