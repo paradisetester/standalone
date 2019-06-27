@@ -1,0 +1,31 @@
+@media print{  
+    
+    body{
+         -webkit-print-color-adjust: exact; 
+    }
+    
+    th.cell100.column {
+    width: 20%;
+    background-color:rgb(28, 175, 141);
+    -webkit-print-color-adjust: exact;
+}
+.column2 {
+    width: 39%;
+    word-break: break-word;
+     background-color:rgb(28, 175, 141);
+    -webkit-print-color-adjust: exact;
+}
+.table100.ver1 th {
+    background-color: #1caf8d;
+    -webkit-print-color-adjust: exact;
+}
+}
+@media print {
+
+td {
+    border-bottom: solid; border-right: solid; background-color: #c0c0c0;
+    
+     -webkit-print-color-adjust: exact;
+}
+
+}

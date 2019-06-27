@@ -1,0 +1,653 @@
+ .container {
+     width: 80%;
+}
+ .inner_sec .card .card-content .card-title {
+     color: #004157;
+     font-size: 19px;
+     font-weight: 700;
+     margin: 0px;
+     line-height: 23px;
+}
+ .inner_sec .card .card-content p {
+     font-size: 14px;
+     color: #004157;
+}
+ .card {
+     position: relative;
+     overflow: hidden;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+     border-radius: 6px;
+}
+ .tri-div::after {
+     height: 0;
+     border-top: 54px solid #ff3197;
+     border-right: 54px solid transparent;
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-bottom-right-radius: 29px;
+     overflow: hidden;
+     z-index: -1;
+}
+ .tri-div{
+     position: absolute;
+     z-index: 999;
+     font-size: 19px;
+     color: #fff;
+     text-shadow: 1px 1px 1px #000;
+     padding: 0px 7px;
+     z-index: 9999;
+}
+ .animate-outer .demo-card {
+     animation-duration: 0.5s;
+     animation-name: slidein;
+}
+ .back {
+     z-index: 1;
+}
+ .back.card {
+     padding: 20px;
+}
+ .panel:hover .back, .panel.active .back {
+     z-index: 2;
+}
+ .demo-card .panel:hover .back, .demo-card .panel.active .back {
+     z-index: 2;
+}
+ .front {
+     z-index: 2;
+}
+ .panel {
+    border:none;
+    border-radius: 0;
+    margin: 0;
+    padding: 15px;
+ }
+ .pann{
+	position:relative;
+	background: transparent;
+}
+ .card {
+     width: 100%;
+}
+
+ .source-list li a{
+     color: #1c1c1c;
+     font-size: 14px;
+     line-height: 22px;
+}
+ .source-list li{
+     margin-bottom: 20px;
+     position: relative;
+     padding-left: 49px;
+}
+ .source-list::before {
+     content: "";
+     width: 9px;
+     height: 100%;
+     background: #f1f6fe;
+     position: absolute;
+     left: 10px;
+}
+ .source-list{
+     position: relative;
+}
+
+.card-outr-row {
+    width: 100%;
+    text-align: justify;
+    padding: 15px;
+    z-index: 9999;
+    height: auto;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: #efefef;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    float:left;
+}
+.card-outr-row {
+    display: none;
+}
+.card-hover-data p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+.card-hover-data {
+    width: 60%;
+    float: left;
+    margin-left: 24px;
+    padding: 8% 0;
+}
+.card-hover .panel {
+    margin: 0;
+}
+.card-hover .card .card-content .card-title {
+    margin-top: 0;
+}
+.demo-card.colour11.value-based {
+    width: 100%;
+    /* display: flex; */
+    margin: 0 0 35px;
+    /* display: table; */
+}
+.card-content.white-black.center.colour1.box_top.gradient1 {
+    margin: 0;
+    /* padding: 20px; */
+    /* height: 239px; */
+    /* border-bottom: 2px solid #ccc; */
+}
+.card-content {
+    text-align: left;
+    /* height: 100%; */
+}
+.card-title.txt {
+    font-weight: 500;
+    margin: 5px 0 0;
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    /* display: block; */
+}
+
+.demo-card__secondary {
+    line-height: 24px;
+    letter-spacing: .5px;
+}
+.card-outr {
+    width: 100%;
+    margin: 10px 15px;
+    /* float: left; */
+    /* display: table; */
+}
+
+.back-card {
+    padding: 15px 0 0;
+    text-align: left;
+    /* width: 58%; */
+    /* background: #e9eff9; */
+    /* float: left; */
+    /* height: 400px; */
+    /* padding: 15px; */
+}
+.demo-card__secondary span {
+    margin-bottom: 16px !important;
+}
+span.source_cls a {
+    word-break: break-all;
+}
+.card-title {
+    color: #fff;
+    font-size: 19px;
+}
+.card p {
+    color: #Fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+.jsmaps-wrapper .jsmaps {
+    width: 100% !important;
+}
+.legend {
+    text-align: center;
+}
+.legend li {
+    display: block;
+    font-size: 23px;
+    list-style: none;
+    vertical-align: top;
+    text-align: left;
+}
+.legend li span {
+    width: 17px;
+    height: 17px;
+    background: #000;
+    display: inline-block;
+}
+.legend {
+    width: 80px;
+    margin: auto;
+    position: absolute;
+    bottom: 22%;
+    right: 33%;
+}
+.toggllee {
+    position: relative;
+}
+.legend li span.rfp {
+    background: #4b1326;
+}
+.legend li span.spa {
+    background: #004157;
+}
+.legend li span.spo {
+    background: #d66f1c;
+}
+span.source_cls {
+    display: block;
+    position: relative;
+    margin: 2px 0 0  !important;
+}
+span.source_cls:before {
+    content: "\f0c6";
+    color: #000;
+    font-size: 16px;
+    font-family: fontawesome;
+    padding: 0 10px 0 0;
+}
+ .container {
+     width: 80%;
+}
+ .inner_sec .card .card-content .card-title {
+     color: #004157;
+     font-size: 19px;
+     font-weight: 700;
+     margin: 0px;
+     line-height: 23px;
+}
+ .inner_sec .card .card-content p {
+     font-size: 14px;
+     color: #004157;
+}
+ 
+ .tri-div::after {
+     height: 0;
+     border-top: 54px solid #ff3197;
+     border-right: 54px solid transparent;
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     border-bottom-right-radius: 29px;
+     overflow: hidden;
+     z-index: -1;
+}
+ .tri-div{
+     position: absolute;
+     z-index: 999;
+     font-size: 19px;
+     color: #fff;
+     text-shadow: 1px 1px 1px #000;
+     padding: 0px 7px;
+     z-index: 9999;
+}
+ .animate-outer .demo-card {
+     animation-duration: 0.5s;
+     animation-name: slidein;
+}
+ .back {
+     z-index: 1;
+     -webkit-transform: rotateX(-180deg);
+     -ms-transform: rotateX(-180deg);
+     -moz-transform: rotateX(-180deg);
+     transform: rotateX(-180deg);
+}
+ .back.card {
+     padding: 20px;
+}
+ .panel:hover .back, .panel.active .back {
+     z-index: 2;
+     -webkit-transform: rotateX(0deg);
+     -ms-transform: rotateX(0deg);
+     -moz-transform: rotateX(0deg);
+     transform: rotateX(0deg);
+}
+ .demo-card .panel:hover .back, .demo-card .panel.active .back {
+     z-index: 2;
+     -webkit-transform: rotateX(0deg);
+     -ms-transform: rotateX(0deg);
+     -moz-transform: rotateX(0deg);
+     transform: rotateX(0deg);
+}
+ .front {
+     z-index: 2;
+}
+
+ 
+
+ .source-list li a{
+     color: #1c1c1c;
+     font-size: 14px;
+     line-height: 22px;
+}
+ .source-list li{
+     margin-bottom: 20px;
+     position: relative;
+     padding-left: 49px;
+}
+ .source-list::before {
+     content: "";
+     width: 9px;
+     height: 100%;
+     background: #f1f6fe;
+     position: absolute;
+     left: 10px;
+}
+ .source-list{
+     position: relative;
+}
+
+.card-outr-row {
+    width: 100%;
+    text-align: justify;
+    padding: 15px;
+    z-index: 9999;
+    height: auto;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: #efefef;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    float:left;
+}
+.card-outr-row {
+    display: none;
+}
+.card-hover-data p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+.card-hover-data {
+    width: 60%;
+    float: left;
+    margin-left: 24px;
+    padding: 8% 0;
+}
+.card-hover .panel {
+    margin: 0;
+}
+.card-hover .card .card-content .card-title {
+    margin-top: 0;
+}
+.demo-card.colour11.value-based {
+    width: 100%;
+    /* display: flex; */
+    margin: 0 0 35px;
+    /* display: table; */
+}
+.card-content.white-black.center.colour1.box_top.gradient1 {
+    margin: 0;
+    /* padding: 20px; */
+    /* height: 239px; */
+    /* border-bottom: 2px solid #ccc; */
+}
+.card-content {
+    text-align: left;
+    /* height: 100%; */
+}
+.card-title.txt {
+    font-weight: 500;
+    margin: 8px 0 0;
+    display: block;
+    color: #E4A11B;
+    font-size: 15px;
+    /* display: block; */
+}
+
+.demo-card__secondary {
+    line-height: 24px;
+    letter-spacing: .5px;
+    color: #131313;
+    border-bottom: 1px solid #e6a82b;
+    padding: 0 0 14px;
+    min-height: auto;
+}
+.Oklahoma .des-back.card p {
+    height: 60px;
+}
+.Oklahoma .demo-card__secondary {
+    min-height: 590px !important;
+}
+.Oklahoma .drug-text {
+    min-height: 97px;
+}
+.card-outr {
+    width: 100%;
+    margin: 10px 15px;
+    /* float: left; */
+    /* display: table; */
+}
+
+.demo-card__secondary span {
+    margin-bottom: 16px !important;
+}
+span.source_cls a {
+    word-break: break-all;
+}
+.card-title {
+    color: #E4A11B;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.card p {
+    color: #151313;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #004157;
+    padding: 5px 0 9px;
+}
+.jsmaps-wrapper .jsmaps {
+    width: 100% !important;
+}
+.legend {
+    text-align: center;
+}
+.legend li {
+    display: block;
+    font-size: 19px;
+    list-style: none;
+    vertical-align: top;
+    text-align: left;
+}
+.legend li span {
+    width: 17px;
+    height: 17px;
+    background: #000;
+    display: inline-block;
+}
+.legend {
+    width: 32%;
+    margin: auto;
+    position: absolute;
+    bottom: 5%;
+    right: 9%;
+}
+.toggllee {
+    position: relative;
+}
+.legend li span.rfp {
+    background: #004157;
+}
+.legend li span.spa {
+    background: #00a9e0;
+}
+.legend li span.spo {
+    background: #f0ab00;
+}
+span.source_cls {
+    display: block;
+    position: relative;
+    margin: 2px 0 0  !important;
+}
+span.source_cls:before {
+    content: "\f0c6";
+    color: #595454;
+    font-size: 16px;
+    font-family: fontawesome;
+    padding: 0 10px 0 0;
+}
+.card p:last-child {
+    /* border: white; */
+}
+.card-outr {
+    width: 23%;
+    float: left;
+    margin: 5px;
+}
+.card-outr.more .demo-card.colour11.value-based {
+    /* display: inherit; */
+}
+.card-outr.more .panel,.card-outr.more .back-card {
+    width: 100%;
+}
+
+.card-outr.more .panel {
+    /* height: 955px; */
+}
+.legend li .wa {
+    background: #e4a11b;
+}
+.Colorado .panel, .Michigan .panel {
+    /* background: #7AB800 !important; */
+}
+.Colorado .state_headings  h3, .Michigan .state_headings  h3{
+    /* color: #7AB800 !important; */
+}
+.Oklahoma .state_headings  h3{/* color:#2a7118 !important; */}
+.Oklahoma .panel .front.card {
+    border-radius: 0;
+}
+.legend h4 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 26px;
+    border-bottom: 2px solid #b5b5b5;
+    padding: 0 0 10px;
+}
+/*******/
+.des-back {
+    padding: 0;
+    text-align: left;
+}
+.Oklahoma .panel {
+    background-color: transparent !important;
+}
+.card-outr.one {
+    float: none;
+    margin: auto;
+    width: 43%;
+}
+.Washington .panel {
+    background: #ffffff !important;
+    border: 1px solid #E4A11B;
+}
+.therap {
+    border: none !important;
+}
+.panel {
+    border: 1px solid;
+}
+.card p {
+    border-bottom: 1px solid;
+}
+.demo-card__secondary p {
+    border: none;
+}
+span.my_toggle {
+    padding: 9px 31px;
+    background: #7ab800;
+    color: #fff;
+	vertical-align: top !important;
+    cursor: pointer;
+}
+span.my_toggle i {
+    color: #fff;
+    font-size: 20px !important;
+    padding: 0 7px;
+}
+.card-content {
+  line-height: normal;
+}
+/****/
+@media screen and (max-width:767px){
+	.legend {
+		width:70%;
+    position: inherit;
+}
+.demo-card.colour11.value-based {
+    display: inherit;
+}
+.panel {
+    width: 100%;
+}
+.back-card {
+    width: 100%;
+}
+.card-content.white-black.center.colour1.box_top.gradient1 {
+    padding: 15px 0 0;
+}
+.chart_outr .source_cls {
+    font-size: 13px;
+}
+.card-outr.more {
+    width: 100%;
+    float: none;
+}
+.card-outr.more .back-card{
+	height:auto !important;
+}
+.card-outr {
+    width: 100% !important;
+}
+ .des-back.card p {
+    height: auto !important;
+}
+ .drug-text {
+    min-height: inherit !important;
+}
+.demo-card__secondary {
+    min-height: auto !important;
+}
+.card-outr.more .panel {
+    height: auto !important;
+}
+.Oklahoma .des-back.card p {
+    height: auto !important;
+}
+.Oklahoma .drug-text {
+    min-height: inherit !important;
+}
+.Oklahoma .demo-card__secondary {
+    min-height: auto !important;
+}
+.card-outr {
+    width: 100%;
+}
+}
+@media screen and (min-width:768px) and (max-width:992px){
+.card-outr.more .panel {
+    height: 1034px !important; 
+}
+}
+@media screen and (min-width:768px) and (max-width:1200px){
+	.legend {
+    bottom: -3px;
+}
+.card-outr.more {
+    width: 47%;
+	margin:8px;
+}
+.legend {
+    width: 85%;
+    margin: auto;
+    position: absolute;
+    bottom: -28%;
+    right: 9%;
+}
+.Oklahoma .des-back.card p {
+    height: auto !important;
+}
+.Oklahoma .drug-text {
+    min-height: inherit !important;
+}
+.Oklahoma .demo-card__secondary {
+    min-height: auto !important;
+}
+.card-outr.more .panel {
+    height: 857px;
+}
+}
