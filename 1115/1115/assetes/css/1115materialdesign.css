@@ -253,8 +253,12 @@ ul.headerMain-navItems.navbar-nav.ml-auto {
 th.sorting_disabled {
     text-align: center;
 }
-
-
+@media only screen and (min-width:320px) and (max-width:1200px){
+.map-categories {
+    position: inherit;
+    margin: 34px 0 0;
+}
+}
 @media only screen and (max-width:1200px){
 
 svg {
@@ -438,10 +442,14 @@ select#states {
     padding: 5px 20px;
     color: #000;
     font-size: 20px !important;
-    background: #7ab800;
+    background: #77c398;
     color: #fff;
     border-radius: 4px;
     margin-right: 10px;
+}
+.table100.ver1 th {
+    font-weight: 600;
+    font-size: 18px !important;
 }
 .drops a i {
     color: #fff;
@@ -450,4 +458,22 @@ select#states {
 }
 .drops a {
     vertical-align: top;
+}
+.drops a, .drops a i {
+    color: #000 !important;
+}
+/****7/1/19*****/
+h1, h2,span,h3, h4,h5,h6, .state_headings ,th,.table100.ver1 td:nth-child(1), .table100.ver1 th:nth-child(1){
+    font-family: 'Times New Roman' !important;
+	color:#4b4b4b !important;
+	font-size:16px !important;
+}
+p,a,div,td,.abbrevation ul,li{
+	 font-family: 'Arial' !important;
+	color:#4b4b4b !important;
+	font-size:14px !important;
+}
+
+.tooltip-inner {
+    color: #fff !important;
 }

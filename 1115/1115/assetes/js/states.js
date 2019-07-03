@@ -71,6 +71,7 @@ function checkJson(abb){
     createData(thisData);
     $("#state_data").show();
     jQuery("#usaTerritories-map").hide();
+    jQuery(".map-categories").hide();
     jQuery(".chart_outrss").hide();
      jQuery(".content-section").show();
         $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -96,34 +97,35 @@ function createData(arr) {
 	var m = 1;
 	var thback = '';
     var stehead = ""; 
+	var thead="";
     var trback = "";
-	 var title = arr.title;
-    if(title.match(/Waiver Request/g)){
-    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #e0516c !important; } .state-head h5 { color: #e0516c;} </style>';
-         thback = 'background-color: #e0516c; !important;';
-         stehead = "color: #e0516c; !important"; 
-         trback = "background-color: #e0516c2e; !important;";
+	 //var title = arr.title;
+   // if(title.match(/Waiver Request/g)){
+   // html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: #e0516c !important; } .state-head h5 { color: #e0516c;} </style>';
+    //     thback = 'background-color: #e0516c; !important;';
+    //     stehead = "color: #e0516c; !important"; 
+    //     trback = "background-color: #e0516c2e; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
-    }
+   // }
     
-    if(title.match(/Approved Through/g)){
-     thback = 'background-color: #1f6ccc; !important;';
-         stehead = "color:#1f6ccc; !important"; 
-         trback = "background-color: #1f6ccc26; !important;";
+   // if(title.match(/Approved Through/g)){
+    // thback = 'background-color: #1f6ccc; !important;';
+   //      stehead = "color:#1f6ccc; !important"; 
+    //     trback = "background-color: #1f6ccc26; !important;";
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
-    }      
-	
+   // }  
+   thead='color:'+arr.color+''
+thback = 'background-color: '+arr.color+'; !important;';    
+	console.log(arr);
     html +='\
     <div class="chart_outr content_outr">\
 	<div class="limiter">\
 	<div class="container-table100">\
 	<div class="state-head">\
         <div class="state_headings" style="border-color: '+arr.color+';">\
-           <h3 style="'+stehead+'">'+arr.state_name+'</h3>\
-                <h5>'+arr.title+'</h5>';
-                if(arr.description){
-                html +='<h6>'+arr.description+'</h6>';
-                }
+           <h3 style="'+thead+'">'+arr.state_name+'</h3>\
+                <h5>'+arr.description+'</h5>';
+                
             html +='</div>\
     <div class="wrap-table100"> <div class="table100 ver1 m-b-110"> <div class="table100-head"><table>';
              html += '<tr class="row100 head" ><th class="cell100 column" style="'+thback+'"></th><th class="cell100 column2" style="'+thback+'">'+ arr.first_heading+'</th>';
@@ -140,7 +142,7 @@ function createData(arr) {
                        //var new_string = string.replace(/•/g,'<br/>•');
 
                    if(m % 2 == 0){
-                    html +='<tr class="row100 body" style="'+trback+'">';
+                    html +='<tr class="row100 body" style="'+thback+'">';
                     }else{
                          html +='<tr class="row100 body">';
                     }

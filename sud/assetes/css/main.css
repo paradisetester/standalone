@@ -745,12 +745,9 @@ background-image: url('../images/tick2.png');
 	color: #000;
 }
 .map-categories {
-		float: right;
-	  margin-bottom: 40px;
     position: absolute;
-    bottom: 26px;
-    right: 26px;
-
+    bottom: 125px;
+    right: 115px;
 }
 .map-categories li {
     display: block;
@@ -767,11 +764,42 @@ background-image: url('../images/tick2.png');
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
 }
+/*28 june 19*/
+.content-section {
+    padding: 0 15px;
+}
+p {
+    padding: 0 15px;
+}
 
-
-
+@media(max-width:480px){
+select#states {
+    width: 100%;
+}
+.drops {
+    padding: 0 15px;
+}
+}
 @media(max-width:767px){
 	.abbrevation ul {
     width: 100%;
+}
+}
+@media(max-width:1200px){
+.map-categories {
+    position: inherit;
+    padding: 15px;
+    display: inline-block;
+}
+.wrap-table100 {
+    margin: auto 10px;
+}
+.map-categories {
+    bottom: 43px;
+}
+}
+@media(max-width:1300px){
+.map-categories {
+    bottom: 43px;
 }
 }

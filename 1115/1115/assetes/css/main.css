@@ -645,7 +645,7 @@ border: none;
 #vertical-ticker  thead th {
 	font-weight: 600;
 	font-size: 15px;
-	background: #1caf8d;
+	background:#77c398;
 	color: #fff;
 	padding: 10px 6px;
 	border-right: 1px solid #d2d2d2;
@@ -710,4 +710,6 @@ background-image: url('../images/tick4.png');
     display: block;
     padding: 4px 0;
 }
-
+table#example {
+    margin-top: -115px;
+}

@@ -1331,7 +1331,7 @@ div#generate i {
 
 @media only screen and (min-width:1200px){
 svg {
-    width: 1100px;
+    width: 969px;
 }
 }
 
@@ -1398,7 +1398,36 @@ span.date {
     font-size: 13px;
 }
 .toggllee #usaTerritories-map {
-    margin: 50px auto 30px !important;
+    margin: 50px auto 0 !important;
+}
+.toggllee{
+	position:relative;
+}
+.map-categories {
+    position: absolute;
+    bottom: -114px;
+    right: 58px;
+}
+.map-categories li span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: bottom;
+}
+.map-categories li {
+    vertical-align: top;
+}
+.map-categories li {
+    vertical-align: top;
+    margin: 10px 0;
+    list-style: none;
+}
+.map-categories h3 {
+    font-weight: 600;
+    font-size: 28px !important;
+    margin: 14px 0;
+    border-bottom: 1px solid #000;
+    padding-bottom: 7px;
 }
 .toggllee ul.sources {
     margin: 0 0 30px;
@@ -1451,7 +1480,7 @@ span.date {
     padding:20px 20px 20px;
 }
 .table100.ver1 td:nth-child(2),.table100.ver1 th:nth-child(2)  {
-    width: 70%;
+    width: 50%;
 }
 .table100.ver1 td:nth-child(3),.table100.ver1 th:nth-child(3)  {
     width: 40%;
@@ -1459,16 +1488,18 @@ span.date {
 .table100-head table {
     table-layout: fixed;
 }
-
 td.cell100.column2 {
     padding: 34px 0;
 }
+
 /********11/16/18*********/
 
 #example-table-theme-semantic-ui .tabulator-row .tabulator-frozen.tabulator-frozen-left{
     position: sticky !important;
     left: 0 !important;
     position :-webkit-sticky !important;
+    top: 0 !important;
+}
 }
 .tabulator-row.tabulator-selectable.tabulator-row-odd {
     padding-left : 0 !important;
@@ -1479,6 +1510,7 @@ td.cell100.column2 {
 }
 div#hdexample {
     z-index: 9999;
+	top:0 !important;
     
 }
 

@@ -68,14 +68,16 @@ Version: 1.0.8
                         else {
 
                             if (($(document).scrollTop() > obj.header.offset().top)) {
-                                obj.container.css("position", "absolute");
+								
+                                obj.container.css("position", "sticky");
+								jQuery('.fixedHeader').css("visibility", "hidden");
                                 obj.container.css("top", (obj.grid.find("tr:last").offset().top - obj.header.height()) + "px");
                             }
                             else {
                                 elem.trigger("freeze:off");
-                                obj.container.css("visibility", "hidden");
-                                obj.container.css("top", "0px");
-                                obj.container.width(0);
+                                //obj.container.css("visibility", "hidden");
+                                //obj.container.css("top", "0px");
+                                //obj.container.width(0);
                             }
                             copiedHeader = false;
                         }
@@ -138,7 +140,7 @@ Version: 1.0.8
                     obj.container.css("top", obj.scroller.offset().top + "px");
                 }
                 
-            obj.container.css("position", "absolute");
+            obj.container.css("position", "sticky");
                 
             } else if (params && params.scrollListenerEl!== undefined) { 
                 obj.container.css("top", obj.scroller.find("thead > tr").innerHeight() + "px");
