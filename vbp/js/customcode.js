@@ -12,7 +12,8 @@ year.push(i)
 const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbws32hX3t5Ze0ES4Sv7morqYW9Z1H0Eja0Yezv2Ha9Qq90CPBJH/exec';
 const API_KEY = 'abcdef';
 
-var url = API_BASE_Data+'?key=' + API_KEY;;
+//var url = API_BASE_Data+'?key=' + API_KEY;
+var url = 'json/vbp.json';
 
 		
 	
@@ -70,30 +71,28 @@ $.each(categoryData, function(inx, cat) {
 			
 
 				/*******grap end*******************/
-		var program_name = 	arr.program_name;
+		var converter = new showdown.Converter();
+        var program_name = arr.program_name;
 		//program_name = 	program_name.replace("• ", "---");
 		 //program_name = program_name.replace(/&#8226;/g,'<br/>&#8226;');
 		html ='';      
 		html +='<div class="program_name">'+arr.title+'</div><section class="discription-content">\
 					<div class="requirements">	\
 						<ul>\
-							<li><span class="ques">Program Name(s)</span> <span class="ans">'+program_name+'</span></li>\
-							<li><span class="ques">Program Website(s):</span> <span class="ans">'+arr.program_website+'</span></li>\
-							<li><span class="ques">Program Contract</span> <span class="ans">'+arr.program_contract+'</span></li>\
-							<li><span class="ques">Contract Effective Date</span><span class="ans">'+arr.contract_effective_date+'</span></li>\
-							<li><span class="ques">VBP Requirements Identified in the Contract?:</span><span class="ans"> '+arr.vbp_requirements_identified_contract+'</span></li>\
-							<li><span class="ques">VBP Requirements Identified Elsewhere?: </span><span class="ans">'+arr.vbp_requirements_identified_elsewhere+'</span></li>\
-							<li><span class="ques">Other Source(s) of VBP Requirements:</span><span class="ans">'+arr.additional_sources_of_vbp_requirements+' </span></li>\
+							<li><span class="ques">Program Name(s)</span> <span class="ans">'+converter.makeHtml(program_name)+'</span></li>\
+							<li><span class="ques">Program Website(s):</span> <span class="ans">'+converter.makeHtml(arr.program_website)+'</span></li>\
+							<li><span class="ques">Program Contract</span> <span class="ans">'+converter.makeHtml(arr.program_contract)+'</span></li>\
+							<li><span class="ques">Contract Effective Date</span><span class="ans">'+converter.makeHtml(arr.contract_effective_date)+'</span></li>\
+							<li><span class="ques">VBP Requirements Identified in the Contract?:</span><span class="ans"> '+converter.makeHtml(arr.vbp_requirements_identified_contract)+'</span></li>\
+							<li><span class="ques">VBP Requirements Identified Elsewhere?: </span><span class="ans">'+converter.makeHtml(arr.vbp_requirements_identified_elsewhere)+'</span></li>\
+							<li><span class="ques">Other Source(s) of VBP Requirements:</span><span class="ans">'+converter.makeHtml(arr.additional_sources_of_vbp_requirements)+' </span></li>\
 						</ul>\
 					</div>\
 					<div class="summary">\
 						<h3>Summary of the State`s VBP Requirements:  </h3>\
-						<p>'+arr.summary_of_the_state_vbp_requirements+'</p>\
+						<p>'+converter.makeHtml(arr.summary_of_the_state_vbp_requirements)+'</p>\
 					<h3>Citations:</h3>\
-					<p><strong>Model Contract:</strong></p>\
-					<ul>'+arr.citations+'</ul>\
-					<p>Oregon`s 1115 Demonstration STCs, January 2017:</p>\
-					<ul><li></li>\
+					<ul>'+converter.makeHtml(arr.citations)+'</ul>\
 					</ul>\
 					</div>\
 					</section>';      
@@ -219,8 +218,8 @@ jQuery(function(){
 });
 
 	function _buildApiUrl ( ) {
-		let url = API_BASE_Data;
-		url += '?key=' + API_KEY;
+		/* let url = API_BASE_Data;
+		url += '?key=' + API_KEY; */
 		return url;
 	}
 	
@@ -337,7 +336,7 @@ jQuery.each( jsonData, function( key, value ) {
 	states_id[key]=value.states_id;
 	category_id[value.abbreviation]=value.category_id;
 });
-console.log(category_id);
+
 
 	 mapData = window.JSMaps.maps.usaTerritories;
 	 var mapPaths = window.JSMaps.maps.usaTerritories.paths;
@@ -368,7 +367,7 @@ console.log(category_id);
 								if(jQuery.inArray(parseInt(cat.id), catss) !== -1){
 									 
 									  mapData.paths[property].color = cat.color;
-									  mapData.paths[property].hoverColor = cat.hovercolor;
+									  mapData.paths[property].hoverColor = cat.hover_color;
 									}
 							});
 
@@ -440,7 +439,7 @@ var catss = [];
 $.each(cats, function(inx, ca) {
 	catss.push(parseInt(ca))
 })
-console.log(categoryData);
+
 $.each(categoryData, function(inx, cat) {	
 	if(jQuery.inArray(parseInt(cat.id), catss) !== -1){
 		  catcolor = cat.color;
@@ -579,7 +578,7 @@ function drawGrap(yearArray,active_color,selector){
 }	
 
 jQuery(document).on('hover', '.data', function() {		
-          console.log('bottom');
+        
 		var hoverContent = $(this).find('.hover-content').height();
 		
 		var bottom = $(window).height() - hoverContent;

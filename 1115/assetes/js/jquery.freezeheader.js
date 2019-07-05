@@ -140,7 +140,7 @@ Version: 1.0.8
                     obj.container.css("top", obj.scroller.offset().top + "px");
                 }
                 
-            obj.container.css("position", "sticky");
+            obj.container.css("position", "absolute");
                 
             } else if (params && params.scrollListenerEl!== undefined) { 
                 obj.container.css("top", obj.scroller.find("thead > tr").innerHeight() + "px");
