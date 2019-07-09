@@ -289,7 +289,6 @@ svg.circliful {
 }
 .table-inner .timelinee {
     border-radius: 25px;
-    background: #efefef;
     position: relative;
 }
 .data {
@@ -313,12 +312,14 @@ svg.circliful {
     height: 100%;
     position: relative;
     left: 0;
+	 display: flex;
+    align-items: center;
     width: 100%;
 }
 .back-color:after {
     content: "";
     left: 0;
-    background: url(../images/arrow.png) no-repeat;
+    background: none;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -347,6 +348,19 @@ svg.circliful {
 }
 .graph {
     margin: 40px -12px;
+}
+.footer-list .list-second li {
+    width: 33%;
+    padding: 0 10px;
+    font-weight: normal;
+}
+
+.footer-list.col-md-12 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+ul.list-second a {
+    display: block;
 }
 /******responsive******/
 @media (max-width:767px){

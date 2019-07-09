@@ -59,8 +59,13 @@ cats = arr.category_id.split(",");
 				});
 				
 				
-			
-
+		
+			var urls = $.parseJSON(arr.links);
+			var urlData = '';
+			 $.each(urls, function (i,v)
+			{
+			  urlData += '<a href="'+v.url+'">'+v.link+'</a> ';
+			});
 				/*******grap end*******************/
 				
 		html ='';      
@@ -68,9 +73,9 @@ cats = arr.category_id.split(",");
 		 <div class="col-md-2">\
 				  <div class="back-color" style="background:'+catcolor+';"><span>'+arr.abbreviation+'</span></div>\
 				</div>\
-			     <div class="col-md-8">\
+			     <div class="col-md-10"><div class="row"><div class="col-md-9">\
 				    <div class="card-left">\
-					  <ul>\
+					  <ul class="list-heading">\
 					    <li>Services</li>\
 					    <li>Project Name</li>\
 					    <li>Contract Start</li>\
@@ -83,20 +88,27 @@ cats = arr.category_id.split(",");
 					    <li>'+arr.contract_start+'</li>\
 					    <li>'+arr.contract_end+'</li>\
 					    <li>'+arr.type+'</li>\
-					  </ul>\
-					</div>\
+					  </ul>\</div>\
 				 </div>\
-				 <div class="col-md-2 graph">\
+				 <div class="col-md-3 graph">\
 				 <div class="label-year">Re-Procurement <span>'+arr.reprocurement+'</span></div>\
                      <div id="canvas-holder" class="graphchart" style="width:100%">\
 						<canvas id="'+selector+'"></canvas>\
 					</div>\
 				 </div>\
-			</div></div>';
+					 <div class="footer-list col-md-12"><ul class="list-heading list-second">\
+					    <li><strong>Extension</strong></li>\
+					    <li><strong>Notes</strong></li>\
+					    <li><strong>Links</strong></li>\
+					  </ul>\
+					  <ul class="list-second">\
+					    <li>'+arr.extension+'</li>\
+					    <li>'+arr.notes+'</li>\
+					    <li>'+urlData+'</li>\
+					  </ul>\</div></div></div></div></div>';
        
 		   $('#bind-single-state').append(html);
 		   
-		   console.log(active_color);
 			var config = drawGrap(rep_year,active_color,selector);
 	
 	
@@ -260,7 +272,7 @@ function showData(data, status, xhr) {
 				console.log('mccategoy');
 	            CATEGORY.length = 0;
 				categoryData = data;
-	            CATEGORY.push('<option>Select Scop of benefits</option>');
+	            CATEGORY.push('<option>Scope of Benefits</option>');
         		for (var i = 0; i < data.length; i++) {
         			createcategory(data[i]);		
         		}
@@ -356,6 +368,10 @@ $.each(categoryData, function(inx, cat) {
 });
 
 /*********add color base on category end*************/
+var unclear = '#e8e8e8';
+if(value.reprocurement == 'Unclear'){
+	var unclear = catcolor;
+}
 
 			html +='<div class="data-sec">\
 				  <ul class="data">\
@@ -366,7 +382,7 @@ $.each(categoryData, function(inx, cat) {
 					 <li class="timelinee fadeInRight">\
 					 <div class="timelineeinner"><div class="timeln" style="width:'+width+'px; height: 11px; border-radius:25px;background:'+catcolor+'; margin-left:'+margin+'px;"></div></div>\
 					 </li>\
-					 <li><div class="unclear"><span class="true" style="background:'+catcolor+';"></span></div></li>\
+					 <li><div class="unclear"><span class="true" style="background:'+unclear+';"></span></div></li>\
 					 <div class="hover-content" style="border-color:'+catcolor+'">\
 			       <ul>\
 				       <li>State</li>\
