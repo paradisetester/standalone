@@ -133,11 +133,15 @@ thback = 'background-color: '+arr.color+'; !important;';
                 html += '<th class="cell100 column2" style="'+thback+'">'+ arr.second_heading+'</th>'
            }
 			 html+='</tr></table></div><div class="table100-body js-pscroll"><table><tbody>';
+			 var errlengh = arr.faqs.length - 2;
                     jQuery.each( arr.faqs, function( key, value ) {
                         var str = value.description;
 
                          var string =' '+value.description;
-                         string = abbrivationstring(string);
+						 if(key != errlengh){							
+							 string = abbrivationstring(string);
+						 }
+                       
                        //var new_string = string.replace('&#8226;','<br/>&#8226;');
                        //var new_string = string.replace(/•/g,'<br/>•');
 

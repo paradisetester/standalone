@@ -87,6 +87,13 @@ function checkJson(abb){
     
 }
 
+function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '">' + url + '</a>';
+    })
+    
+}
 
 function createData(arr) {
     var m = 1;
@@ -130,13 +137,20 @@ function createData(arr) {
                 html += '<th class="cell100 column2" style="'+thback+'">'+ arr.second_heading+'</th>'
            }
             html+='</tr></thead></table></div><div class="table100-body js-pscroll"><table><tbody>';
+			var errlengh = arr.medicad.length - 1;
+		
                     jQuery.each( arr.medicad, function( key, value ) {
                        // var str = value.description;
 
                     var string = value.description;
+					
                        var string = string.replace(/&#8226;/g,'<br/>&#8226;');
                         //string = string.replace(/•/g,'<br/>•');
-                        string = abbrivationstring(string);
+						 //string = urlify(string);
+						 if(key != errlengh){							
+							 string = abbrivationstring(string);
+						 }
+                        
                         if(m % 2 == 0){
                     html +='<tr class="row100 body" style="'+trback+'">';
                     }else{
@@ -203,6 +217,10 @@ function createData(arr) {
 }
 
 function abbrivationstring(string){
+	/* if(string.indexOf('href') > 0)
+	{
+		return string;
+	}	 */	
     if(string.match(/SUD/g)){
         string = string.replace(/SUD/g,'<span class="tooltip1" title="Substance use disorder">SUD</span>');
         }
