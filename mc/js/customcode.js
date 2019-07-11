@@ -1,6 +1,6 @@
 var STATES = [];
 var CATEGORY = [];
-var current, jsonData, categoryData;
+var current, jsonData, categoryData, stateData;
 var selector = 'donut-chart';
 var yearLength = 2030;
 var year = [];		
@@ -8,13 +8,27 @@ var i = 2018;
 for (i = 2018; i<= yearLength; i++){
 year.push(i)
 }
-		
+var API_URL = '\json/mcjsondata.json';
+const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbwmcM9ig7EsXkM48Bev89LbBpb5LuS2YudknsxxSN1SJfPs8XeO/exec';
+const API_KEY = 'abcdef';
 
+if(API_URL){
+	var url = API_URL;
+	
+}else{
+	var url = API_BASE_Data+'?key=' + API_KEY;	
+}
+
+
+
+		
+	
 function createData(arr){	
 
 /*********add color base on category start*************/
 var catcolor = '';
 var hovercolor = '';
+console.log(arr);
 cats = arr.category_id.split(",");
 
 		var catss = [];
@@ -36,7 +50,7 @@ cats = arr.category_id.split(",");
 				var rep_year = [];
 				var active_color = [];
 				
-				var reprocurement = arr.reprocurement;
+				var reprocurement = arr.reprocurement+'-';
 				res = reprocurement.split("-");
 				 if(res.length>1){					 
 					  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
@@ -128,22 +142,30 @@ cats = arr.category_id.split(",");
 function checkJson(abb){ 
    $('#bind-single-state').fadeOut();
     var thisData='';
+    var arrayLength=[];
 	$('#bind-single-state').html('');
     jQuery.each( jsonData, function( key, value ) {	
         if(value.abbreviation===abb){
-			 createData(value);
-			 thisData = value;
+			
+			if(value.active==1){
+				arrayLength.push(value);
+				createData(value);
+				thisData = value;
+			}
+			 
         }   
     });
+	
 	 if(!thisData){
         return;
     }
 	 
-	
+	$('.single-card-iner').addClass('card'+arrayLength.length);
     $('#bind-single-state').fadeIn();
+    $('.mob').hide();
 	
     $('#map').fadeOut("slow");
-    $('.table-inner').fadeOut("slow");
+    $('.timeline-table').fadeOut("slow");
 	
 	
 	/************select drop down option start***************/   
@@ -158,32 +180,20 @@ function checkJson(abb){
 
 /************card show on map state click end***************/	
 
-	/************select drop down value***************/ 
-	jQuery(document).on('change', '#states', function() {
-		 jQuery("#category option").prop('selected', false);
-		var val = jQuery(this).val();			
-		checkJson(val);
-	});
+	
 		
-	/************select drop down value***************/ 
-	jQuery(document).on('change', '#category', function() {
-		 jQuery("#states option").prop('selected', false);
-		var val = jQuery(this).val();			
-		checkCatJson(val);
-	});
+/************card show on category change start*************/
 		
-		
-		/************card show on category change start*************/
-		
+
 function checkCatJson(catID){ 
 	var catcolor = '';
 	var hovercolor = '';
     var thisData='';
 	$('#bind-single-state').html('');
     jQuery.each( jsonData, function( key, value ) {	
-	
-		
-		stateCategories = value.category_id.split(",");
+	if(value.active==1){
+		var catVal = value.category_id+' ';
+		stateCategories = catVal.split(",");
 		var catss = [];
 		$.each(stateCategories, function(inx, ca) {
 			catss.push(parseInt(ca))
@@ -195,15 +205,16 @@ function checkCatJson(catID){
 					thisData = value;
 				}
 		
-
+	}
           
     });
 	 if(!thisData){
         return;
     }
     $('#map').fadeOut("slow");
-    $('.table-inner').fadeOut("slow");
+    $('.timeline-table').fadeOut("slow");
 	 $('#bind-single-state').fadeIn();
+	 $('.mob').hide();
 	/************select drop down option start***************/   
    jQuery("#category option").each(function( index ) {
         var chk = jQuery(this).val();
@@ -223,7 +234,7 @@ $(document).ready(function(){
 	
 	 
 /******map********/	
-		 jQuery('#map').JSMaps({
+		  jQuery('#map').JSMaps({
 				map: 'usaTerritories',
 				mapWidth: 800, 
 				mapHeight: 600,
@@ -236,61 +247,71 @@ $(document).ready(function(){
 					 
 				}
 		});
-		
+		 
 
 jQuery(function(){
-    loadAjax('\json/mcstates.json');
-   // loadAjax('\json/mccategoy.json');
+	_getStateData();
 });
 
-function loadAjax(file){
-    current = file;
-    jQuery.ajax({
-        dataType: "json",
-		url: file,
-		data: [],
-		success: showData
-	});	
-}
+	function _buildApiUrl ( ) {
+		if(API_URL){
+			let url = API_URL;
+			
+		}else{
+			let url = API_BASE_Data;
+			url += '?key=' + API_KEY;
+		}
 
-
-function showData(data, status, xhr) {
-	if(data.length){
-	    switch(current){
-	        case '\json/mcstates.json':
-			console.log('state');
-	            STATES.length = 0;
-	            STATES.push('<option>Select State</option>');
-        		for (var i = 0; i < data.length; i++) {
-        			createStates(data[i]);		
-        		}				
-        		jQuery('#states').html(STATES);
-                loadAjax('\json/mccategoy.json');
-                
-        	break;
-			case '\json/mccategoy.json':
-				console.log('mccategoy');
-	            CATEGORY.length = 0;
-				categoryData = data;
-	            CATEGORY.push('<option>Scope of Benefits</option>');
-        		for (var i = 0; i < data.length; i++) {
-        			createcategory(data[i]);		
-        		}
-        		jQuery('#category').html(CATEGORY);
-                 loadAjax('\json/mcdata.json');
-        	break;
-			case '\json/mcdata.json':
-	            jsonData = data;
-					createTable();			
-        	break;
-            
-    	}
+		console.log(url);
+		return url;
 	}
-}
+	
+	function _setNotice (label) {
+		document.getElementById('notice').innerHTML = label;
+	}
+	
+	function _getStateData () {	
+		fetch(_buildApiUrl())
+			.then((response) => response.json())
+			.then((json) => {
+				
+				jsonData = json.mc_data;
+				stateData = json.states;
+				catData = json.category;
+				
+				_stateBind(stateData);
+				_categoryBind(catData);
+				
+				console.log(jsonData);
+				loadMap(jsonData,catData);
+				
+				createTable(jsonData);
+				
 
+				
+			})
+			.catch((error) => {
+				_setNotice('Unexpected error loading posts');
+			})
+	}
+	
+	/*****************************************************/	
+	/***********************state start*******************/
+	/*****************************************************/	
+	function _stateBind(stateData){
+				STATES.length = 0;
+	            STATES.push('<option>Select State</option>');
+        		for (var i = 0; i < stateData.length; i++) {
+        			createStates(stateData[i]);		
+        		}	
+					
+        		jQuery('#states').html(STATES);
+	}
+	
 
 		
 	function createStates(arr) {
+		
 	   var html='';	    
 		if(arr.available == "1"){
 		 html = '<option value="'+arr.abbreviation+'">'+arr.name+'</option>';
@@ -300,17 +321,121 @@ function showData(data, status, xhr) {
 		STATES.push(html); 
 	}
 
-	function createcategory(arr) {
+
+	/************select drop down value***************/ 
+	jQuery(document).on('change', '#states', function() {
+		 jQuery("#category option").prop('selected', false);
+		var val = jQuery(this).val();			
+		checkJson(val);
+	});
+		
+	
+	/*****************************************************/	
+	/**************category drop down start***************/
+	/*****************************************************/	
+	function _categoryBind(catData){
+		CATEGORY.length = 0;
+				categoryData = catData;
+	            CATEGORY.push('<option>Scope of Benefits</option>');
+        		for (var i = 0; i < catData.length; i++) {
+        			createcategory(catData[i]);		
+        		}
+				
+        		jQuery('#category').html(CATEGORY);
+	}
+	
+	function createcategory(arr) {		
 		var html = '<option value="'+arr.id+'">'+arr.name+'</option>';
 		CATEGORY.push(html); 
 	}
 
-
+	/************select drop down value***************/ 
+	jQuery(document).on('change', '#category', function() {
+		 jQuery("#states option").prop('selected', false);
+		var val = jQuery(this).val();			
+		checkCatJson(val);
+	});
+		
+	/**********category drop down end*******************/
 
 });
 
-/**********table data start*************/
 
+	
+/************************************************/
+/*************mapload jquery start***************/
+/************************************************/
+
+
+function loadMap(jsonData,categoryData){		
+var abb = [];
+var states_id = [];
+var category_id = [];
+var color = [];
+var hoverColor = [];
+
+console.log(jsonData);
+
+jQuery.each( jsonData, function( key, value ) {	
+	abb[key]=value.abbreviation;
+	states_id[key]=value.states_id;
+	category_id[value.abbreviation]=value.category_id;
+});
+
+
+	 mapData = window.JSMaps.maps.usaTerritories;
+	 var mapPaths = window.JSMaps.maps.usaTerritories.paths;
+	 var i=0;
+	  for (property in mapPaths) {
+				if (mapPaths.hasOwnProperty(property)) {
+
+				var StateName=mapData.paths[property].name.trim();
+				var abbreviation = mapData.paths[property].abbreviation.trim();
+				
+				if ($.inArray(abbreviation, abb) !== -1){
+					
+					mapData.paths[property].enable = true;
+					
+							var catArrs =  category_id[abbreviation]+ ' ';
+							cats = catArrs.split(",");
+
+							var catss = [];
+							$.each(cats, function(inx, ca) {
+								catss.push(parseInt(ca))
+							})
+							/* if(abbreviation == "VA"){
+								console.log(catss);
+								} */	
+								
+							$.each(categoryData, function(inx, cat) {
+								
+								if(jQuery.inArray(parseInt(cat.id), catss) !== -1){									 
+									  mapData.paths[property].color = cat.color;
+									  mapData.paths[property].hoverColor = cat.hover_color;
+									  mapData.paths[property].selectedColor = cat.hover_color;
+									}
+									if(cat.id=='0'){
+										 mapData.paths[property].enable = false;
+										 
+									}
+							});
+
+				}
+				}
+				i++;
+	}
+	$('#map').trigger('reDraw', mapData);
+
+}			  
+
+		
+/***********************************************/
+/*************mapload jquery end*****************/
+/***********************************************/
+
+/*****************************************************/	
+/**********table data start***************************/
+/*****************************************************/	
 	function createTable(){	
 		html =''; 
 		var k = 0;
@@ -457,44 +582,15 @@ function drawGrap(yearArray,active_color,selector){
 		return config;
 }	
 
+jQuery(document).on('hover', '.data', function() {		
+          console.log('bottom');
+		var hoverContent = $(this).find('.hover-content').height();
+		
+		var bottom = $(window).height() - hoverContent;
+		bottom = $(this).offset.top - bottom;
+		
+	
+});
 
-/*
-function drawGrap(data,dataLabelsArray,seriesColorsArray,selector){
-	console.log(selector);
-	var plot1 = jQuery.jqplot (selector, [data], 
-    { 
-      seriesDefaults: {
-        // Make this a pie chart.
-        renderer: jQuery.jqplot.PieRenderer, 
-        rendererOptions: {
-			padding: 2, sliceMargin: 2, 
-          startAngle: 180,            
-          shadowDepth : 0, 
-		    defaultHeight:120,
-        defaultWidth: 150,
-          dataLabelThreshold: 0, 
-          showDataLabels: true,
-          // Setting the dataLabelsArray - defined above..  
-          dataLabels: dataLabelsArray, 
-          dataLabelFormatString: "%s"
-        },
-      },
-        
-      //Setting the series colors - defined above.. 
-      seriesColors: seriesColorsArray,
-        
-      // Make the backround transparent, remove canvas borders..
-      grid: {
-          backgroundColor: 'transparent',
-          drawBorder: false,
-          shadow: false
-      }, 
-      legend: { show:false, location: 'e' }
-    });
-}
-*/
 /***************graph map*************/
-		
-		
-		/*************map jquery start***************/
-		/*************map jquery end***************/
+	

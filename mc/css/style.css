@@ -101,7 +101,7 @@ img{
 	}	
 .custom-select {
     border-radius: 0;
-    width: 79%;
+  
     height: 40px;
     /* margin: 010px 0; */
 }
@@ -245,16 +245,48 @@ svg.circliful {
 #map {
 	margin:40px 0 0;
 }
-.icon-sec {
-    /* text-align: center; */
-}
-#map svg {
-    height: 600px !important;
-}
-#map .jsmaps{
-    margin: auto;
-    width: 945px !important;
-}
+
+
+#map  {
+  position: relative;
+  margin:40px auto 0;
+  /* console */ }
+  
+#map  .jsmaps-preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 16px 14px; }
+
+#map  .jsmaps-text {
+    float: left;
+    overflow: auto;
+    padding: 10px 20px;
+    clear: both; }
+	
+.jsmaps-tooltip {
+    position: fixed;
+    display: none;
+    padding: 10px 15px;
+    background: #f2f2f2;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    pointer-events: none;
+    /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; }
+
 .hover-content ul li {
     width: 49%;
     text-align: left;
@@ -507,6 +539,11 @@ div#donut-chart35 {
 #map .jsmaps {
     width: auto !important;
 }
+
+
+
+
+
 }
 @media  screen and (min-width:992px) and (max-width:1200px){
 .back-color span {
