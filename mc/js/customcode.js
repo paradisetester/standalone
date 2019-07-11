@@ -29,7 +29,16 @@ function createData(arr){
 var catcolor = '';
 var hovercolor = '';
 
+if(arr.category_id.length > 1)
+{
 cats = arr.category_id.split(",");
+}
+else
+{
+cats = [1];	
+}
+
+
 
 		var catss = [];
 		$.each(cats, function(inx, ca) {
@@ -143,18 +152,13 @@ function checkJson(abb){
     
     var thisData='';
     var arrayLength=[];
-
+	$('#bind-single-state').fadeOut();
+	$('#bind-single-state').html('');
     jQuery.each( jsonData, function( key, value ) {	
-        if(value.abbreviation===abb){
-			
-			if(value.active=="1"){
-				$('#bind-single-state').fadeOut();
-   	$('#bind-single-state').html('');
+        if(value.abbreviation===abb){				
 				arrayLength.push(value);
 				createData(value);
 				thisData = value;
-			}
-			 
         }   
     });
 	
@@ -193,7 +197,7 @@ function checkCatJson(catID){
     var thisData='';
 	$('#bind-single-state').html('');
     jQuery.each( jsonData, function( key, value ) {	
-	if(value.active==1){
+
 		var catVal = value.category_id+' ';
 		stateCategories = catVal.split(",");
 		var catss = [];
@@ -206,9 +210,7 @@ function checkCatJson(catID){
 					createData(value);
 					thisData = value;
 				}
-		
-	}
-          
+	   
     });
 	 if(!thisData){
         return;
@@ -348,7 +350,7 @@ jQuery(function(){
 	}
 	
 	function createcategory(arr) {		
-		var html = '<option value="'+arr.id+'">'+arr.name+'</option>';
+		var html = '<option value="'+arr.id+'">'+arr.description+'</option>';
 		CATEGORY.push(html); 
 	}
 
