@@ -28,7 +28,7 @@ function createData(arr){
 /*********add color base on category start*************/
 var catcolor = '';
 var hovercolor = '';
-console.log(arr);
+
 cats = arr.category_id.split(",");
 
 		var catss = [];
@@ -140,14 +140,16 @@ cats = arr.category_id.split(",");
 }
 /************card show on map state click start*************/
 function checkJson(abb){ 
-   $('#bind-single-state').fadeOut();
+    
     var thisData='';
     var arrayLength=[];
-	$('#bind-single-state').html('');
+
     jQuery.each( jsonData, function( key, value ) {	
         if(value.abbreviation===abb){
 			
-			if(value.active==1){
+			if(value.active=="1"){
+				$('#bind-single-state').fadeOut();
+   	$('#bind-single-state').html('');
 				arrayLength.push(value);
 				createData(value);
 				thisData = value;
@@ -165,7 +167,7 @@ function checkJson(abb){
     $('.mob').hide();
 	
     $('#map').fadeOut("slow");
-    $('.timeline-table').fadeOut("slow");
+   $('.table-inner').fadeOut("slow");
 	
 	
 	/************select drop down option start***************/   
@@ -211,8 +213,9 @@ function checkCatJson(catID){
 	 if(!thisData){
         return;
     }
+	
     $('#map').fadeOut("slow");
-    $('.timeline-table').fadeOut("slow");
+ $('.table-inner').fadeOut("slow");
 	 $('#bind-single-state').fadeIn();
 	 $('.mob').hide();
 	/************select drop down option start***************/   
@@ -282,7 +285,7 @@ jQuery(function(){
 				_stateBind(stateData);
 				_categoryBind(catData);
 				
-				console.log(jsonData);
+				
 				loadMap(jsonData,catData);
 				
 				createTable(jsonData);
@@ -437,13 +440,15 @@ jQuery.each( jsonData, function( key, value ) {
 /**********table data start***************************/
 /*****************************************************/	
 	function createTable(){	
-		html =''; 
+		var html =''; 
 		var k = 0;
-
+    
 		jQuery.each( jsonData, function( key, value ) {
+			
 				/*********create progress bar start**********/
+				
 				var rep_year = [];
-				var reprocurement = value.reprocurement;
+				var reprocurement = value.reprocurement+'-';
 				res = reprocurement.split("-");
 				 if(res.length>1){					 
 					  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
@@ -471,32 +476,45 @@ jQuery.each( jsonData, function( key, value ) {
 					 
 					 
 				});
+			
 				
 				
 				
-				
-				/*********create progress bar end************/
+/*********create progress bar end**********************/
 /*********add color base on category start*************/
 var catcolor = '';
 var hovercolor = '';
+
+if(value.category_id.length > 1)
+{
 cats = value.category_id.split(",");
+}
+else
+{
+cats = [1];	
+}
+
 
 var catss = [];
 $.each(cats, function(inx, ca) {
+	
 	catss.push(parseInt(ca))
+	
 })
+
 $.each(categoryData, function(inx, cat) {	
 	if(jQuery.inArray(parseInt(cat.id), catss) !== -1){
 		  catcolor = cat.color;
 		  hovercolor = cat.hovercolor;
 		}
 });
-
+	
 /*********add color base on category end*************/
 var unclear = '#e8e8e8';
 if(value.reprocurement == 'Unclear'){
 	var unclear = catcolor;
 }
+
 
 			html +='<div class="data-sec">\
 				  <ul class="data">\
@@ -544,8 +562,11 @@ if(value.reprocurement == 'Unclear'){
 			   </div>\
 				  </ul>\
 			  </div>';
-       
+      	
 		});
+		
+	
+	
    $('#bind-table').append(html);
 	
 }
