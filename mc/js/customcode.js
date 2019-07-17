@@ -9,6 +9,7 @@ for (i = 2018; i<= yearLength; i++){
 year.push(i)
 }
 var API_URL = '\json/mcjsondata.json';
+//var API_URL = '';
 const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbwmcM9ig7EsXkM48Bev89LbBpb5LuS2YudknsxxSN1SJfPs8XeO/exec';
 const API_KEY = 'abcdef';
 
@@ -20,8 +21,6 @@ if(API_URL){
 }
 
 
-
-		
 	
 function createData(arr){	
 
@@ -90,6 +89,10 @@ cats = [1];
 			  urlData += '<a href="'+v.url+'">'+v.link+'</a> ';
 			});
 				/*******grap end*******************/
+				// var date = "\/Date(1297246301973)\/";
+
+				var contractStartDate = arr.contract_start.split('T');
+				var contractEndDate = arr.contract_end.split('T');
 				
 		html ='';      
 		html +='<div class="single-card-iner"><div class="row">\
@@ -108,8 +111,8 @@ cats = [1];
 					  <ul class="card-data-sec">\
 					    <li>'+arr.catname+'</li>\
 					    <li>'+arr.program_name+'</li>\
-					    <li>'+arr.contract_start+'</li>\
-					    <li>'+arr.contract_end+'</li>\
+					    <li>'+contractStartDate[0]+'</li>\
+					    <li>'+contractEndDate[0]+'</li>\
 					    <li>'+arr.type+'</li>\
 					  </ul>\</div>\
 				 </div>\
