@@ -46,15 +46,27 @@
 }
  .back {
      z-index: 1;
+     -webkit-transform: rotateX(-180deg);
+     -ms-transform: rotateX(-180deg);
+     -moz-transform: rotateX(-180deg);
+     transform: rotateX(-180deg);
 }
  .back.card {
      padding: 20px;
 }
  .panel:hover .back, .panel.active .back {
      z-index: 2;
+     -webkit-transform: rotateX(0deg);
+     -ms-transform: rotateX(0deg);
+     -moz-transform: rotateX(0deg);
+     transform: rotateX(0deg);
 }
  .demo-card .panel:hover .back, .demo-card .panel.active .back {
      z-index: 2;
+     -webkit-transform: rotateX(0deg);
+     -ms-transform: rotateX(0deg);
+     -moz-transform: rotateX(0deg);
+     transform: rotateX(0deg);
 }
  .front {
      z-index: 2;
@@ -71,6 +83,21 @@
 }
  .card {
      width: 100%;
+     /* height: 100%; */
+     -o-transition: all .5s;
+     -ms-transition: all .5s;
+     -moz-transition: all .5s;
+     -webkit-transition: all .5s;
+     transition: all .5s;
+     -webkit-backface-visibility: hidden;
+     -ms-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+     backface-visibility: hidden;
+     /* position: absolute; */
+     top: 0px;
+     left: 0px;
+     margin: 0px;
+     box-shadow: none;
 }
 
  .source-list li a{
@@ -163,7 +190,10 @@
     /* float: left; */
     /* display: table; */
 }
-
+.card-content.white-black.center.colour1.box_top {
+    background-image: -moz-linear-gradient(#ffeff7 28% -7px, #ff4fa6 133%);
+    background: -ms-linear-gradient(#ffeff7 28% , #ff4fa6 133%);
+}
 .back-card {
     padding: 15px 0 0;
     text-align: left;
@@ -396,20 +426,21 @@ span.source_cls:before {
     padding: 0 0 14px;
     min-height: auto;
 }
-.Oklahoma .des-back.card p {
-    height: 60px;
+.limiter.Oklahoma .demo-card__secondary{
+	 min-height: 580px;
 }
-.Oklahoma .demo-card__secondary {
-    min-height: 678px !important;
-}
-.Oklahoma .drug-text {
-    min-height: 121px;
+p.drug-text {
+    min-height: 66px;
 }
 .card-outr {
     width: 100%;
     margin: 10px 15px;
     /* float: left; */
     /* display: table; */
+}
+.card-content.white-black.center.colour1.box_top {
+    background-image: -moz-linear-gradient(#ffeff7 28% -7px, #ff4fa6 133%);
+    background: -ms-linear-gradient(#ffeff7 28% , #ff4fa6 133%);
 }
 
 .demo-card__secondary span {
@@ -509,6 +540,7 @@ span.source_cls:before {
 }
 .Oklahoma .state_headings  h3{/* color:#2a7118 !important; */}
 .Oklahoma .panel .front.card {
+    /* background: #2a7118 !important; */
     border-radius: 0;
 }
 .legend h4 {
@@ -519,9 +551,47 @@ span.source_cls:before {
     padding: 0 0 10px;
 }
 /*******/
+.panel:hover .des-back, .panel.active .des-back {
+    z-index: 2;
+    -webkit-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+.des-back{
+    /* z-index: 1; */
+    /* -webkit-transform: rotateX(-180deg); */
+    -ms-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    /* transform: rotateX(-180deg); */
+    /* background-image: url(http://www.digitaltrends.com/wp-content/uploads/2011/03/ie-9-icon.jpg); */
+}
+.panel:hover .front, .panel.active .front {
+    /* z-index: 1; */
+    /* -webkit-transform: rotateX(180deg); */
+    -ms-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    /* transform: rotateX(180deg); */
+}
 .des-back {
     padding: 0;
+    /* height: 320px; */
     text-align: left;
+}
+.front.card {
+    /* height: 320px; */
+    /* padding:15px; */
+}
+.Oklahoma .panel  .des-back{
+    /* background: #2a7118 !important; */
+    /* position: relative; */
+}
+.Colorado .pann, .Louisiana .pann , .Washington .pann, .Michigan .pann {
+    /* height: 360px; */
+}
+.Colorado .front.card,.Louisiana .front.card, .Washington .front.card, .Michigan .front.card{
+    /* height: 325px; */
+    /* padding: 15px; */
 }
 .Oklahoma .panel {
     background-color: transparent !important;
@@ -559,9 +629,6 @@ span.my_toggle i {
     font-size: 20px !important;
     padding: 0 7px;
 }
-.card-content {
-  line-height: normal;
-}
 /****/
 @media screen and (max-width:767px){
 	.legend {
@@ -593,39 +660,24 @@ span.my_toggle i {
 .card-outr {
     width: 100% !important;
 }
- .des-back.card p {
-    height: auto !important;
-}
- .drug-text {
-    min-height: inherit !important;
-}
-.demo-card__secondary {
+.limiter.Oklahoma .demo-card__secondary {
     min-height: auto !important;
-}
-.card-outr.more .panel {
-    height: auto !important;
-}
-.Oklahoma .des-back.card p {
-    height: auto !important;
-}
-.Oklahoma .drug-text {
-    min-height: inherit !important;
-}
-.Oklahoma .demo-card__secondary {
-    min-height: auto !important;
-}
-.card-outr {
-    width: 100%;
 }
 }
 @media screen and (min-width:768px) and (max-width:992px){
 .card-outr.more .panel {
     height: 1034px !important; 
 }
+.limiter.Oklahoma .demo-card__secondary {
+    min-height: auto !important;
+}
 }
 @media screen and (min-width:768px) and (max-width:1200px){
 	.legend {
     bottom: -3px;
+}
+.limiter.Oklahoma .demo-card__secondary {
+    min-height: auto !important;
 }
 .card-outr.more {
     width: 47%;
@@ -638,16 +690,7 @@ span.my_toggle i {
     bottom: -28%;
     right: 9%;
 }
-.Oklahoma .des-back.card p {
-    height: auto !important;
-}
-.Oklahoma .drug-text {
-    min-height: inherit !important;
-}
-.Oklahoma .demo-card__secondary {
-    min-height: auto !important;
-}
 .card-outr.more .panel {
-    height: 857px;
+    height: 955px;
 }
 }

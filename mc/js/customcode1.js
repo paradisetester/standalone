@@ -8,8 +8,8 @@ var i = 2018;
 for (i = 2018; i<= yearLength; i++){
 year.push(i)
 }
-var API_URL = '\json/mcjsondata.json';
-//var API_URL = '';
+//var API_URL = '\json/mcjsondata.json';
+var API_URL = '';
 const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbwmcM9ig7EsXkM48Bev89LbBpb5LuS2YudknsxxSN1SJfPs8XeO/exec';
 const API_KEY = 'abcdef';
 
@@ -37,47 +37,51 @@ else
 cats = [1];	
 }
 
-var catss = [];
-$.each(cats, function(inx, ca) {
-	catss.push(parseInt(ca))
-})
-$.each(categoryData, function(inx, cat) {	
-	if(jQuery.inArray(parseInt(cat.id), catss) !== -1){
-		  catcolor = cat.color;
-		  hovercolor = cat.hovercolor;
-		}
-});
 
-/*********create progress bar start**********/
 
-var rep_year = [];
-var reprocurement = arr.reprocurement+'-';
-res = reprocurement.split("-");
- if(res.length>1){					 
-	  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
-	  rep_year.push(k)
-	}
- }else{
-	 rep_year.push(parseInt(res[0]))
- }				
-
-var width = 0;
-var margin = 0;					
-$.each(year, function(indx, val) {	
-	if(jQuery.inArray(val, rep_year) !== -1){										
-		  width += +(parseInt(16.33));
-	 }else{						 
-	 if(width >0 ){
-		 margin += +(parseInt(16.33));						 
-	 } 	
-	}				 
-	 
-});
-/*********create progress bar end**********************/
+		var catss = [];
+		$.each(cats, function(inx, ca) {
+			catss.push(parseInt(ca))
+		})
+		$.each(categoryData, function(inx, cat) {	
+			if(jQuery.inArray(parseInt(cat.id), catss) !== -1){
+				  catcolor = cat.color;
+				  hovercolor = cat.hovercolor;
+				}
+		});
 
 
 /*********add color base on category end*************/
+/*******grap start*****************/
+			selector = 'donut-chart'+arr.id;
+				
+				var rep_year = [];
+				var active_color = [];
+				
+				var reprocurement = arr.reprocurement+'-';
+				res = reprocurement.split("-");
+				 if(res.length>1){					 
+					  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
+					  rep_year.push(k)
+					}
+				 }else{
+					 rep_year.push(parseInt(res[0]))
+				 }	
 
+				
+				$.each(year, function(indx, val) { 				
+										
+					if(jQuery.inArray(val, rep_year) !== -1){
+						active_color.push(catcolor);
+					 }else{	
+						active_color.push('#cccccc');
+						}
+					 
+					 
+				});
+				
+				
+		
 			var urls = $.parseJSON(arr.links);
 			var urlData = '';
 			 $.each(urls, function (i,v)
@@ -95,7 +99,7 @@ $.each(year, function(indx, val) {
 		 <div class="col-md-2">\
 				  <div class="back-color" style="background:'+catcolor+';"><span>'+arr.abbreviation+'</span></div>\
 				</div>\
-			     <div class="col-md-10"><div class="row"><div class="col-md-8">\
+			     <div class="col-md-10"><div class="row"><div class="col-md-9">\
 				    <div class="card-left">\
 					  <ul class="list-heading">\
 					    <li>Services</li>\
@@ -112,24 +116,10 @@ $.each(year, function(indx, val) {
 					    <li>'+arr.type+'</li>\
 					  </ul>\</div>\
 				 </div>\
-				 <div class="col-md-4 graph">\
-				 <ul class="mob-ul"><li>Projected Re-Procurement Timinig</li><li class="hov-con">2022-2024</li></ul>\
+				 <div class="col-md-3 graph">\
 				 <div class="label-year">Re-Procurement <span>'+arr.reprocurement+'</span></div>\
-				 <li class="timeline-sec">\
-				     <ul>\
-					   <li>2018</li>\
-					   <li>2021</li>\
-					   <li>2024</li>\
-					   <li>2027</li>\
-					   <li>2030</li></ul>\
-				 </li>\
-                    <div class="timelineeinner"><div class="timeln" style="width:'+width+'px; height: 11px; border-radius:25px;background:'+catcolor+'; margin-left:'+margin+'px;"></div>\
-					 <div class="hover-content" style="border-color:'+catcolor+'">\
-				   <ul>\
-				       <li>Projected Re-Procurement Timinig</li>\
-				       <li class="hov-con">'+arr.reprocurement+'</li>\
-				   </ul>\
-			   </div>\
+                     <div id="canvas-holder" class="graphchart" style="width:100%">\
+						<canvas id="'+selector+'"></canvas>\
 					</div>\
 				 </div>\
 					 <div class="footer-list col-md-12"><ul class="list-heading list-second">\
@@ -145,7 +135,17 @@ $.each(year, function(indx, val) {
        
 		   $('#bind-single-state').append(html);
 		   
+			var config = drawGrap(rep_year,active_color,selector);
+	
+	
+			var ctx = document.getElementById(selector).getContext('2d');	
 			
+			myDoughnut = new Chart(ctx, config);
+			
+			myDoughnut.options.circumference = Math.PI;
+			myDoughnut.options.rotation = -Math.PI;
+			
+			myDoughnut.update();
 	
 	
 	//drawGrap(data,dataLabelsArray,seriesColorsArray,selector);
@@ -450,33 +450,42 @@ jQuery.each( jsonData, function( key, value ) {
     
 		jQuery.each( jsonData, function( key, value ) {
 			
-/*********create progress bar start**********/
+				/*********create progress bar start**********/
+				
+				var rep_year = [];
+				var reprocurement = value.reprocurement+'-';
+				res = reprocurement.split("-");
+				 if(res.length>1){					 
+					  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
+					  rep_year.push(k)
+					}
+				 }else{
+					 rep_year.push(parseInt(res[0]))
+				 }
+					
 
-var rep_year = [];
-var reprocurement = value.reprocurement+'-';
-res = reprocurement.split("-");
- if(res.length>1){					 
-	  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
-	  rep_year.push(k)
-	}
- }else{
-	 rep_year.push(parseInt(res[0]))
- }				
-
-var width = 0;
-var margin = 0;					
-$.each(year, function(indx, val) {	
-	if(jQuery.inArray(val, rep_year) !== -1){										
-		  width += +(parseInt(16.33));
-	 }else{						 
-	 if(width >0 ){
-		 margin += +(parseInt(16.33));						 
-	 } 	
-	}				 
-	 
-});
+				var width = 0;
+				var margin = 0;
+					
+				$.each(year, function(indx, val) { 				
+										
+					if(jQuery.inArray(val, rep_year) !== -1){
+										
+						  width += +(parseInt(16.33));
+					 }else{	
+					 
+					 if(width >0 ){
+						 margin += +(parseInt(16.33));						 
+					 } 
+				}
+					 
+					 
+				});
+			
+				
+				
+				
 /*********create progress bar end**********************/
-
 /*********add color base on category start*************/
 var catcolor = '';
 var hovercolor = '';
@@ -510,16 +519,14 @@ var unclear = '#e8e8e8';
 if(value.reprocurement == 'Unclear'){
 	var unclear = catcolor;
 }
-                var contractStartDate = value.contract_start.split('T');
-				var contractEndDate = value.contract_end.split('T');
-				
+
 
 			html +='<div class="data-sec">\
 				  <ul class="data">\
 					 <li>'+value.abbreviation+'</li>\
 					 <li>'+value.program_name+'</li>\
 					 <li>'+value.catname+'</li>\
-					 <li>'+contractStartDate[0]+'</li>\
+					 <li>'+value.contract_start+'</li>\
 					 <li class="timelinee fadeInRight">\
 					 <div class="timelineeinner"><div class="timeln" style="width:'+width+'px; height: 11px; border-radius:25px;background:'+catcolor+'; margin-left:'+margin+'px;"></div></div>\
 					 </li>\
@@ -539,11 +546,11 @@ if(value.reprocurement == 'Unclear'){
 				   </ul>\
 				   <ul>\
 				       <li>Contract Start</li>\
-				       <li class="hov-con">'+contractStartDate[0]+'</li>\
+				       <li class="hov-con">'+value.contract_start+'</li>\
 				   </ul>\
 				   <ul>\
 				       <li>Contract End</li>\
-				       <li class="hov-con">'+contractEndDate[0]+'</li>\
+				       <li class="hov-con">'+value.contract_end+'</li>\
 				   </ul>\
 				   <ul>\
 				       <li>Projected Re-Procurement Timinig</li>\
@@ -559,48 +566,9 @@ if(value.reprocurement == 'Unclear'){
 				   </ul>\
 			   </div>\
 				  </ul>\
-			  </div>\
-      <div class="responv-design">\
-    <ul>\
-	   <li class="res-title">State</li>\
-	   <li>'+value.abbreviation+'</li>\
-	</ul>\
-	<ul>\
-	   <li class="res-title">Program Name</li>\
-	   <li>'+value.program_name+'</li>\
-	</ul>\
-	 <ul>\
-	   <li class="res-title">Services Provided</li>\
-	   <li>'+value.catname+'</li>\
-	</ul>\
-	 <ul>\
-	   <li class="res-title">Contract Start</li>\
-	   <li>'+value.contract_start+'</li>\
-	</ul>\
-	 <ul>\
-	   <li class="res-title">Contract End</li>\
-	   <li>'+value.contract_end+'</li>\
-	   </ul>';
-	   html +='<ul><li class="timeline-sec res-title"><span>Projected Re-Procurement Window</span>\
-			 <ul>\
-			    <li>2018</li>\
-			   <li>2021</li>\
-			   <li>2024</li>\
-			   <li>2027</li>\
-			   <li>2030</li></ul>\
-		 </li>\
-		 <li class="timelinee fadeInRight">\
-					 <div class="timelineeinner"><div class="timeln" style="width:'+width+'px; height: 11px; border-radius:25px;background:'+catcolor+'; margin-left:'+margin+'px;"></div></div>\
-					 </li>\
-	</ul>\
-	<ul>\
-	   <li class="res-title">Unclear</li>\
-	   <li><div class="unclear"><span class="true" style="background:'+unclear+';"></span></div></li>\
-	</ul>\
-</div>\
-</div>';
-
-});
+			  </div>';
+      	
+		});
 		
 	
 	
