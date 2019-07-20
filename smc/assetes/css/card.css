@@ -262,7 +262,7 @@ span.source_cls {
     margin: 2px 0 0  !important;
 }
 span.source_cls:before {
-    content: "\f0c6";
+    /* content: "\f0c6"; */
     color: #000;
     font-size: 16px;
     font-family: fontawesome;
@@ -448,6 +448,7 @@ p.drug-text {
 }
 span.source_cls a {
     word-break: break-all;
+    display: inline-block;
 }
 .card-title {
     color: #E4A11B;
@@ -503,13 +504,16 @@ span.source_cls {
     display: block;
     position: relative;
     margin: 2px 0 0  !important;
+    padding: 0 0 0 16px;
 }
-span.source_cls:before {
+span.source_cls a:before {
     content: "\f0c6";
     color: #595454;
     font-size: 16px;
     font-family: fontawesome;
     padding: 0 10px 0 0;
+    position: absolute;
+    left: 0;
 }
 .card p:last-child {
     /* border: white; */
@@ -605,7 +609,7 @@ span.source_cls:before {
     background: #ffffff !important;
     border: 1px solid #E4A11B;
 }
-.therap {
+.typ {
     border: none !important;
 }
 .panel {
