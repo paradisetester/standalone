@@ -149,6 +149,7 @@ li.timeline-sec ,li.timelinee{
 li.timeline-sec ul li {
     padding: 4px 6px;
     text-align: left;
+	    font-size: 16px;
 }
 .data-sec {
     background: #ffff;

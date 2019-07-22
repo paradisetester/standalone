@@ -51,8 +51,18 @@ $.each(categoryData, function(inx, cat) {
 /*********create progress bar start**********/
 
 var rep_year = [];
-var reprocurement = arr.reprocurement+'-';
-res = reprocurement.split("-");
+var reprocurement = arr.reprocurement;
+
+  if(reprocurement.length > 4)
+  {
+	res = reprocurement.split("-");	
+  }
+  else
+  {
+	res[0] = reprocurement; 
+	res[1] = reprocurement; 	
+  }
+  
  if(res.length>1){					 
 	  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
 	  rep_year.push(k)
@@ -60,15 +70,21 @@ res = reprocurement.split("-");
  }else{
 	 rep_year.push(parseInt(res[0]))
  }				
-
+console.log(rep_year);
 var width = 0;
 var margin = 0;					
 $.each(year, function(indx, val) {	
-	if(jQuery.inArray(val, rep_year) !== -1){										
-		  width += +(parseInt(16.33));
-	 }else{						 
-	 if(width >0 ){
-		 margin += +(parseInt(16.33));						 
+	
+	
+	if(jQuery.inArray(val, rep_year) !== -1){	
+		
+		  width += +(parseInt(17));
+	 }else{	
+	
+	 if(width <= 0 ){
+		
+		 margin += +(parseInt(17));	
+		 
 	 } 	
 	}				 
 	 
@@ -113,7 +129,7 @@ $.each(year, function(indx, val) {
 					  </ul>\</div>\
 				 </div>\
 				 <div class="col-md-4 graph">\
-				 <ul class="mob-ul"><li>Projected Re-Procurement Timinig</li><li class="hov-con">2022-2024</li></ul>\
+				 <ul class="mob-ul"><li>Projected Re-Procurement Timinig</li><li class="hov-con">'+arr.reprocurement+'</li></ul>\
 				 <div class="label-year">Re-Procurement <span>'+arr.reprocurement+'</span></div>\
 				 <li class="timeline-sec">\
 				     <ul>\
@@ -453,8 +469,20 @@ jQuery.each( jsonData, function( key, value ) {
 /*********create progress bar start**********/
 
 var rep_year = [];
-var reprocurement = value.reprocurement+'-';
-res = reprocurement.split("-");
+var rep_year = [];
+var reprocurement = value.reprocurement;
+
+  if(reprocurement.length > 4)
+  {
+	res = reprocurement.split("-");	
+  }
+  else
+  {
+	res[0] = reprocurement; 
+	res[1] = reprocurement; 	
+  }
+  
+
  if(res.length>1){					 
 	  for (k = parseInt(res[0]); k<= parseInt(res[1]); k++){
 	  rep_year.push(k)
