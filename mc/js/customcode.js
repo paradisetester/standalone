@@ -8,8 +8,8 @@ var i = 2018;
 for (i = 2018; i<= yearLength; i++){
 year.push(i)
 }
-var API_URL = '\json/mcjsondata.json';
-//var API_URL = '';
+//var API_URL = '\json/mcjsondata.json';
+var API_URL = '';
 const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbwmcM9ig7EsXkM48Bev89LbBpb5LuS2YudknsxxSN1SJfPs8XeO/exec';
 const API_KEY = 'abcdef';
 

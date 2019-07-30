@@ -419,6 +419,46 @@ ul.list-second a {
 .mob-ul {
     display: none;
 }
+
+.legend {
+    position: absolute;
+    bottom: -20%;
+    right: 19%;
+}
+.map-outr {
+    position: relative;
+}
+.legend ul li {
+    list-style: none;
+    padding: 3px 0;
+}
+.legend ul {
+    padding: 0;
+}
+.legend h4 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+.legend ul li span {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+span.rfp {
+    background: #76b7b2 !important;
+}
+span.spa {
+    background: #f28e2b !important;
+}
+span.spo {
+    background: #e15759 !important;
+}
+span.wa {
+    background: #4e79a7 !important;
+}
 /******responsive******/
 @media (max-width:767px){
 .image {
@@ -441,7 +481,7 @@ ul.list-second a {
 .graph  ul {
     width: 100% !important;
     float: none;
-    text-align: center;
+   
 }
 li.timeline-sec ul li {
     width: auto !important;
@@ -468,8 +508,11 @@ li.timeline-sec ul li {
 li.timeline-sec ul li {
     display: inline-block;
     width: 0;
-    font-size: 11px;
+
+
 }
+.graph li.timeline-sec{overflow: hidden;}
+
 
 .responv-design li.timeline-sec ul li {
     padding: 0 20px;
@@ -499,7 +542,7 @@ li.timeline-sec ul li {
     padding: 0 0 10px;
 }
 .single-card-iner ul {
-    width: 47%;
+    width: 44%;
     float: left;
     margin: 0 5px;
 }
@@ -558,6 +601,11 @@ div#donut-chart35 {
 .mob-ul {
     display: none;
 }
+.legend {
+    position: inherit;
+    right: inherit;
+    padding: 18px 20px;
+}
 /****res*****/
 }
 
@@ -615,6 +663,11 @@ li.timeline-sec, .timelineeinner,.label-year {
 .data-sec ul li,.table-inner ul li {
     font-size: 12px;
 } 
+.legend {
+    position: inherit;
+    right: inherit;
+    padding: 18px 20px;
+}
 }
 @media  screen and (min-width:992px) and (max-width:1230px){
 .back-color span {
