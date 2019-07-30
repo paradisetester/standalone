@@ -20,6 +20,7 @@ $(document).ready(function(){
 		 $
 			$('.table-inner').fadeOut("slow");
 			$('#map').fadeIn("slow");			
+			$('.legend').fadeIn("slow");			
 			$('#bind-single-state').html('');
 
 			$("#states option:selected").prop("selected", false);

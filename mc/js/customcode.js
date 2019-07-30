@@ -190,6 +190,7 @@ function checkJson(abb){
     $('.mob').hide();
 	
     $('#map').fadeOut("slow");
+    $('.legend').fadeOut("slow");
    $('.table-inner').fadeOut("slow");
 	
 	
@@ -236,6 +237,7 @@ function checkCatJson(catID){
     }
 	
     $('#map').fadeOut("slow");
+    $('.legend').fadeOut("slow");
  $('.table-inner').fadeOut("slow");
 	 $('#bind-single-state').fadeIn();
 	 $('.mob').hide();
