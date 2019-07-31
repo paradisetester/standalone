@@ -70,7 +70,7 @@ var reprocurement = arr.reprocurement;
  }else{
 	 rep_year.push(parseInt(res[0]))
  }				
-console.log(rep_year);
+
 var width = 0;
 var margin = 0;					
 $.each(year, function(indx, val) {	
@@ -220,15 +220,23 @@ function checkCatJson(catID){
 
 		var catVal = value.category_id+' ';
 		stateCategories = catVal.split(",");
+		
 		var catss = [];
 		$.each(stateCategories, function(inx, ca) {
 			catss.push(parseInt(ca))
 		});
 		
 				
-			if(jQuery.inArray(parseInt(catID), catss) !== -1){				
+			if(jQuery.inArray(parseInt(catID), catss) !== -1){	
+			if(catID == 1 && catss.length == 1){
 					createData(value);
 					thisData = value;
+				}
+			if(catID != 1){
+					createData(value);
+					thisData = value;
+				}
+					
 				}
 	   
     });
@@ -288,7 +296,7 @@ jQuery(function(){
 			url += '?key=' + API_KEY;
 		}
 
-		console.log(url);
+	
 		return url;
 	}
 	
@@ -400,7 +408,7 @@ var category_id = [];
 var color = [];
 var hoverColor = [];
 
-console.log(jsonData);
+
 
 jQuery.each( jsonData, function( key, value ) {	
 	abb[key]=value.abbreviation;
@@ -671,7 +679,7 @@ function drawGrap(yearArray,active_color,selector){
 }	
 
 jQuery(document).on('hover', '.data', function() {		
-          console.log('bottom');
+         
 		var hoverContent = $(this).find('.hover-content').height();
 		
 		var bottom = $(window).height() - hoverContent;
