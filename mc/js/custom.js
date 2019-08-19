@@ -14,7 +14,8 @@ $(document).ready(function(){
     $('.custom_btn-chart').click(function() {
 			$('#map').fadeOut("slow");
 			$('.table-inner').fadeIn("slow");
-			 $('#bind-single-state').fadeOut();
+			$('#bind-single-state').fadeOut();
+			$('.legend').fadeOut("slow");	
     });
 	 $('.map-btn').click(function() {
 		 $

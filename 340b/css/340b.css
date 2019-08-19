@@ -1,4 +1,13 @@
-	.mdl-data-table .approved th{    text-align: center;
+body{
+	font-family: 'Times New Roman' !important;
+	    color: #4b4b4b !important;
+}
+p, ul, li , a{
+    font-family: 'Arial' !important;
+    color: #4b4b4b !important;
+    font-size: 14px !important;
+}
+.mdl-data-table .approved th{    text-align: center;
     background: #25b8cc;
     color: #fff;
 	}
@@ -16,6 +25,7 @@
 }
 select#states {
    margin:0px;
+   font-size: 18px;
 }
 .map_sectn {
     width: 100%;
@@ -325,9 +335,7 @@ td.desktop-hide {
 .top-section{
 	position:relative;
 }
-.header {
-    margin: 55px 0 0;
-}
+
 
 span.date {
     color: #a0a0a0;
@@ -443,8 +451,14 @@ div#usaTerritories-map {
 
 span.my_toggle i, a.intro-c i  {
     color: #7ab800 !important;
-    font-size: 32px !important;
+    font-size: 38px !important;
     padding: 0 5px;
+}
+select#states:focus, .select#states:active, .select#states:hover {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+    border: 1px solid #7ab800;
 }
 
 /*********12/12/18***************/
@@ -495,8 +509,9 @@ table#example th, table#example td {
     border-right: 1px solid rgba(0,0,0,.12);
 }
 .table-responsive tr td:first-child {
-    color: #222;
     font-weight: 600 !important;
+	 color: #4b4b4b !important;
+    font-size: 16px !important;
 }
 
 .table-responsive tr th {
@@ -551,7 +566,7 @@ section#section{
    /*end source section css*/
 
 .state_headings {
-    max-width: 48%;
+    max-width: 47.5%;
     width: 98%;
     margin: 20px auto 0;
     border: 2px solid  #357a38;
@@ -753,6 +768,11 @@ body{   background: rgb(239, 253, 245);}
 
 #state_data .ques_ans table tr td.desktop-hide {
     color: #fff !important;
+}
+
+
+.jsmaps-select.mobile {
+    display: none;
 }
 
 @media only screen and (max-width:1400px){
@@ -960,3 +980,46 @@ select#states {
 }
         
     }
+	
+	
+	.jsmaps-wrapper {
+  position: relative;
+  margin: 0 auto;
+  /* console */ }
+  .jsmaps-wrapper .jsmaps-preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 16px 14px; }
+  .jsmaps-wrapper .jsmaps {
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .jsmaps-wrapper .jsmaps-text {
+    float: left;
+    overflow: auto;
+    padding: 10px 20px;
+    clear: both; }
+  .jsmaps-wrapper .jsmaps-tooltip {
+    position: fixed;
+    display: none;
+    padding: 10px 15px;
+    background: #f2f2f2;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    pointer-events: none;
+    /* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; }
+  
