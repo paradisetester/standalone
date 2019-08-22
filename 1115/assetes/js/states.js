@@ -124,7 +124,7 @@ thback = 'background-color: '+arr.color+'; !important;';
 	<div class="state-head">\
         <div class="state_headings" style="border-color: '+arr.color+';">\
            <h3 style="'+thead+'">'+arr.state_name+'</h3>\
-                <h5>'+arr.description+'</h5>';
+                <h5>'+arr.title+'</h5>';
                 
             html +='</div>\
     <div class="wrap-table100"> <div class="table100 ver1 m-b-110"> <div class="table100-head"><table>';
@@ -178,6 +178,18 @@ thback = 'background-color: '+arr.color+'; !important;';
 
     
     jQuery('#state_data').html(html);
+	
+	setTimeout(function(){ 
+		var height = jQuery('.table100-head').height();	
+		console.log(height);
+		if(height>0){
+			jQuery('.table100.ver1.m-b-110').css('padding-top',height);
+		}		
+		}, 500);
+	
+	
+	
+	
 }
 
 

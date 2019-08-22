@@ -218,6 +218,13 @@ function createData(arr) {
     html += arr.state_content;
     jQuery('#state_data').html(html);
 	
+		setTimeout(function(){ 
+		var height = jQuery('.table100-head').height();	
+		console.log(height);
+		if(height>0){
+			jQuery('.table100.ver1.m-b-110').css('padding-top',height);
+		}		
+		}, 100);
 }
 
 function abbrivationstring(string){

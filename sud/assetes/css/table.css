@@ -1461,7 +1461,15 @@ span.date {
 td.cell100.column2 {
     padding: 34px 0;
 }
-
+.table100.ver1 td.column2 {
+    padding-left: 3px !important;
+}
+table td.column2 p {
+    padding-left: 0 !important;
+}
+.table100.ver1 td.column2 ul {
+    padding-left: 12px ;
+}
 .guide ul li {
     display: inline-flex;
     margin-right: 15px;
@@ -1477,9 +1485,9 @@ td.cell100.column2 {
     color: #000;
     font-style: italic;
 }
-tr.row100.body:first-child td {
-    padding: 50px 33px 50px;
-}
+	/* tr.row100.body:first-child td {
+		padding: 50px 33px 50px;
+	} */
 
 li ul {
     padding: 0 30px;
