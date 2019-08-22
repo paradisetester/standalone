@@ -283,7 +283,7 @@ function createData(arr) {
 	<ol>'; 
 	var $s = 1;
 	jQuery.each( source_arr, function( key,value){					
-					html += '<li id="source'+$s+'" data-tab="source'+$s+'" class=""><a href="'+source_link_arr[key]+'" target="_blank">'+$s+". "+value+'</a></li>';
+					html += '<li id="source'+$s+'" data-tab="source'+$s+'" class=""><a href="'+source_link_arr[key]+'" target="_blank">'+value+'</a></li>';
 				$s++;		
 	});
 	

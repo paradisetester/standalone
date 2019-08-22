@@ -1231,6 +1231,7 @@ div#loadData {
 .toggllee {
     width: 100%;
     float: left;
+    margin-top: 50px;
     margin-bottom: 42px;
 }
 #usaTerritories-map {
@@ -1327,6 +1328,7 @@ div#generate i {
 
 
 /***********11/14/18*************/
+
 
 
 @media only screen and (min-width:1200px){
@@ -1500,7 +1502,7 @@ td.cell100.column2 {
     position :-webkit-sticky !important;
     top: 0 !important;
 }
-}
+
 .tabulator-row.tabulator-selectable.tabulator-row-odd {
     padding-left : 0 !important;
 }
@@ -1548,6 +1550,11 @@ a.charttt img {
     vertical-align: inherit;
 }
 }
+@media screen and (max-width:680px){
+	tr.row100.body td {
+    padding: 85px 15px 42px!important;
+}
+}
 @media (max-width:450px){
 	ul.research-img {
     display: block;
@@ -1558,4 +1565,9 @@ a.charttt img {
     margin-bottom: 16px;
 }
 
+}
+@media screen and (max-width:330px){
+tr.row100.body td {
+    padding: 111px 15px 42px!important;
+}
 }
