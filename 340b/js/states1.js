@@ -213,6 +213,7 @@ function createData(arr) {
                     var source_link34 = new Array();
                     let string = value2.source;
                     let string_link = value2.source_link;
+					if(string_link){
                     source_arr34  = string.split('|');
                     source_link34 = string_link.split('|');
                     jQuery.each( source_arr34, function( key34,value34){
@@ -230,7 +231,10 @@ function createData(arr) {
 						vi++;
 					});					
 				}
+				
                     });
+					
+					}
 			}
 				html +='</td></tr>';
 				i++;
