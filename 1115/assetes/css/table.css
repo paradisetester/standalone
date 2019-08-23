@@ -1331,6 +1331,15 @@ div#generate i {
 
 
 
+@media (max-width:767px){
+div#hdexample {    
+    display: none;
+}
+#hdScrollexample table#example {
+    margin-top: 0px;
+}
+}
+
 @media only screen and (min-width:1200px){
 svg {
     width: 969px;
@@ -1551,6 +1560,8 @@ a.charttt img {
 }
 }
 @media screen and (max-width:680px){
+	
+
 	tr.row100.body td {
     padding: 25px 15px 25px!important;
 }

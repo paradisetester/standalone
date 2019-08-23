@@ -1558,7 +1558,15 @@ span.date {
     margin: auto;
 }
 }
+
 @media (max-width:767px){
+div#hdexample {    
+    display: none;
+}
+#hdScrollexample table#example {
+    margin-top: 0px;
+}
+
     /* .table100-body {
     margin: 25px 0;
 } */
