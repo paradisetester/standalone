@@ -1552,7 +1552,7 @@ a.charttt img {
 }
 @media screen and (max-width:680px){
 	tr.row100.body td {
-    padding: 85px 15px 42px!important;
+    padding: 25px 15px 25px!important;
 }
 }
 @media (max-width:450px){

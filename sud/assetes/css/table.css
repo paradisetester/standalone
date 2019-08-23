@@ -1559,11 +1559,11 @@ span.date {
 }
 }
 @media (max-width:767px){
-    .table100-body {
+    /* .table100-body {
     margin: 25px 0;
-}
+} */
 tr.row100.body:first-child td {
-    padding: 33px 33px 50px;
+    padding-right:33px;
 }
 }
 @media (max-width:450px){
