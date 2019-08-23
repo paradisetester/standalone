@@ -138,7 +138,7 @@ thback = 'background-color: '+arr.color+'; !important;';
                         var str = value.description;
 
                          var string =' '+value.description;
-						 if(key != errlengh){							
+						 if(value.category_name != 'Reference Material'){						
 							 string = abbrivationstring(string);
 						 }
                        
@@ -159,7 +159,10 @@ thback = 'background-color: '+arr.color+'; !important;';
                             if(value.description2 != '' && value.description2 != null){
                                 var string2 =value.description2;
                                // var new_string2 = string2.replace(/•/g,'<br/>•');
-                               string2 = abbrivationstring(string);
+							   if(value.category_name != 'Reference Material'){					
+									 string2 = abbrivationstring(string);
+								 }
+                              
                             html +='<td class="cell100 column2">'+string2+'</td>';
 
                         }else{
