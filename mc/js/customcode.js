@@ -304,12 +304,12 @@ jQuery(function(){
 		document.getElementById('notice').innerHTML = label;
 	}
 	
-	function _getStateData () {	
+	function _getStateData () {		
 		fetch(_buildApiUrl())
-			.then((response) => response.json())
-			.then((json) => {
-				
-				jsonData = json.mc_data;
+		.then(function(response) {
+		return response.json()
+		}).then(function(json) {
+			jsonData = json.mc_data;
 				stateData = json.states;
 				catData = json.category;
 				
@@ -320,13 +320,11 @@ jQuery(function(){
 				loadMap(jsonData,catData);
 				
 				createTable(jsonData);
-				
-
-				
-			})
-			.catch((error) => {
-				_setNotice('Unexpected error loading posts');
-			})
+			
+		}).catch(function(ex) {
+		console.log('parsing failed', ex);
+		_setNotice('Unexpected error loading posts');
+		})
 	}
 	
 	/*****************************************************/	

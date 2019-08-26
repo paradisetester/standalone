@@ -160,7 +160,7 @@ li.timeline-sec ul li {
     text-align: left;
 }
 .data-sec {
-    background: #ffff;
+    background: #ffffff;
     padding: 15px;
     box-shadow: 1px 1px 6px 2px #f5f5f5;
     margin: 5px 0;
@@ -550,9 +550,9 @@ div#responv-design {
     border-radius: 25px;
     margin: 10px 0;
 }
-#map svg {
+/*#map svg {
     height: auto !important;
-}
+}*/
 .timelineeinner {
     margin: 10px 0 !important;
 }
@@ -760,9 +760,9 @@ div#responv-design {
     border-radius: 25px;
     margin: 10px 0;
 }
-#map svg {
+/*#map svg {
     height: auto !important;
-}
+}*/
 .timelineeinner {
     margin: 10px 0 !important;
 }
