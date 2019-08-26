@@ -12,8 +12,8 @@ year.push(i)
 const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbws32hX3t5Ze0ES4Sv7morqYW9Z1H0Eja0Yezv2Ha9Qq90CPBJH/exec';
 const API_KEY = 'abcdef';
 
-//var url = API_BASE_Data+'?key=' + API_KEY;
-var url = 'json/vbp.json';
+var url = API_BASE_Data+'?key=' + API_KEY;
+//var url = 'json/vbp.json';
 
 		
 	
@@ -324,15 +324,17 @@ jQuery(function(){
 
 function loadMap(jsonData,categoryData){		
 var abb = [];
+var name = [];
 var states_id = [];
 var category_id = [];
 var color = [];
 var hoverColor = [];
 
-//console.log(jsonData);
+console.log(jsonData);
 
 jQuery.each( jsonData, function( key, value ) {	
 	abb[key]=value.abbreviation;
+	name[key]=value.name;
 	states_id[key]=value.states_id;
 	category_id[value.abbreviation]=value.category_id;
 });
@@ -347,7 +349,7 @@ jQuery.each( jsonData, function( key, value ) {
 				var StateName=mapData.paths[property].name.trim();
 				var abbreviation = mapData.paths[property].abbreviation.trim();
 				
-				if ($.inArray(abbreviation, abb) !== -1){
+				if ($.inArray(StateName, name) !== -1){
 					
 					mapData.paths[property].enable = true;
 					

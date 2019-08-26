@@ -15,7 +15,7 @@
     color: #fff;
     padding: 16px 14px; }
   .jsmaps-wrapper .jsmaps {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0; }
   .jsmaps-wrapper .jsmaps-text {

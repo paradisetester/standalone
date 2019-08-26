@@ -1233,7 +1233,7 @@ div#loadData {
     margin-bottom: 42px;
 }
 #usaTerritories-map {
-    width: 988px !important;
+    width: 80% !important;
     margin: auto !important;
     clear: both;
 }
