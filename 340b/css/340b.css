@@ -776,12 +776,7 @@ body{   background: rgb(239, 253, 245);}
     display: none;
 }
 
-@media only screen and (max-width:1400px){
-      svg {
-    width: auto !important;
-    height: auto !important;
-}
-}
+
 
 @media only screen and (max-width:1200px){
     .map_sectn .jsmaps-select.mobile {
@@ -794,10 +789,7 @@ body{   background: rgb(239, 253, 245);}
 .guide span {
     font-size: 11px;
 }
-  svg {
-    width: auto !important;
-    height: auto !important;
-}
+
 span.my_toggle img {
     vertical-align: top !important;
 }
