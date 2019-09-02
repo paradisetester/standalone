@@ -710,9 +710,7 @@ background-image: url('../images/tick4.png');
     display: block;
     padding: 4px 0;
 }
-table#example {
-    margin-top: -115px;
-}
+
 @media screen and (max-width:540px){
 	#example .table100.ver1 td {
     padding: 86px 15px 18px !important;
