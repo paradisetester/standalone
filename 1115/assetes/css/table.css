@@ -1230,8 +1230,7 @@ div#loadData {
 }
 .toggllee {
     width: 100%;
-    float: left;
-    margin-top: 50px;
+    float: left;   
     margin-bottom: 42px;
 }
 #usaTerritories-map {
@@ -1526,6 +1525,9 @@ div#hdexample {
 }
 
 @media (max-width:992px){
+	div#hdexample {
+    display: none;
+}
 	.toggllee {
     width: 100% !important;
 }

@@ -311,7 +311,7 @@ table#example th, table#example td {
     border-right: 1px solid rgba(0,0,0,.12);
     padding: 11px !important;
 }
-<<<<<<< HEAD
+
 
 div#example_wrapper {
     overflow-x: scroll;
@@ -320,9 +320,7 @@ div#example_wrapper {
 div#example2_wrapper {
     overflow-x: scroll;
 }
-table#example th, table#example td, table#example2 th, table#example2 td {
-    padding: 0 15px !important;
-}
+
 }
 
 

@@ -661,9 +661,10 @@ border: none;
 	position:relative;
 }
 #vertical-ticker  tbody tr td:first-child {
-    font-weight: lighter;
-   background-color: transparent;
+	font-weight: lighter;
+	background-color: transparent;
 	color: #383838;
+	padding: 10px 5px;
 }
 #vertical-ticker  .cr {
 	width: 12px;

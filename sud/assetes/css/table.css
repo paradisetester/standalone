@@ -1522,6 +1522,9 @@ div#hdexample {
 }
 /*****************/
 @media (max-width:992px){
+div#hdexample {
+    display: none;
+}
 	.toggllee {
     width: 100% !important;
 }
