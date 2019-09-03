@@ -392,6 +392,9 @@ div#usaTerritories-map {
    float: none !important; 
 }
 
+select#states {
+    margin-bottom: 39px;
+}
 .container {
     max-width: 100% !important;
     box-sizing: border-box;
