@@ -358,9 +358,9 @@ jQuery.each( jsonData, function( key, value ) {
 							$.each(cats, function(inx, ca) {
 								catss.push(parseInt(ca))
 							})
-							/* if(abbreviation == "VA"){
+							 if(abbreviation == "NH"){
 								console.log(catss);
-								} */	
+								}	
 								
 							$.each(categoryData, function(inx, cat) {
 								

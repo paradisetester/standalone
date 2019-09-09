@@ -283,9 +283,7 @@ div#state_data {
     display: block;
 }
 
-select#states {
-    vertical-align: text-bottom;
-}
+
 .icons-outr {
     margin: 20px 0;
 }
