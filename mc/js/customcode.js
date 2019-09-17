@@ -21,7 +21,18 @@ if(API_URL){
 }
 
 
-	
+function formatDate(date) {
+     var d = new Date(date),
+         month = '' + (d.getMonth() + 1),
+         day = '' + d.getDate(),
+         year = d.getFullYear();
+
+     if (month.length < 2) month = '0' + month;
+     if (day.length < 2) day = '0' + day;
+
+     return [ month, day, year].join('/');
+ }
+ 
 function createData(arr){	
 
 /*********add color base on category start*************/
@@ -123,8 +134,8 @@ $.each(year, function(indx, val) {
 					  <ul class="card-data-sec">\
 					    <li>'+arr.catname+'</li>\
 					    <li>'+arr.program_name+'</li>\
-					    <li>'+contractStartDate[0]+'</li>\
-					    <li>'+contractEndDate[0]+'</li>\
+					    <li>'+formatDate(contractStartDate[0])+'</li>\
+					    <li>'+formatDate(contractEndDate[0])+'</li>\
 					    <li>'+arr.type+'</li>\
 					  </ul>\</div>\
 				 </div>\

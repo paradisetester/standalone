@@ -1520,6 +1520,20 @@ div#hdexample {
     font-size: 14px !important;
     font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
 }
+tr td, tr th {
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+}
+.table100.ver1.m-b-110 {
+    border: 2px solid;
+}
+tr th{
+	border-top:none;
+	border-bottom:none;
+}
+.table100.ver1 .table100-body tr:last-child td {
+    border-bottom: none !important;
+}
 /*****************/
 @media (max-width:992px){
 div#hdexample {

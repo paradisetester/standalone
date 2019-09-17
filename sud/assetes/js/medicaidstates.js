@@ -103,10 +103,10 @@ function createData(arr) {
     var stehead = "";
     var title = arr.title;
 	
-    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { background-color: #e0516c2e; !important;  } .table100.ver1 th { background-color: '+arr.color+'; !important; } .state-head h5 { color: '+arr.color+';} </style>';
-	thback = 'background-color: '+arr.color+'; !important;';
+    html += ' <style type="text/css" rel="stylesheet"> .table100.ver1 .table100-body tr:nth-child(even) { border-color: #e0516c2e; !important;  } .table100.ver1 th { border-color: '+arr.color+'; !important; } .state-head h5 { color: '+arr.color+';} </style>';
+	thback = 'border-color: '+arr.color+'; !important;';
 	stehead = 'color: '+arr.color+'; !important'; 
-	trback = 'background-color: '+arr.color+'; !important;';
+	trback = 'border-color: '+arr.color+'; !important;';
 	//jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
 	
 	
@@ -131,7 +131,7 @@ function createData(arr) {
 		html +='<h6>'+arr.description+'</h6>';
 	}
 	html +='</div>\
-	<div class="wrap-table100"> <div class="table100 ver1 m-b-110"> <div class="table100-head"><table><thead>';
+	<div class="wrap-table100"> <div class="table100 ver1 m-b-110"  style="'+thback+'"> <div class="table100-head"><table><thead>';
 	html += '<tr class="row100 head" ><th class="cell100 column" style="'+thback+'"></th><th class="cell100 column2" style="'+thback+'">'+ arr.first_heading+'</th>';
 	if(arr.second_heading != '' && arr.second_heading != null){
 		html += '<th class="cell100 column2" style="'+thback+'">'+ arr.second_heading+'</th>'
@@ -156,8 +156,8 @@ function createData(arr) {
 			}else{
 			html +='<tr class="row100 body">';
 		}
-		html +='<td class="cell100 column1" >'+value.category_name+'</td>\
-		<td  class="cell100 column2">'+string;
+		html +='<td class="cell100 column1"  style="'+thback+'">'+value.category_name+'</td>\
+		<td  class="cell100 column2"  style="'+thback+'">'+string;
 		
 		if(value.source != 'No requirements located.' && value.source !='' && value.source != null ){
 			if ($.inArray(value.source, source_arr) === -1){
@@ -187,7 +187,7 @@ function createData(arr) {
 					new_string2 = abbrivationstring(new_string2);
 				}
 				
-				html +='<td class="cell100 column2">'+new_string2+'</td>';
+				html +='<td class="cell100 column2" style="'+thback+'">'+new_string2+'</td>';
 				
 			}
 		}

@@ -267,7 +267,6 @@ th.cell100.column {
     font-size: 14px;
     color: #4b4b4b;
     line-height: 1.4;
-    background-color: #1caf8d;
     z-index: 9;
     position: relative;
     font-weight: bold;
@@ -279,7 +278,7 @@ th.cell100.column {
 }
 
 .table100.ver1 .table100-body tr:nth-child(even) {
-  background-color: #8e8e8e2e;
+  background-color:#f9f9f9;
 }
 
 /*---------------------------------------------*/

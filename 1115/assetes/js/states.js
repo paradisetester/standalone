@@ -115,7 +115,7 @@ function createData(arr) {
          //jQuery(".table100.ver1 .table100-body tr:nth-child(even)").css("");
    // }  
    thead='color:'+arr.color+''
-thback = 'background-color: '+arr.color+'; !important;';    
+thback = 'border-color: '+arr.color+'; !important;';    
 	console.log(arr);
     html +='\
     <div class="chart_outr content_outr">\
@@ -127,7 +127,7 @@ thback = 'background-color: '+arr.color+'; !important;';
                 <h5>'+arr.title+'</h5>';
                 
             html +='</div>\
-    <div class="wrap-table100"> <div class="table100 ver1 m-b-110"> <div class="table100-head"><table>';
+    <div class="wrap-table100"> <div class="table100 ver1 m-b-110" style="'+thback+'"> <div class="table100-head"><table>';
              html += '<tr class="row100 head" ><th class="cell100 column" style="'+thback+'"></th><th class="cell100 column2" style="'+thback+'">'+ arr.first_heading+'</th>';
            if(arr.second_heading != '' && arr.second_heading != null ){
                 html += '<th class="cell100 column2" style="'+thback+'">'+ arr.second_heading+'</th>'
@@ -150,8 +150,8 @@ thback = 'background-color: '+arr.color+'; !important;';
                     }else{
                          html +='<tr class="row100 body">';
                     }
-                    html +='<td class="cell100 column1" >'+value.category_name+'</td>\
-                        <td class="cell100 column2" >'+string+'\
+                    html +='<td class="cell100 column1" style="'+thback+'" >'+value.category_name+'</td>\
+                        <td class="cell100 column2" style="'+thback+'" >'+string+'\
                         ';
                         
             html +='</td>';
@@ -163,7 +163,7 @@ thback = 'background-color: '+arr.color+'; !important;';
 									 string2 = abbrivationstring(string);
 								 }
                               
-                            html +='<td class="cell100 column2">'+string2+'</td>';
+                            html +='<td class="cell100 column2" style="'+thback+'">'+string2+'</td>';
 
                         }else{
                             html +='<td></td>';
