@@ -12,7 +12,8 @@ p, ul, li , a{
     color: #fff;
 	}
 
-	.headerMain-navItems.navbar-nav.ml-auto a {
+
+.headerMain-navItems.navbar-nav.ml-auto a {
     font-size: 14px !important;
     padding: .5rem !important;
 }
@@ -121,8 +122,8 @@ select#states {
 	background-size: 5%;
 }
 .ques_ans table tr th {
-    background:#e4e3e3 !important;
-    color: #000;
+    background: #77c398 !important;
+    color: #212121;
     box-shadow: none !important;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -241,9 +242,16 @@ span.my_togglee {
 	font-size:14px !important;
 }
 .active_source a{
-    -webkit-animation: 2s linear infinite condemned_blink_effect;
-    animation: 2s linear infinite condemned_blink_effect;
-    -moz-animation: 2s linear infinite condemned_blink_effect; 
+    /* -webkit-animation: 2s linear infinite condemned_blink_effect; */
+    /* animation: 2s linear infinite condemned_blink_effect; */
+    -moz-animation: 3s linear infinite condemned_blink_effect;
+    color: #5c8a00 !important;
+    animation: blinker 3s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    color:#000;
+  }
 }
 @-webkit-keyframes condemned_blink_effect { 
     0% {
@@ -556,10 +564,12 @@ section#section{
     clear: both;
     padding: 17px 0px;
 		}
-		.sources .section-title h3{       background: #f17340;
+		.sources .section-title h3{
+    background: #77c398;
     color: #fff;
     padding: 6px 20px;
-    box-shadow: 1px 1px 1px #000;}
+    box-shadow: 1px 1px 1px #000;
+    }
 .sources ol li {
     padding: 13px 0px;
 }
@@ -570,7 +580,7 @@ section#section{
     max-width: 47.5%;
     width: 98%;
     margin: 20px auto 0;
-    border: 2px solid  #357a38;
+    border: 2px solid  #77c398;
     color: #fff;
     padding: 2px 17px;
     border-radius: 3px;
@@ -582,12 +592,11 @@ section#section{
 }
 .state_headings h3 {
          margin: 10px 0px 8px;
-    font-size: 21px;
-    color: #1caf8d;
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-weight: 600;
-    
+         font-size: 21px;
+         color: #77c398;
+         text-transform: uppercase;
+         text-decoration: underline;
+         font-weight: 600;
 }
 
 .state_headings h5 {
@@ -681,13 +690,13 @@ section#section{
 }
 .ques_ans table tr td {box-shadow: 0 0 2px #d0cfcf;  vertical-align: middle;}
 .inner_data h5 {
-       color: #fff;
-    padding: 15px;
-    font-size: 22px;
-    background: #212121;
-    box-shadow: 1px 1px 3px #888383;
-    font-weight: 600;
-    font-size: 15px;
+       color: #000;
+       padding: 15px;
+       font-size: 22px;
+       background: #77c398;
+       box-shadow: 1px 1px 3px #888383;
+       font-weight: 600;
+       font-size: 15px;
 }
 .inner_data h6 {
     padding: 15px;
@@ -699,11 +708,11 @@ svg {
 }
 
 .inner_data h6 {
-    background:#4caf50;
+    background: #77c398;
     padding: 15px;
     margin: 8px 0px;
     font-weight: 600;
-    color: #fff;
+    color: #212121;
     font-size: 14px;
 }
 .chart_outr.content_outr {
