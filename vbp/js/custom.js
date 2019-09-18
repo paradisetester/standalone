@@ -5,7 +5,7 @@ $(document).ready(function(){
 		/********onclick map and chart********/
     $('.custom_btn-chart').click(function() {
 			$('#map').fadeOut("slow");
-			$('.mob').hide();
+			$('.legends').hide();
 			$('.timeline-table').fadeIn("slow");
 			 $('#bind-single-state').fadeOut();
     });
@@ -13,7 +13,7 @@ $(document).ready(function(){
 		 
 			$('.timeline-table').fadeOut("slow");
 			$('#map').fadeIn("slow");			
-			$('.mob').fadeIn("slow");			
+			$('.legends').fadeIn("slow");			
 			$('#bind-single-state').html('');
 
 			$("#states option:selected").prop("selected", false);

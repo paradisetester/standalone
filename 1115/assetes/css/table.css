@@ -1197,10 +1197,10 @@ button#download-csv,#download-xlsx, #download-pdf {
 div#generate {
     display: inline-block;
 }
-                   .drops {
+.drops {
     float:  left;
     width: 100%;
-    margin: 20px 0;
+    margin: 38px 0 0;
 }
 div#loadData {
     float: left;
@@ -1218,6 +1218,7 @@ div#loadData {
             }
  svg {
     margin: 10px 0 !important;
+	height:600px !important;
     
 
 }
@@ -1415,8 +1416,9 @@ span.date {
 }
 .map-categories {
     position: absolute;
-    bottom: -114px;
-    right: 58px;
+    bottom: inherit;
+    right: 3%;
+	    display: inline-block;
 }
 .map-categories li span {
     display: inline-block;
@@ -1433,11 +1435,11 @@ span.date {
     list-style: none;
 }
 .map-categories h3 {
-    font-weight: 600;
     font-size: 28px !important;
     margin: 14px 0;
-    border-bottom: 1px solid #000;
-    padding-bottom: 7px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
 }
 .toggllee ul.sources {
     margin: 0 0 30px;
@@ -1597,5 +1599,23 @@ a.charttt img {
 @media screen and (max-width:330px){
 tr.row100.body td {
     padding: 111px 15px 42px!important;
+}
+}
+@media screen and (max-width:767px){
+html .toggllee svg{
+	height:100vh !important;
+}
+html .toggllee #usaTerritories-map{
+	height:100vh !important;
+}
+}
+@media screen and (min-width:1240px){
+html .toggllee svg, .toggllee #usaTerritories-map{
+	max-height:600px !important;
+}
+}
+@media screen and (min-width:1800px){
+.map-categories {
+    right: 23%;
 }
 }

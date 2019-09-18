@@ -104,6 +104,9 @@ img{
   
     height: 40px;
     /* margin: 010px 0; */
+	font-size:15px;
+    /* margin: 010px 0; */
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 .custom-select:focus, .custom-select:active,.custom-select:hover {
     outline: none;
@@ -116,6 +119,7 @@ img{
     color: #7ab800;
     text-align: center;
     font-size: 28px;
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 /********map-sec*********/
 #map {
@@ -302,7 +306,6 @@ svg.circliful {
     box-shadow: 0px -1px 8px 3px #ececec;
     display: none;
     z-index: 999;
-    right: 0px;
     top: 40px;
     background: #fff;
     width: 40%;
@@ -319,6 +322,19 @@ svg.circliful {
     top: -6%;
     left: 10%;
     position: absolute;
+}
+.data:hover .hover-content.topshow:before {
+    top: auto;
+    bottom: -26px;
+    border-top: 26px solid #ffffff;
+    border-bottom: 0 solid #ffffff;
+}
+
+.data:hover .hover-content.topshow {
+    top: auto;
+    bottom: 100%;
+	border-bottom: 0 solid #fff;
+	border-top: 3px solid #74d175;
 }
 .table-inner .timelinee {
     border-radius: 25px;
@@ -422,7 +438,7 @@ ul.list-second a {
 
 .legend {
     position: absolute;
-    bottom: -20%;
+    bottom: -27%;
     right: 19%;
 }
 .map-outr {
@@ -458,6 +474,9 @@ span.spo {
 }
 span.wa {
     background: #4e79a7 !important;
+}
+.map-section {
+    padding: 30px 0 0;
 }
 /******responsive******/
 @media (max-width:767px){
@@ -679,5 +698,16 @@ li.timeline-sec, .timelineeinner,.label-year {
 .graph .timeline-sec ul li {
     font-size: 12px;
     width: auto !important;
+}
+}
+
+@media screen and (min-width:1240px){
+svg {
+    max-height: 600px !important;
+    width: 100% !important;
+}
+#map {
+    max-width: 940px;
+    max-height: 600px !important;
 }
 }

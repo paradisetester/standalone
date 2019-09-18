@@ -206,6 +206,7 @@ select#states {
     max-width: 500px;
     border:1px solid rgb(208, 207, 207) !important;
     margin-right: 12px !important;
+    font-size: 15px;
 }
 .outr_states {
     width: 600px;
@@ -466,8 +467,13 @@ div#example2_wrapper {
      padding:0px; 
    
 }
-    
-
+.toggllee  svg , .toggllee #usaTerritories-map{
+    height: 600px !important;
+}
+.map-categories {
+    right: 2%;
+    bottom: inherit;
+}
 
 
 

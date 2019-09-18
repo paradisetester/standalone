@@ -1230,10 +1230,9 @@ div#loadData {
 .toggllee {
     width: 100%;
     float: left;
-    margin-bottom: 42px;
 }
 #usaTerritories-map {
-    width: 80% !important;
+    width: 70% !important;
     margin: auto !important;
     clear: both;
 }
@@ -1373,8 +1372,13 @@ ul.research-img li a {
 }
 .desprective-content h4 {
     color: #72a212;
-    font-size: 30px;
+    font-size: 28px;
     margin: 36px 0 10px;
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+select#states{
+	font-family: Georgia, Times, "Times New Roman", serif !important;
+	font-size:15px ;
 }
 
 span.date {
@@ -1389,7 +1393,7 @@ span.date {
     font-size: 13px;
 }
 .toggllee #usaTerritories-map {
-    margin: 50px auto 30px !important;
+    margin: 50px auto 0 !important;
 }
 .toggllee ul.sources {
     margin: 0 0 30px;
@@ -1518,3 +1522,34 @@ a.charttt img {
 }
 
 }
+
+@media screen and (min-width: 1240px){
+.toggllee svg {
+    height: 600px !important;
+    width: auto !important;
+}
+.toggllee #usaTerritories-map {
+    height: 600px !important;
+}
+}
+
+@media screen and (min-width: 1550px){
+.legend {
+    bottom: -22% !important;
+}
+#usaTerritories-map {
+    width: 54% !important;
+}
+.toggllee #usaTerritories-map {
+    height: 600px !important;
+}
+}
+@media screen and (min-width: 1900px){
+#usaTerritories-map {
+    width: 40% !important;
+}
+}
+@media screen and (min-width: 2200px){
+#usaTerritories-map {
+    width: 27% !important;
+}}

@@ -1197,10 +1197,10 @@ button#download-csv,#download-xlsx, #download-pdf {
 div#generate {
     display: inline-block;
 }
-                   .drops {
+.drops {
     float:  left;
     width: 100%;
-    margin: 20px 0;
+    margin:38px 0 0;
 }
 div#loadData {
     float: left;
@@ -1603,3 +1603,19 @@ tr.row100.body:first-child td {
 
 }
 
+@media screen and (max-width:767px){
+html .toggllee svg{
+	height:auto !important;
+	width:100% !important;
+}
+}
+@media screen and (min-width:1300px){
+html .toggllee svg, .toggllee #usaTerritories-map{
+	max-height:600px !important;
+}
+}
+@media screen and (min-width:1800px){
+.map-categories {
+    right: 23% !important;
+}
+}

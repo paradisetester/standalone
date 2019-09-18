@@ -211,7 +211,6 @@ span.source_cls a {
     width: 80px;
     margin: auto;
     position: absolute;
-    bottom: 22%;
     right: 33%;
 }
 .toggllee {
@@ -453,8 +452,11 @@ span.source_cls a {
     width: 32%;
     margin: auto;
     position: absolute;
-    bottom: 5%;
     right: 9%;
+}
+p.therap {
+    font-weight: 600;
+    font-size: 16px;
 }
 .toggllee {
     position: relative;

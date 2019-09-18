@@ -125,7 +125,7 @@ function checkJson(abb){
 	 
 	$('.single-card-iner').addClass('card'+arrayLength.length);
     $('#bind-single-state').fadeIn();
-    $('.mob').hide();
+    $('.legends').hide();
 	
     $('#map').fadeOut("slow");
     $('.timeline-table').fadeOut("slow");
@@ -177,7 +177,7 @@ function checkCatJson(catID){
     $('#map').fadeOut("slow");
     $('.timeline-table').fadeOut("slow");
 	 $('#bind-single-state').fadeIn();
-	 $('.mob').hide();
+	 $('.legends').hide();
 	/************select drop down option start***************/   
    jQuery("#category option").each(function( index ) {
         var chk = jQuery(this).val();

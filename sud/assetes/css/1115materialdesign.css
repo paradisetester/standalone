@@ -198,8 +198,8 @@ select#states {
     margin-right: 12px !important;
     color: #000000;
     padding: 0 6px;
-   font-size: 18px;
-   font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 15px;
+    font-family: Georgia, Times, "Times New Roman", serif;
 }
 .outr_states {
     width: 600px;
@@ -407,8 +407,8 @@ svg {
     font-size: 48px !important;
 }
 #usaTerritories-map {
-    width: 998px !important;
-
+    width: 960px !important;
+    
 }
 .icons-outr {
     margin: 20px 0;

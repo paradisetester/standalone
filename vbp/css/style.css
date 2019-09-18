@@ -106,7 +106,9 @@ img{
     border-radius: 0;
     width: 79%;
     height: 40px;
+	font-size:15px;
     /* margin: 010px 0; */
+	font-family: Georgia, Times, "Times New Roman", serif;
 }
 .custom-select:focus, .custom-select:active,.custom-select:hover {
     outline: none;
@@ -119,6 +121,7 @@ img{
     color: #7ab800;
     text-align: center;
     font-size: 28px;
+	font-family: Georgia, Times, "Times New Roman", serif !important;
 }
 /********map-sec*********/
 #map {
@@ -126,7 +129,7 @@ img{
     margin: 40px;
 }
 .custom_select {
-    margin: auto;
+    margin: 5px auto 49px;
     max-width: 500px;
 }
 .map-section {
@@ -263,10 +266,7 @@ svg.circliful {
 .icon-sec {
     /* text-align: center; */
 }
-#map svg {
-    height: 600px !important;
-    width: auto !important;
-}
+
 #map .jsmaps{
     margin: auto;
     width: 945px !important;
@@ -401,7 +401,6 @@ svg.circliful {
 .legends {
     position: absolute;
     right: 0;
-    bottom: 2%;
 }
 .card-bottom ul li {
     width: 100%;
@@ -572,12 +571,9 @@ div#responv-design {
     /* width: 480px !important; */
     margin: auto;
 }
-.legends {
-    display: none;
-}
-.legends.mob{
+.legends{
 	display:block;
-	position: inherit;
+	position: inherit !important;
 	margin: 22px 0;
 }
 .card-bottom {
@@ -788,8 +784,9 @@ div#responv-design {
     width: 500px !important;
     margin: auto;
 }
-.legends {
-    display: none;
+.legends{
+	position:inherit !important;
+	    margin: 30px 0 0;
 }
 .legends.mob{
 	display:block;
@@ -1353,3 +1350,21 @@ li {
       -moz-transform: rotate(135deg);
       -ms-transform: rotate(135deg);
       transform: rotate(135deg); }
+
+@media screen and (min-width:1240px){
+#map svg {
+    height: 600px !important;
+    width: auto !important;
+}
+}
+
+#map, svg {
+    width: 100% !important;
+    height: auto !important;
+}
+.map-outr {
+ 
+    width: 100%;
+    margin: auto;
+	position: relative;
+}

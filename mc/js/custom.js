@@ -27,3 +27,36 @@ $(document).ready(function(){
 			$("#states option:selected").prop("selected", false);
     });
 });
+
+function tooltip_position()
+ {
+
+	var windowidth = $( window ).width();
+	
+	$('.data-sec').hover(function(event) {
+		var window_top = $(window).scrollTop();
+		var scroll_top = $(this).offset().top;
+	 var cusor_position = scroll_top-window_top;
+		
+		$('.hover-content').removeClass('topshow');
+		$('.hover-content').removeClass('bottomshow');
+		
+		var hoverDiv = $(this).find('.hover-content');
+		
+		if((windowidth-event.pageX) > hoverDiv.width())
+		{
+		hoverDiv.css("left", (event.pageX-50)+"px");
+		} else 
+		{
+		hoverDiv.css("right", 0);	
+		}
+		var divHeight = hoverDiv.height();
+		if(divHeight > cusor_position){
+			hoverDiv.addClass('bottomshow');			
+		}else{		
+			hoverDiv.addClass('topshow');
+		}
+		
+		
+	 });
+	 }

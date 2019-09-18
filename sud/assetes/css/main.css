@@ -745,8 +745,8 @@ background-image: url('../images/tick2.png');
 }
 .map-categories {
     position: absolute;
-    bottom: 125px;
     right: 115px;
+    bottom: inherit;
 }
 .map-categories li {
     display: block;

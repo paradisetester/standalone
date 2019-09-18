@@ -652,7 +652,7 @@ if(value.reprocurement == 'Unclear'){
 	
 	
    $('#bind-table').append(html);
-	
+	tooltip_position();
 }
 /**********table data end***************/
 	
