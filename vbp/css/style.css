@@ -1,7 +1,6 @@
 /***********/
 body{
 	margin:0;
-	background:#f4f7fc;
 	font-family: 'Roboto', sans-serif;
 }
 img{
@@ -104,11 +103,14 @@ img{
 	}	
 .custom-select {
     border-radius: 0;
-    width: 79%;
+    width: 50%;
     height: 40px;
-	font-size:15px;
-    /* margin: 010px 0; */
-	font-family: Georgia, Times, "Times New Roman", serif;
+    font-size:15px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    border: 1px solid #77c398;
+    display: inline-block;
+    color: #000;
+    margin-right: 12px;
 }
 .custom-select:focus, .custom-select:active,.custom-select:hover {
     outline: none;
@@ -129,11 +131,12 @@ img{
     margin: 40px;
 }
 .custom_select {
-    margin: 5px auto 49px;
-    max-width: 500px;
+    margin: 0 auto 0;
+    max-width: 700px;
+    text-align: center;
 }
 .map-section {
-    padding: 35px 0;
+    margin: 38px 0 0;
 }
 
 
@@ -251,12 +254,13 @@ svg.circliful {
 	margin:40px 0 0;
 }
 .custom_btn-chart, .map-btn {
-    display: inline-block;
-    padding: 0 7px;
+    display: inline;
+    padding: 0;
+    margin-left: -4px;
 }
 .custom_btn-chart i, .map-btn i {
-    font-size: 38px;
-    color: #7ab800;
+    font-size: 23px;
+    color: #000;
     vertical-align: top;
 }
 #map {
@@ -431,6 +435,20 @@ li.title-notes {
 .card-parent {
     cursor: pointer;
 }
+a.charttt {
+    display: inline-block;
+    padding: 7px 22px;
+    font-size: 18px !important;
+    background: #77c398;
+    color: #000;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+a.charttt i {
+    padding-right: 5px;
+}
 /******responsive******/
 @media (max-width:767px){
 .image {
@@ -531,9 +549,6 @@ div#donut-chart35 {
 }
 .charts {
     margin: 10px auto 30px;
-}
-.custom-select {
-    margin: 10px 0;
 }
 .table-inner {
     display: none;
@@ -646,6 +661,20 @@ h3 {
     line-height: normal !important;
     font-size: 15px !important;
 }
+a.charttt {
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 18px !important;
+    background: #77c398;
+    color: #000;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+a.charttt i {
+    padding-right: 5px;
+}
 /*****restable***/
 /****res*****/
 .graph {
@@ -739,9 +768,7 @@ div#donut-chart35 {
 .charts {
     margin: 10px auto 30px;
 }
-.custom-select {
-    margin: 10px 0;
-}
+
 .table-inner {
     display: none;
 }
@@ -1122,8 +1149,9 @@ li {
 
 #map {
   position: relative;
-  margin: 0 auto;
-  /* console */ }
+  margin: 50px auto 0;
+  /* console */
+  }
   #map .jsmaps-preloader {
     position: absolute;
     top: 50%;
@@ -1353,18 +1381,22 @@ li {
 
 @media screen and (min-width:1240px){
 #map svg {
-    height: 600px !important;
-    width: auto !important;
+    margin: 10px 0 0;
 }
-}
-
 #map, svg {
-    width: 100% !important;
-    height: auto !important;
+    max-width: 920px !important;
+	height: 600px !important;
+}
 }
 .map-outr {
  
     width: 100%;
     margin: auto;
 	position: relative;
+}
+.page_outr {
+    padding: 15px 0 0;
+}
+#map svg {
+     margin: 10px 0 0; 
 }

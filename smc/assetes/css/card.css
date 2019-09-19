@@ -1,6 +1,9 @@
  .container {
      width: 80%;
 }
+.outr {
+    padding-top: 15px;
+}
  .inner_sec .card .card-content .card-title {
      color: #004157;
      font-size: 19px;
@@ -554,16 +557,21 @@ span.source_cls:before {
     border: none;
 }
 span.my_toggle {
-    padding: 9px 31px;
-    background: #7ab800;
-    color: #fff;
-	vertical-align: top !important;
+    padding: 5px 20px;
+    background: #77c398;
+    color: #000;
+    vertical-align: top !important;
     cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    margin-left: -4px;
 }
 span.my_toggle i {
-    color: #fff;
-    font-size: 20px !important;
-    padding: 0 7px;
+    color: #000;
+    font-size: 23px !important;
+    padding: 0 5px;
+	vertical-align:top;
 }
 .card-content {
   line-height: normal;
@@ -571,8 +579,9 @@ span.my_toggle i {
 /****/
 @media screen and (max-width:767px){
 	.legend {
-		width:70%;
+    width: 70%;
     position: inherit;
+    padding: 41px 0;
 }
 .demo-card.colour11.value-based {
     display: inherit;

@@ -200,13 +200,16 @@ table.dataTable tbody td {
     padding: 15px 0 !important;
 }
 select#states {
-    width: 40%;
+    width: 50%;
     float: left;
     margin: auto;
-    max-width: 500px;
-    border:1px solid rgb(208, 207, 207) !important;
+    /* max-width: 500px; */
+    border: 1px solid rgb(119, 195, 152) !important;
     margin-right: 12px !important;
     font-size: 15px;
+    padding: 0 6px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    color: #000;
 }
 .outr_states {
     width: 600px;
@@ -295,11 +298,13 @@ div#state_data {
     display: inline-block;
     padding: 5px 20px;
     color: #000;
-    font-size: 20px !important;
+    font-size: 18px !important;
     background: #77c398;
     color: #fff;
     border-radius: 4px;
-    margin-right: 10px;
+    font-family: Georgia, Times, "Times New Roman", serif !important;
+    margin-right: 12px;
+    margin-left: -4px;
 }
 .table100.ver1 th {
     font-weight: 600;
@@ -308,13 +313,15 @@ div#state_data {
 .drops a i {
     color: #fff;
     font-size: 23px !important;
-	padding-right:5px;
+    padding-right:5px;
+    vertical-align: text-bottom;
 }
 .drops a {
     vertical-align: top;
 }
 .drops a, .drops a i {
     color: #000 !important;
+    /* vertical-align: text-bottom; */
 }
 /****7/1/19*****/
 h1, h2,span,h3, h4,h5,h6, .state_headings ,th,.table100.ver1 td:nth-child(1), .table100.ver1 th:nth-child(1){
@@ -355,6 +362,7 @@ h1, h2, span, h3, h4, h5, h6, .state_headings, th, .table100.ver1 td:nth-child(1
 .map-categories {
     position: inherit;
     margin: 34px 0 0;
+	padding: 0 25px;
 }
 }
 @media only screen and (max-width:1200px){
@@ -466,9 +474,6 @@ div#example2_wrapper {
 .outr_states span {
      padding:0px; 
    
-}
-.toggllee  svg , .toggllee #usaTerritories-map{
-    height: 600px !important;
 }
 .map-categories {
     right: 2%;

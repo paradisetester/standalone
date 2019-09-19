@@ -1417,7 +1417,7 @@ span.date {
 .map-categories {
     position: absolute;
     bottom: inherit;
-    right: 3%;
+    right: 4%;
 	    display: inline-block;
 }
 .map-categories li span {
@@ -1601,17 +1601,23 @@ tr.row100.body td {
     padding: 111px 15px 42px!important;
 }
 }
-@media screen and (max-width:767px){
+/*@media screen and (max-width:767px){
 html .toggllee svg{
 	height:100vh !important;
 }
 html .toggllee #usaTerritories-map{
 	height:100vh !important;
 }
-}
+}*/
 @media screen and (min-width:1240px){
 html .toggllee svg, .toggllee #usaTerritories-map{
 	max-height:600px !important;
+	max-width:938px !important;
+}
+}
+@media screen and (min-width:1400px){
+.map-categories {
+    right: 12%;
 }
 }
 @media screen and (min-width:1800px){

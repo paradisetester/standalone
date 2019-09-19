@@ -1524,12 +1524,9 @@ a.charttt img {
 }
 
 @media screen and (min-width: 1240px){
-.toggllee svg {
+.toggllee svg, .toggllee #usaTerritories-map {
     height: 600px !important;
-    width: auto !important;
-}
-.toggllee #usaTerritories-map {
-    height: 600px !important;
+    max-width: 938px !important;
 }
 }
 
@@ -1537,19 +1534,7 @@ a.charttt img {
 .legend {
     bottom: -22% !important;
 }
-#usaTerritories-map {
-    width: 54% !important;
-}
 .toggllee #usaTerritories-map {
     height: 600px !important;
 }
 }
-@media screen and (min-width: 1900px){
-#usaTerritories-map {
-    width: 40% !important;
-}
-}
-@media screen and (min-width: 2200px){
-#usaTerritories-map {
-    width: 27% !important;
-}}

@@ -1612,10 +1612,20 @@ html .toggllee svg{
 @media screen and (min-width:1300px){
 html .toggllee svg, .toggllee #usaTerritories-map{
 	max-height:600px !important;
+	max-width:938px !important;
+}
+}
+@media screen and (min-width:1400px){
+.map-categories {
+    right: 16% !important;
 }
 }
 @media screen and (min-width:1800px){
 .map-categories {
-    right: 23% !important;
+    right: 19% !important;
 }
+}
+@media screen and (min-width:1900px){
+.map-categories {
+    right: 26% !important;
 }

@@ -1,7 +1,7 @@
 /***********/
 body{
 	margin:0;
-	background:#f4f7fc;
+	background: #fff;
 }
 img{
 	max-width:100%;
@@ -101,12 +101,14 @@ img{
 	}	
 .custom-select {
     border-radius: 0;
-  
     height: 40px;
     /* margin: 010px 0; */
-	font-size:15px;
+    font-size:15px;
     /* margin: 010px 0; */
-	font-family: Georgia, Times, "Times New Roman", serif;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    border: 1px solid #77c398;
+    padding: 0 6px !important;
+    color: #000;
 }
 .custom-select:focus, .custom-select:active,.custom-select:hover {
     outline: none;
@@ -126,7 +128,7 @@ img{
     width: 100%;
     margin: 40px;
 }
-.custom_select {margin: 0 0 0 40px;}
+.custom_select {/* margin: 0 0 0 40px; */}
 
 
 /******timeline sec********/
@@ -240,12 +242,12 @@ svg.circliful {
 }
 .custom_btn-chart, .map-btn {
     display: inline-block;
-    padding: 0 7px;
+    padding: 0 6px 0 0;
 }
 .custom_btn-chart i, .map-btn i {
-    font-size: 38px;
-    color: #7ab800;
-    vertical-align: top;
+    font-size: 23px;
+    color: #000 !important;
+    vertical-align: middle;
 }
 #map {
 	margin:40px 0 0;
@@ -254,8 +256,9 @@ svg.circliful {
 
 #map  {
   position: relative;
-  margin:40px auto 0;
-  /* console */ }
+  margin: 50px auto 0;
+  /* console */
+  }
   
 #map  .jsmaps-preloader {
     position: absolute;
@@ -439,7 +442,7 @@ ul.list-second a {
 .legend {
     position: absolute;
     bottom: -27%;
-    right: 19%;
+    right: 24%;
 }
 .map-outr {
     position: relative;
@@ -476,7 +479,29 @@ span.wa {
     background: #4e79a7 !important;
 }
 .map-section {
-    padding: 30px 0 0;
+    padding: 0 0 0;
+}
+.row.drops {
+    margin: 38px 0 0;
+    max-width: 800px;
+    margin: 38px auto 0;
+}
+.page_outr {
+    padding: 15px 0 0;
+}
+a.charttt {
+    display: inline-block;
+    padding: 4px 21px;
+    font-size: 18px !important;
+    background: #77c398;
+    color: #000;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+a.charttt i {
+    padding-right: 5px;
+    vertical-align: text-bottom;
 }
 /******responsive******/
 @media (max-width:767px){
@@ -511,6 +536,7 @@ li.timeline-sec ul li {
 .footer-list .list-second li {
     width: 100%;
 }
+
 /****res*****/
 .responv-design ul li {
     list-style: none;
@@ -628,6 +654,11 @@ div#donut-chart35 {
 /****res*****/
 }
 
+@media screen and (max-width:350px){
+	a.charttt {
+    margin: 5px 0;
+}
+}
 @media  screen and (min-width:767px) and (max-width:992px){
 	.custom_btn-chart i, .map-btn i {
     font-size: 28px;
@@ -687,6 +718,9 @@ li.timeline-sec, .timelineeinner,.label-year {
     right: inherit;
     padding: 18px 20px;
 }
+a.charttt {
+    padding: 4px 17px;
+}
 }
 @media  screen and (min-width:992px) and (max-width:1230px){
 .back-color span {
@@ -699,15 +733,21 @@ li.timeline-sec, .timelineeinner,.label-year {
     font-size: 12px;
     width: auto !important;
 }
+a.charttt {
+    padding: 4px 17px;
+}
 }
 
 @media screen and (min-width:1240px){
-svg {
+
+#map, svg{
+    max-width: 920px;
     max-height: 600px !important;
-    width: 100% !important;
 }
-#map {
-    max-width: 940px;
-    max-height: 600px !important;
+.row.drops .col-md-4 {
+    padding: 0 12px 0 0;
+}
+.map-btn {
+    margin-left: -4px;
 }
 }

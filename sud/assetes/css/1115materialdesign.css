@@ -190,10 +190,10 @@ table.dataTable tbody td {
     padding: 15px 0 !important;
 }
 select#states {
-    width: 40%;
+    width: 50%;
     float: left;
     margin: auto;
-    max-width: 500px;
+    /* max-width: 500px; */
     border: 1px solid #77c398 !important;
     margin-right: 12px !important;
     color: #000000;
@@ -430,13 +430,15 @@ svg {
     background: #77c398;
     color: #000;
     border-radius: 4px;
-    margin-right: 10px;
-	font-family: Georgia, Times, "Times New Roman", serif;
+    margin-right: 12px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    margin-left: -4px;
 }
 .drops a i {
     color: #000;
     font-size: 23px !important;
 	padding-right:5px;
+	vertical-align: top;
 }
 .drops a {
     vertical-align: top;

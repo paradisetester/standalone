@@ -193,12 +193,14 @@ table.dataTable tbody td {
     padding: 15px 0 !important;
 }
 select#states {
-    width: 40%;
+    width: 50%;
     float: left;
     margin: auto;
-    max-width: 500px;
-    border:1px solid rgb(208, 207, 207) !important;
+    /* max-width: 500px; */
+    border: 1px solid #77c398 !important;
     margin-right: 12px !important;
+    padding: 0 6px;
+    color: #000;
 }
 .outr_states {
     width: 600px;
@@ -254,7 +256,7 @@ th.sorting_disabled {
 @media only screen and (max-width:1200px){
 
 svg {
-    width: auto !important;
+    width: 100% !important;
     height: auto !important;
 }
 span.my_toggle img {
