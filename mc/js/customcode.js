@@ -113,9 +113,20 @@ $.each(year, function(indx, val) {
 			});
 				/*******grap end*******************/
 				// var date = "\/Date(1297246301973)\/";
-
-				var contractStartDate = arr.contract_start.split('T');
-				var contractEndDate = arr.contract_end.split('T');
+if(arr.contract_start == 'Unclear'){
+	var startdate = arr.contract_start;
+}else{
+	var contractStartDate = arr.contract_start.split('T');
+	var startdate = formatDate(contractStartDate[0]);
+}
+if(arr.contract_end == 'Unclear'){
+	var enddate = arr.contract_end;
+}else{
+	var contractEndDate = arr.contract_end.split('T');
+	var enddate = formatDate(contractEndDate[0]);
+}
+				
+				
 				
 		html ='';      
 		html +='<div class="single-card-iner"><div class="row">\
@@ -134,8 +145,8 @@ $.each(year, function(indx, val) {
 					  <ul class="card-data-sec">\
 					    <li>'+arr.catname+'</li>\
 					    <li>'+arr.program_name+'</li>\
-					    <li>'+formatDate(contractStartDate[0])+'</li>\
-					    <li>'+formatDate(contractEndDate[0])+'</li>\
+					    <li>'+startdate+'</li>\
+					    <li>'+enddate+'</li>\
 					    <li>'+arr.type+'</li>\
 					  </ul>\</div>\
 				 </div>\
@@ -557,8 +568,18 @@ var unclear = '#e8e8e8';
 if(value.reprocurement == 'Unclear'){
 	var unclear = catcolor;
 }
-                var contractStartDate = value.contract_start.split('T');
-				var contractEndDate = value.contract_end.split('T');
+	if(value.contract_start == 'Unclear'){
+		var startdate = value.contract_start;
+	}else{
+		var contractStartDate = value.contract_start.split('T');
+		var startdate = formatDate(contractStartDate[0]);
+	}
+	if(value.contract_end == 'Unclear'){
+		var enddate = value.contract_end;
+	}else{
+		var contractEndDate = value.contract_end.split('T');
+		var enddate = formatDate(contractEndDate[0]);
+	}
 				
 
 			html +='<div class="data-sec">\
@@ -566,7 +587,7 @@ if(value.reprocurement == 'Unclear'){
 					 <li>'+value.abbreviation+'</li>\
 					 <li>'+value.program_name+'</li>\
 					 <li>'+value.catname+'</li>\
-					 <li>'+contractStartDate[0]+'</li>\
+					 <li>'+startdate+'</li>\
 					 <li class="timelinee fadeInRight">\
 					 <div class="timelineeinner"><div class="timeln" style="width:'+width+'px; height: 11px; border-radius:25px;background:'+catcolor+'; margin-left:'+margin+'px;"></div></div>\
 					 </li>\
@@ -586,11 +607,11 @@ if(value.reprocurement == 'Unclear'){
 				   </ul>\
 				   <ul>\
 				       <li>Contract Start</li>\
-				       <li class="hov-con">'+contractStartDate[0]+'</li>\
+				       <li class="hov-con">'+startdate+'</li>\
 				   </ul>\
 				   <ul>\
 				       <li>Contract End</li>\
-				       <li class="hov-con">'+contractEndDate[0]+'</li>\
+				       <li class="hov-con">'+enddate+'</li>\
 				   </ul>\
 				   <ul>\
 				       <li>Projected Re-Procurement Timinig</li>\
