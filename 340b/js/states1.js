@@ -104,8 +104,6 @@ function createData(arr) {
     <div class="chart_outr content_outr">\
 	<div class="state_headings" >\
 	<h3 >'+arr.state+'</h3>\
-	<h5>'+arr.title+'</h5>\
-	<h6>'+todayDate+'</h6>\
 	</div><div class="box1">\
 	<div class="col-md-9">\
 	<div class="ques_ans">\
