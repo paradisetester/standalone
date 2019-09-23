@@ -82,7 +82,6 @@ section#section {
     background:#357a38;
     color: #fff;
     padding: 6px 20px;
-    box-shadow: 0px 2px 1px #000;
 }
 .table-responsive {
     overflow: hidden;
@@ -362,7 +361,7 @@ span.date {
 }
 
 td.desktop_hide {
-    background: #357a38;
+    background: #77c398;
 }
 
 @media  (max-width:767px){
@@ -471,7 +470,7 @@ select#states:focus, .select#states:active, .select#states:hover {
     outline: none;
     border-color: transparent;
     box-shadow: none;
-    border: 1px solid #7ab800;
+    border: 1px solid #77c398;
 }
 
 /*********12/12/18***************/
@@ -573,7 +572,6 @@ section#section{
     background: #77c398;
     color: #fff;
     padding: 6px 20px;
-    box-shadow: 1px 1px 1px #000;
     }
 .sources ol li {
     padding: 13px 0px;
@@ -783,10 +781,6 @@ body{   background: rgb(239, 253, 245);}
     .map_sectn .jsmaps-select.mobile {
     display: none !important;
 }
-.outr_states span {
-    padding:0px !important;
-  
-}
 .guide span {
     font-size: 11px;
 }
@@ -851,8 +845,12 @@ svg {
 
 
 @media only screen and (max-width: 768px){
-    
-   
+    .chart_outr.content_outr h6 {
+    text-align: left !important;
+}
+   li{
+	   text-align:left;
+   }
 .mdl-cell table tr td:first-child span {
        font-size: 11px;
     text-align: center;
@@ -899,6 +897,7 @@ svg {
 #state_data .ques_ans table tr td {
     padding: 15px !important;
      width: 100% !important;
+	 text-align: left;
 }
 .ques_ans table  tr td {
     display: block;
@@ -927,11 +926,15 @@ svg {
 }
 
 .desktop_hide {
-    color: #fff5f5 !important;
+    color: #101010 !important;
+    font-weight: 600;
 }
 svg{
 	width:100% !important;
 	height:auto !important;
+}
+table tr td ul li, table tr td ul ol {
+    text-align: left;
 }
 }
 
