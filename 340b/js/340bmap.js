@@ -19,18 +19,26 @@ function loadAjax(file){
 	});	
 }
 
-
+var STATESMulti = [];
 function showData(data, status, xhr) {
 	if(data.length){
 	    switch(current){
 	        case '340bstates.json':
 			STATES.length = 0;
 			STATES.push('<option value="">Select State</option>');
-			for (var i = 0; i < data.length; i++) {
-				createStates(data[i]);		
+			for (var i = 0; i < data.length; i++) {				
+				createStates(data[i]);	
+				//STATESMulti.push({"id": data[i].name, "title": data[i].name});
 			}
+			
 			jQuery('#states').html(STATES);
+			jQuery('#statesMulti').html(STATESMulti);
+			jQuery('#statesMulti').selectpicker('refresh');;
+			
+			
 			loadAjax('sectiondata.json');
+		
+		
         	break;
             case 'sectiondata.json':
 			//console.log(data);
@@ -49,6 +57,7 @@ function createStates(arr) {
     html = '<option value="'+arr.name+'" disabled style="color: red">'+arr.name+'</option>';
    }
     STATES.push(html); 
+    STATESMulti.push(html); 
 }
 
 
@@ -68,11 +77,15 @@ function checkJson(abb){
         return;
 	}
     createData(thisData);
-    $("#state_data").show();
-	$('.jsmaps-wrapper-box').hide();
-    jQuery(".chart_outrss").hide();
-     $("html, body").animate({ scrollTop: 0 }, "slow");
-     $(".state-content").hide();
+		jQuery(".state_container").show();
+		jQuery(".chart_container").hide();
+		jQuery(".map_container").hide();
+		jQuery("#statesMulti").hide();
+		jQuery("#states").show();
+		jQuery(".bootstrap-select.show-tick").hide();
+		
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+   
     jQuery("#states option").each(function( index ) {
         var chk = jQuery(this).val();
         if(chk==abb){
