@@ -4,6 +4,26 @@ body {
 table.dataTable thead th {
     background: #cde5d9;
 }
+table#example th {
+  position: relative;
+}
+
+label[data-title]:hover:after {
+  content: attr(data-title);
+  padding: 10px 14px;
+  position: absolute;
+  left: 0; 
+  white-space: nowrap;
+  z-index: 9999;
+  background:#fff;
+  color: #4a4a4a;
+  bottom: 100%;
+  text-transform: capitalize;
+  font-weight: 500;
+  border: 1px solid #4a4a4a2e;
+}
+table#example th:nth-child(7) label[data-title]:hover:after{right:10px;left:auto} 
+
 #example_length, #example_filter {
     padding: 3px 15px;
     /* width: 200px; */
