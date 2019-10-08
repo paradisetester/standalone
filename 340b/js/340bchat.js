@@ -176,10 +176,10 @@ if(columnLenght>6){
 		var drugName = ke.split("_");
 		var system = val.replace('_',' ');
 		var system = system.replace('_',' ');
-	var heads = '<label data-title="'+system+' '+drugs[drugName[0]]+'">'+heading+' '+drugName[0]+'</label>';
+		var heads = '<label data-title="'+system+' '+drugs[drugName[0]]+'">'+heading+' '+drugName[0]+'</label>';
 		data.push({ "data" : ke,"defaultContent": "-","visible": true ,"title":heads})
 	});
-
+console.log(data);
 
 	$('#example').DataTable().clear();
 	$('#example').DataTable().destroy();
@@ -191,13 +191,7 @@ if(columnLenght>6){
 		 "fixedHeader": {
             header: true,
             footer: false
-        },
-		"columnDefs": [ {
-        targets: 0,
-        render: function ( data, type, row ) {
-            return data.substr( 0, 3 );
         }
-    } ]
 	} );
 	//	table.columns.adjust().draw();
 
