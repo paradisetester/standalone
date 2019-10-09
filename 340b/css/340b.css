@@ -766,7 +766,10 @@ body{   background: rgb(239, 253, 245);}
         }
 
 #state_data .ques_ans table tr td.desktop-hide {
-    color: #fff !important;
+    color: #090909 !important;
+    text-align: center;
+    background: #77c398;
+    font-weight: 600;
 }
 
 
@@ -934,6 +937,15 @@ svg{
 }
 table tr td ul li, table tr td ul ol {
     text-align: left;
+}
+th.mobile_hide {
+    display: none;
+}
+#sticky-wrapper {
+    display: none;
+}
+td.desktop_hide {
+    background: #77c398 !important;
 }
 }
 

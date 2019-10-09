@@ -179,7 +179,7 @@ if(columnLenght>6){
 		var heads = '<label data-title="'+system+' '+drugs[drugName[0]]+'">'+heading+' '+drugName[0]+'</label>';
 		data.push({ "data" : ke,"defaultContent": "-","visible": true ,"title":heads})
 	});
-console.log(data);
+
 
 	$('#example').DataTable().clear();
 	$('#example').DataTable().destroy();
@@ -259,7 +259,7 @@ $('.service').change(function() {
 	services = $(".service:checkbox:checked").map(function(){
 		return $(this).val();
 	}).get();
-	console.log(services);
+	
 	_chartDataBind(chatData,subcat,services,delivery_system);
 });
 

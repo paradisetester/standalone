@@ -163,19 +163,25 @@ function createData(arr) {
 			
 		    html +=	'<td>'+clerify+'\
 			';
+			//console.log(value1.source_link);
 			if(value1.source != '<p>No requirements located.</p>' && value1.source != null &&  value1.source !='' && value1.source !="<p>Unable to locate.</p>"
  && value1.source_link != null){ 
-      var source_arr34 = new Array();
-    var source_link34 = new Array();
-    let string = value1.source;
-    let string_link = value1.source_link;
-    source_arr34  = string.split('|');
-    source_link34 = string_link.split('|');
+	var source_arr34 = new Array();
+	var source_link34 = new Array();
+	let string = removeHTML(value1.source);
+	let string_link = removeHTML(value1.source_link);
+		
+	
+	source_arr34  = string.split('|');
+	source_link34 = string_link.split('|');
+ 
   
         jQuery.each( source_arr34, function( key34,value34){
 				if ($.inArray(value34, source_arr) === -1){
-					source_arr.push(value34);
-					source_link_arr.push(source_link34[key34]);
+				var values = removeHTML(value34);
+				
+					source_arr.push(values);
+					source_link_arr.push(removeHTML(source_link34[key34]));
 					html += ' <a  class="state_check" href="#source'+$si+'">['+$si+']</a>';
 					$si++;
 					//console.log(value1.source);
@@ -189,11 +195,12 @@ function createData(arr) {
 					});						
 				}
      });
+	 
 			}
 			html +='</td></tr>';
 			
-			source[i]=value1.source;
-			source_link[i]=value1.source_link;
+			source[i]=removeHTML(value1.source);
+			source_link[i]=removeHTML(value1.source_link);
 			i++;
 			
 			//console.log(source_arr);
@@ -212,8 +219,9 @@ function createData(arr) {
 				if(value2.clarifying_detail != null){
             clerify = value2.clarifying_detail;
               }
-				source[i]=value2.source;
-				source_link[i]=value2.source_link;
+			  
+				source[i]=removeHTML(value2.source);
+				source_link[i]=removeHTML(value2.source_link);
 				html +='<tr>\
 				<td>'+value2.question_title +'</td>\
 				<td class="desktop-hide">Answer</td>\
@@ -222,15 +230,18 @@ function createData(arr) {
 				if(value2.source != '<p>No requirements located</p>' && value2.source != null  && value2.source !='' && value2.source !="<p>Unable to locate.</p>"){
 				    var source_arr34 = new Array();
                     var source_link34 = new Array();
-                    let string = value2.source;
-                    let string_link = value2.source_link;
+                    let string = removeHTML(value2.source);
+					
+                    let string_link = removeHTML(value2.source_link);
+					
 					if(string_link){
                     source_arr34  = string.split('|');
                     source_link34 = string_link.split('|');
+					
                     jQuery.each( source_arr34, function( key34,value34){
 				if ($.inArray(value34, source_arr) === -1){
-					source_arr.push(value34);
-					source_link_arr.push(source_link34[key34]);
+					source_arr.push(removeHTML(value34));
+					source_link_arr.push(removeHTML(source_link34[key34]));
 					html += ' <a  class="state_check" href="#source'+$si+'">['+$si+']</a>';
 					$si++;
 				}else{
@@ -254,6 +265,8 @@ function createData(arr) {
 			';
 		}
 	});
+	
+	
 	// console.log(ab);
 	function unique(list) {
 		var result = [];
@@ -267,12 +280,14 @@ function createData(arr) {
 	    html += arr.state_content;
 	}
 	
-//	console.log(source);
-	//console.log(source_link);
-	source = unique(source);
+     //console.log(source);
+	//console.log('---');
+	
+	//source = unique(source);
 	//source_link = unique(source_link);
-	//console.log(source);
-	//console.log(source_link);
+	source_arr = unique(source_arr);
+//	console.log(source);
+	console.log(source_arr);
 	html +='</div></div><div class="col-md-3 hidden-sm hidden-xs">';
 	
 	html += '<div class="sidenav-wrapper is-sticky"><ul class="my-navbar">';
@@ -297,11 +312,15 @@ function createData(arr) {
 	</div>\
 	<ol>'; 
 	var $s = 1;
-	jQuery.each( source_arr, function( key,value){					
+
+	var $source = [];
+	
+	jQuery.each( source_arr, function( key,value){	
+	$source.push({'link':source_link_arr[key],'title':value});
 					html += '<li id="source'+$s+'" data-tab="source'+$s+'" class=""><a href="'+source_link_arr[key]+'" target="_blank">'+value+'</a></li>';
 				$s++;		
 	});
-	
+		//console.log($source);
 	html +='</ol>\
 	</section>\
 	';
@@ -312,7 +331,15 @@ function createData(arr) {
 }
 
 
-
+function removeHTML(str){
+		var string = $('<p>'+str+'</p>').text();
+		string1 = $.trim(string);
+		string2 = string1.replace('  | ','|');
+		
+		return string2;
+		 
+		}
+		
 
 
 
