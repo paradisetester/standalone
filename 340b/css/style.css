@@ -640,7 +640,19 @@ table.dataTable thead th {
     background-position: right;
 }
 .service_reimburse.drugs ul li {
-    width: 40% !important;
+    width: 100% !important;
+}
+.service_reimburse.drugs ul li label {
+    margin: 4px 0 !important;
+}
+.cat-one {
+    width: 100%;
+}
+body .sub-cat label {
+    margin: 5px 0  !important;
+}
+.cat-btn label.container{
+	margin:10px 0 !important;
 }
 }
 @media screen and (min-width:767px) and (max-width:940px){
@@ -672,4 +684,9 @@ table.dataTable thead th {
 table.dataTable, table.dataTable th, table.dataTable td {
     font-size: 14px;
 }
+}
+@media screen and (min-width:992px) and (max-width:1200px){
+.container {
+    padding: 0;
+    margin: 20px auto !important;
 }
