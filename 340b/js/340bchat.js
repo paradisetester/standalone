@@ -64,6 +64,8 @@ var removeElements = function(text, selector) {
 
 
 function _chartDataBind(chatData,subcat,services,delivery_system){
+	
+	
 	var mainarray = [];
 	var mainarray1 = [];
 	var column = [];
@@ -71,10 +73,10 @@ var headers = {};
 	var i = 1;
 
 	var head = {
-		"covered_entities_340B":"CE 340B",
-		"contract_pharmacies_340B":"CP 340B",
-		"covered_entities_non-340B":"CE N-340B",
-		"contract_pharmacies_non-340B":"CP N-340B",
+		"covered_entities_340-B":"CE 340B",
+		"contract_pharmacies_340-B":"CP 340B",
+		"covered_entities_non-340-B":"CE N-340B",
+		"contract_pharmacies_non-340-B":"CP N-340B",
 		"covered_entities":"CDD",
 		"contract_pharmacies":"CDD",
 	};
@@ -162,6 +164,7 @@ var drugs = {
 		i++;
 	});
 
+	
 
 columnLenght = $.map(headers, function(el) { return el }).length;
 if(columnLenght>6){
@@ -223,6 +226,7 @@ $('.delivery_system').change(function() {
 
 
 $('.delivery_system1').change(function() {
+	
 	delivery_system1 = $(".delivery_system1:checkbox:checked").map(function(){
 		return $(this).val();
 	}).get();
@@ -232,7 +236,7 @@ $('.delivery_system1').change(function() {
 
 	var parentClass = '.reimbursement';
 	refreshCategory(parentClass,this);
-
+	
 	_chartDataBind(chatData,subcat,services,delivery_system);
 	event.preventDefault();
 });
