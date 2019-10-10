@@ -177,15 +177,16 @@ function createData(arr) {
  
   
         jQuery.each( source_arr34, function( key34,value34){
-				if ($.inArray(value34, source_arr) === -1){
-				var values = removeHTML(value34);
-				
+				if ($.inArray(removeHTML(value34), source_arr) === -1){					
+					var values = removeHTML(value34);	
+					
 					source_arr.push(values);
 					source_link_arr.push(removeHTML(source_link34[key34]));
 					html += ' <a  class="state_check" href="#source'+$si+'">['+$si+']</a>';
 					$si++;
 					//console.log(value1.source);
 				}else{
+			
 					var vi = 1;
 				jQuery.each( source_arr, function( key,value){	
 					if(value==value34){
@@ -239,7 +240,7 @@ function createData(arr) {
                     source_link34 = string_link.split('|');
 					
                     jQuery.each( source_arr34, function( key34,value34){
-				if ($.inArray(value34, source_arr) === -1){
+				if ($.inArray(removeHTML(value34), source_arr) === -1){
 					source_arr.push(removeHTML(value34));
 					source_link_arr.push(removeHTML(source_link34[key34]));
 					html += ' <a  class="state_check" href="#source'+$si+'">['+$si+']</a>';
@@ -285,9 +286,10 @@ function createData(arr) {
 	
 	//source = unique(source);
 	//source_link = unique(source_link);
-	source_arr = unique(source_arr);
-//	console.log(source);
-	console.log(source_arr);
+
+	//source_arr = unique(source_arr);
+	//source_link_arr = unique(source_link_arr);
+
 	html +='</div></div><div class="col-md-3 hidden-sm hidden-xs">';
 	
 	html += '<div class="sidenav-wrapper is-sticky"><ul class="my-navbar">';
