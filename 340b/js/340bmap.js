@@ -77,6 +77,10 @@ function checkJson(abb){
         return;
 	}
     createData(thisData);
+	$('#example').DataTable().clear();
+			$('#example').DataTable().destroy();
+			$('#example thead').remove();
+			
 		jQuery(".state_container").show();
 		jQuery(".chart_container").hide();
 		jQuery(".map_container").hide();

@@ -317,11 +317,7 @@ $('.chart_container').hide();
         });
 
 
-        jQuery('body').on('click', '.stateClick', function (e) {
-			$('#example').DataTable().clear();
-			$('#example').DataTable().destroy();
-			$('#example thead').remove();
-	
+        jQuery('body').on('click', '.stateClick', function (e) {	
             var val = jQuery(this).attr('data-id');
             checkJson(val);
 
