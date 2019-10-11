@@ -298,6 +298,10 @@ $('.chart_container').hide();
     jQuery(document).ready(function () {
 
         jQuery(".map_click").click(function () {
+		$('#example').DataTable().clear();
+			$('#example').DataTable().destroy();
+			$('#example thead').remove();
+			
             jQuery(".state_container").hide();
             jQuery(".chart_container").hide();
             jQuery("#statesMulti").hide();
@@ -317,7 +321,11 @@ $('.chart_container').hide();
         });
 
 
-        jQuery('body').on('click', '.stateClick', function (e) {	
+        jQuery('body').on('click', '.stateClick', function (e) {
+			$('#example').DataTable().clear();
+			$('#example').DataTable().destroy();
+			$('#example thead').remove();
+	
             var val = jQuery(this).attr('data-id');
             checkJson(val);
 
