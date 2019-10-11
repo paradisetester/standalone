@@ -161,7 +161,7 @@ function createData(arr) {
 			}
 			html += '<td class="desktop_hide">Clarifying Details</td>';
 			
-		    html +=	'<td>'+clerify+'\
+		    html +=	'<td>'+removeHTML(clerify)+'\
 			';
 			//console.log(value1.source_link);
 			if(value1.source != '<p>No requirements located.</p>' && value1.source != null &&  value1.source !='' && value1.source !="<p>Unable to locate.</p>"
@@ -182,7 +182,7 @@ function createData(arr) {
 					
 					source_arr.push(values);
 					source_link_arr.push(removeHTML(source_link34[key34]));
-					html += ' <a  class="state_check" href="#source'+$si+'">['+$si+']</a>';
+					html += ' <sup><a  class="state_check" href="#source'+$si+'">['+$si+']</a></sup>';
 					$si++;
 					//console.log(value1.source);
 				}else{
@@ -190,7 +190,7 @@ function createData(arr) {
 					var vi = 1;
 				jQuery.each( source_arr, function( key,value){	
 					if(value==value34){
-						html += ' <a  class="state_check" href="#source'+vi+'">['+vi+']</a>';
+						html += ' <sup><a  class="state_check" href="#source'+vi+'">['+vi+']</a></sup>';
 						}
 						vi++;
 					});						
@@ -226,7 +226,7 @@ function createData(arr) {
 				html +='<tr>\
 				<td>'+value2.question_title +'</td>\
 				<td class="desktop-hide">Answer</td>\
-				<td>'+clerify+'\
+				<td>'+removeHTML(clerify)+'\
 				';
 				if(value2.source != '<p>No requirements located</p>' && value2.source != null  && value2.source !='' && value2.source !="<p>Unable to locate.</p>"){
 				    var source_arr34 = new Array();
@@ -243,13 +243,13 @@ function createData(arr) {
 				if ($.inArray(removeHTML(value34), source_arr) === -1){
 					source_arr.push(removeHTML(value34));
 					source_link_arr.push(removeHTML(source_link34[key34]));
-					html += ' <a  class="state_check" href="#source'+$si+'">['+$si+']</a>';
+					html += ' <sup><a  class="state_check" href="#source'+$si+'">['+$si+']</a></sup>';
 					$si++;
 				}else{
 				var vi = 1;
 				jQuery.each( source_arr, function( key,value){	
 					if(value == value34){
-						html += ' <a  class="state_check" href="#source'+vi+'">['+vi+']</a>';
+						html += ' <sup><a  class="state_check" href="#source'+vi+'">['+vi+']</a></sup>';
 						}
 						vi++;
 					});					

@@ -73,20 +73,22 @@ var headers = {};
 	var i = 1;
 
 	var head = {
-		"covered_entities_340-B":"CE 340B",
-		"contract_pharmacies_340-B":"CP 340B",
-		"covered_entities_non-340-B":"CE N-340B",
-		"contract_pharmacies_non-340-B":"CP N-340B",
-		"covered_entities":"CDD",
-		"contract_pharmacies":"CDD",
+		"covered_entities_340B":"Covered Entities",
+		"contract_pharmacies_340B":"Contract Pharmacies",
+		"covered_entities_non-340B":"Non Covered Entities",
+		"contract_pharmacies_non-340B":"Non Contract Pharmacies",
+		"covered_entities":"Covered Entities",
+		"contract_pharmacies":"Contract Pharmacies",
 	};
 var drugs = {
-		"fic":"FFS Ingredient Cost",
-		"fdf":"FFS Dispensing Fee",
-		"fcd":"FFS Clarifying Details",
-		"mic":"MCO Ingredient Cost",
-		"mdf":"MCO Dispensing Fee",
-		"mcd":"MCO Clarifying Details",
+		"fic":"FFS IC",
+		"fdf":"FFS DF",
+		"fcd":"FFS CD",
+		"mic":"MCO IC",
+		"mdf":"MCO DF",
+		"mcd":"MCO CD",
+		"fdd":"FFS ",
+		"mdd":"MCO ",
 	};
 	
 	jQuery.each( delivery_system, function( k, v ) {
@@ -116,7 +118,7 @@ var drugs = {
 			if(jQuery.inArray(value.state, selectedState) !== -1){
 				chartArray = {};
 				jQuery.each( value.service, function( catKey, catvalue ) {
-					chartArray['state'] = '<a data-id="'+value.state+'" class="stateClick">'+value.abbreviation+'</a>';
+					chartArray['state'] = '<a data-id="'+value.state+'" class="stateClick">'+value.state+'</a>';
 					jQuery.each( subcat, function( ca, su ) {
 						jQuery.each( catvalue[su], function( subcatKey, subcatvalue ) {
 							var catvalue1 = $('<p>'+subcatvalue+'</p>').text();
@@ -136,7 +138,7 @@ var drugs = {
 			chartArray = {};
 
 			jQuery.each( value.service, function( catKey, catvalue ) {
-				chartArray['state'] = '<a data-id="'+value.state+'" class="stateClick">'+value.abbreviation+'</a>';
+				chartArray['state'] = '<a data-id="'+value.state+'" class="stateClick">'+value.state+'</a>';
 
 				jQuery.each( subcat, function( ca, su ) {
 
@@ -179,7 +181,13 @@ if(columnLenght>6){
 		var drugName = ke.split("_");
 		var system = val.replace('_',' ');
 		var system = system.replace('_',' ');
-		var heads = '<label data-title="'+system+' '+drugs[drugName[0]]+'">'+heading+' '+drugName[0]+'</label>';
+		
+		var drgs = drugs[drugName[0]].split(" ");
+		var columnName = drgs[0]+' '+heading+' '+drgs[1];
+		var columnNameHover = drgs[0]+' '+system+' '+drgs[1];
+		var heads = '<label data-title="'+columnNameHover+'">'+columnName+'</label>';
+		
+		
 		data.push({ "data" : ke,"defaultContent": "-","visible": true ,"title":heads})
 	});
 
@@ -187,9 +195,11 @@ if(columnLenght>6){
 	$('#example').DataTable().clear();
 	$('#example').DataTable().destroy();
 	$('#example thead').remove();
+
 	table = $('#example').DataTable( {
 		"lengthMenu": [[60, 120, 180, -1], [60, 120, 180, "All"]],
         "data": mainarray,
+		responsive: true,
 		"columns" : data,
 		 "fixedHeader": {
             header: true,
@@ -197,6 +207,8 @@ if(columnLenght>6){
         }
 	} );
 	//	table.columns.adjust().draw();
+//
+
 
 }
 
