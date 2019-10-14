@@ -697,6 +697,10 @@ select#states, .icons-box {
 p, ul, li, a {
     margin: 3px 0 !important;
 }
+#state_data sup {
+    top: inherit;
+    bottom: -5px;
+}
 /******res********/
 @media screen and (max-width:767px) {
     .icons-box {

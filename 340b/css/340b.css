@@ -6,7 +6,7 @@ body {
 p, ul, li, a {
     font-family: 'Arial' !important;
     color: #4b4b4b !important;
-    font-size: 13px !important;
+    font-size: 14px !important;
 }
 
 .mdl-data-table .approved th {
@@ -282,7 +282,7 @@ span.my_togglee {
 }
 
 .ques_ans table tr td {
-    padding: 15px 5px;
+    padding: 15px 12px;
     width: 25% !important;
     font-size: 14px !important;
 }
@@ -1223,7 +1223,7 @@ span.my_toggle {
 }
 
 .chart_outr.content_outr h6 {
-    font-size: 18px !important;
+    font-size: 15px !important;
     margin: 0 0 10px;
 }
 
