@@ -222,14 +222,10 @@
             <tr>
 
                 <th>States</th>
-                <th>FFS IC</th>
-                <th>FFS DF</th>
-                <th>FFS Info</th>
+                <th>FFS Covered Entities IC</th>
+                <th>FFS Covered Entities DF</th>
                 <th>FFS DDM</th>
-                <th>MCO IC</th>
-                <th>MCO DF</th>
-                <th>MCO Info</th>
-                <th>MCO DDM</th>
+               
 
             </tr>
         </thead>
@@ -305,21 +301,24 @@ $('.chart_container').hide();
             jQuery(".map_container").show();
             jQuery("#states").show();
             jQuery(".bootstrap-select.show-tick").hide();
+			jQuery($.fn.dataTable.tables()).DataTable().fixedHeader.disable();
         });
 
         jQuery(".chart_click").click(function () {
+		
             jQuery(".state_container").hide();
             jQuery(".chart_container").show();
             jQuery(".map_container").hide();
             jQuery("#statesMulti").show();
             jQuery("#states").hide();
             jQuery(".bootstrap-select.show-tick").show();
+				jQuery($.fn.dataTable.tables()).DataTable().fixedHeader.enable();
 			jQuery($.fn.dataTable.tables()).DataTable().fixedHeader.adjust();
         });
 
 
         jQuery('body').on('click', '.stateClick', function (e) {
-			
+			jQuery($.fn.dataTable.tables()).DataTable().fixedHeader.disable();
             var val = jQuery(this).attr('data-id');
             checkJson(val);
 

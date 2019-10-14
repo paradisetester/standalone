@@ -23,6 +23,7 @@ var columnLenght = 1;
 var selectedState ={};
 
 jQuery(function(){
+
 	_getStateData();
 });
 function _buildApiUrl ( ) {
