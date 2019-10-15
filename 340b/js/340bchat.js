@@ -78,8 +78,8 @@ var headers = {};
 		"contract_pharmacies_340B":"Contract Pharmacies",
 		"covered_entities_non-340B":"Non Covered Entities",
 		"contract_pharmacies_non-340B":"Non Contract Pharmacies",
-		"covered_entities":"Covered Entities",
-		"contract_pharmacies":"Contract Pharmacies",
+		"covered_entities":"Covered Entities DDM",
+		"contract_pharmacies":"Contract Pharmacies DDM",
 	};
 var drugs = {
 		"fic":"FFS IC",

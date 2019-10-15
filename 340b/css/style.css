@@ -698,10 +698,8 @@ p, ul, li, a {
     margin: 3px 0 !important;
 }
 #state_data sup {
-    top: inherit;
-    bottom: -5px;
+   line-height:13px;
 }
-
 
 
 

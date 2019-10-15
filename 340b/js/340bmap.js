@@ -228,7 +228,7 @@ function createData(arr) {
 				html +='<tr>\
 				<td>'+value2.question_title +'</td>\
 				<td class="desktop-hide">Answer</td>\
-				<td>'+removeHTML(clerify)+'\
+				<td>'+clerify+'\
 				';
 				if(value2.source != '<p>No requirements located</p>' && value2.source != null  && value2.source !='' && value2.source !="<p>Unable to locate.</p>"){
 				    var source_arr34 = new Array();
