@@ -147,7 +147,7 @@ function createData(arr) {
             clerify = value1.clarifying_detail;
         }
 			html +='<tr>\
-			<td>'+value1.question_title +'</td>\
+			<td data-ids="'+value1.questions_id+'">'+value1.question_title +'</td>\
 			<td class="desktop_hide">Ingredient Cost</td>';
 			if(value1.ingredient_cost != null){
 		    html +='<td>'+value1.ingredient_cost;+'</td>';
@@ -168,6 +168,8 @@ function createData(arr) {
 			//console.log(value1.source_link);
 			if(value1.source != '<p>No requirements located.</p>' && value1.source != null &&  value1.source !='' && value1.source !="<p>Unable to locate.</p>"
  && value1.source_link != null){ 
+ 
+ 
 	var source_arr34 = new Array();
 	var source_link34 = new Array();
 	let string = removeHTML(value1.source);
@@ -176,27 +178,31 @@ function createData(arr) {
 	
 	source_arr34  = string.split('|');
 	source_link34 = string_link.split('|');
+
  
-  
         jQuery.each( source_arr34, function( key34,value34){
+					
 				if ($.inArray(removeHTML(value34), source_arr) === -1){					
 					var values = removeHTML(value34);	
 					
 					source_arr.push(values);
+					
 					source_link_arr.push(removeHTML(source_link34[key34]));
 					html += ' <sup><a  class="state_check" href="#source'+$si+'">['+$si+']</a></sup>';
 					$si++;
 					//console.log(value1.source);
 				}else{
-			
+					
 					var vi = 1;
 				jQuery.each( source_arr, function( key,value){	
-					if(value==value34){
+					
+					if(value==removeHTML(value34)){
 						html += ' <sup><a  class="state_check" href="#source'+vi+'">['+vi+']</a></sup>';
 						}
 						vi++;
 					});						
 				}
+				
      });
 	 
 			}
@@ -226,7 +232,7 @@ function createData(arr) {
 				source[i]=removeHTML(value2.source);
 				source_link[i]=removeHTML(value2.source_link);
 				html +='<tr>\
-				<td>'+value2.question_title +'</td>\
+				<td data-ids="'+value2.questions_id+'">'+value2.question_title +'</td>\
 				<td class="desktop-hide">Answer</td>\
 				<td>'+clerify+'\
 				';
@@ -250,7 +256,7 @@ function createData(arr) {
 				}else{
 				var vi = 1;
 				jQuery.each( source_arr, function( key,value){	
-					if(value == value34){
+					if(value == removeHTML(value34)){
 						html += ' <sup><a  class="state_check" href="#source'+vi+'">['+vi+']</a></sup>';
 						}
 						vi++;
