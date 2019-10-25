@@ -163,7 +163,7 @@ function createData(arr) {
 			}
 			html += '<td class="desktop_hide">Clarifying Details</td>';
 			
-		    html +=	'<td>'+removeHTML(clerify)+'\
+		    html +=	'<td>'+clerify+'\
 			';
 			//console.log(value1.source_link);
 			if(value1.source != '<p>No requirements located.</p>' && value1.source != null &&  value1.source !='' && value1.source !="<p>Unable to locate.</p>"
