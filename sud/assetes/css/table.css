@@ -1445,8 +1445,8 @@ span.date {
 .table100.ver1 td:nth-child(1),.table100.ver1 th:nth-child(1) {
     width: 20%;
     padding:20px 20px 20px;
-	font-family: Georgia, Times, "Times New Roman", serif !important;
-
+    font-family:'arial' !important;;
+    font-size: 14px;
 }
 .table100.ver1 td:nth-child(2),.table100.ver1 th:nth-child(2)  {
     width: 40%;
@@ -1517,8 +1517,8 @@ div#hdexample {
 .table100-body.js-pscroll ul, li {
     margin: 0px;
     color: #4b4b4b !important;
-    font-size: 14px !important;
-    font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 12px !important;
+    font-family:Arial !important;
 }
 tr td, tr th {
     border-bottom: 2px solid;

@@ -24,7 +24,7 @@
 
 body, html {
 	height: 100%;
-	font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+	font-family:Arial !important;
 }
 
 /* ------------------------------------ */
@@ -90,38 +90,38 @@ iframe {
 h1 {
     color: #4b4b4b !important;
     font-size: 40px !important;
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family:'arial' !important;
 }
 h2 {
     color: #4b4b4b !important;
     font-size: 32px !important;
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family: 'arial' 
 }
 h3 {
     color: #4b4b4b !important;
     font-size: 28px !important;
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family: 'arial' !important;
 }
 h4 {
     color: #4b4b4b !important;
     font-size: 24px !important;
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family: 'arial' !important;
 }
 h5 {
     color: #4b4b4b !important;
     font-size: 20px !important;
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family:'arial'  !important;
 }
 h6 {
     color: #4b4b4b !important;
-    font-size: 16px !important;
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-size: 12px !important;
+    font-family: 'arial' !important;
 }
 
 p {
     color: #4b4b4b !important;
-    font-size: 16px !important;
-    font-family: ArialMT, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 12px !important;
+    font-family: 'arial' !important;
 }
 /*//////////////////////////////////////////////////////////////////
 [ Scroll bar ]*/
@@ -263,7 +263,7 @@ th.cell100.column {
 [ Ver1 ]*/
 
 .table100.ver1 th {
-    font-family: Georgia, Times, "Times New Roman", serif !important;
+    font-family: 'arial' !important;
     font-size: 14px;
     color: #4b4b4b;
     line-height: 1.4;
@@ -669,6 +669,7 @@ section.section2 img {
  .tooltip1 {
     font-weight: 600;
     color: #0e0e0e;
+    /* font-size: 12px; */
 }
 
 #vertical-ticker  table,#vertical-ticker  th,#vertical-ticker  td {
@@ -688,7 +689,7 @@ border: none;
 #vertical-ticker  tbody td{
 	color: #000;
 	padding: 10px 5PX;
-	font-size: 14px;
+	font-size: 12px;
 	border-right: 1px solid #d2d2d2;
 	position:relative;
 }

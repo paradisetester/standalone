@@ -52,7 +52,9 @@ function createStates(arr) {
 
 jQuery(document).on('change', '#states', function(){
     var val = jQuery(this).val();
-    checkJson(val);     
+	if(val){
+    checkJson(val); 
+	}
 	// jQuery('.tooltip1').tooltip();  
 });
 

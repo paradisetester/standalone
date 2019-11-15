@@ -137,12 +137,13 @@
 		jQuery(document).on('change', '#states', function() {
 
 			var val = jQuery(this).val();
+			if(val){
 			checkJson(val);
 			jQuery(".jsmaps-wrapper-box").hide();
 			jQuery(".jsmaps-wrapper-box").removeClass("slow");
 			var url = "http://survey.paradisetechsoft.com/api/downloadata/"+val;
                     jQuery("#generate a").attr('href', url)
-
+			}
 		});
 
 		if (!readCookie('introjs')) {

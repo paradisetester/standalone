@@ -907,7 +907,7 @@ div#responv-design {
 }
 p,li {
     color: #636363;
-    font-size: 16px;
+    font-size: 12px;
     font-family: 'Arial';
 }
 li {
@@ -1014,9 +1014,9 @@ svg.us-state-map {
     float: left;
 }
 h3 {
-    font-size: 20px !important;
+    font-size: 14px !important;
     color: #024981 !important;
-    font-family: 'Times New Roman';
+    font-family: 'Arial';
 }
 .requirements ul {
     margin: 0;
@@ -1026,13 +1026,14 @@ h3 {
 }
 .ans li {
     line-height: normal !important;
-    font-size: 16px !important;
+    font-size: 12px !important;
+    font-family: 'arial';
 }
 li span.ques {
     color: #024981;
     font-weight: bold;
     font-family: 'Times New Roman';
-    font-size: 20px;
+    font-size: 14px;
 }
 li span.ans {
     color: #828282;
@@ -1041,13 +1042,14 @@ li span.ans {
 .requirements ul li span {
     width: 50%;
     float: left;
+    font-family: arial;
 }
 .requirements ul li a {
     color: #4fc063;
     font-weight: normal;
     line-height: normal !important;
     display: block;
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 8px;
     font-family: 'Arial';
 }
@@ -1056,6 +1058,7 @@ li span.ans {
     float: left;
     margin: 25px 0 0 0;
     width: 100%;
+    font-family: arial;
 }
 .summary h3 {
     font-weight: bold;
@@ -1064,8 +1067,9 @@ li span.ans {
 }
 .summary p {
     color: #566b7b;
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 12px;
+    line-height: 26px;
+    margin: 5px 0;
 }
 .summary li {
     color: #566b7b;
@@ -1075,7 +1079,7 @@ li span.ans {
     line-height: 32px;
     background-repeat: no-repeat;
     background-position: left 10px;
-    padding: 0 0 0 22px;
+    padding: 0 0 0 0;
 }
 .program_name {
     text-align: center;
@@ -1092,7 +1096,7 @@ li span.ans {
 .summary li {
     margin: 0;
     list-style: lightskyblue;
-    font-size: 16px !important;
+    font-size: 12px !important;
     list-style-type: disc;
 }
 

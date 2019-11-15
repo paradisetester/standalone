@@ -120,6 +120,7 @@ table.dataTable tbody td {
     color: #1caf8d;
     text-transform: uppercase;
     font-weight: 600;
+    font-size: 20px !important;
 }
 
 .state-head h5 {
@@ -325,14 +326,14 @@ div#state_data {
 }
 /****7/1/19*****/
 h1, h2,span,h3, h4,h5,h6, .state_headings ,th,.table100.ver1 td:nth-child(1), .table100.ver1 th:nth-child(1){
-    font-family: 'Times New Roman' !important;
-	color:#4b4b4b !important;
-	font-size:16px !important;
+    font-family: 'Arial' !important;
+    color:#4b4b4b !important;
+    font-size:16px !important;
 }
 p,a,div,td,.abbrevation ul,li{
 	 font-family: 'Arial' !important;
-	color:#4b4b4b !important;
-	font-size:14px !important;
+	 color:#4b4b4b !important;
+	 font-size: 12px !important;
 }
 
 .tooltip-inner {
@@ -353,7 +354,7 @@ td.cell100.column2 ul {
     font-size: 18px !important;
 }
 h1, h2, span, h3, h4, h5, h6, .state_headings, th, .table100.ver1 td:nth-child(1), .table100.ver1 th:nth-child(1) {
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 }
 

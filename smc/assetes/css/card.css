@@ -397,6 +397,8 @@ span.source_cls:before {
     border-bottom: 1px solid #e6a82b;
     padding: 0 0 14px;
     min-height: auto;
+    font-size: 12px;
+	font-family: arial;
 }
 .Oklahoma .des-back.card p {
     height: 60px;
@@ -427,7 +429,7 @@ span.source_cls a {
 }
 .card p {
     color: #151313;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     border-bottom: 1px solid #004157;
     padding: 5px 0 9px;
@@ -440,14 +442,14 @@ span.source_cls a {
 }
 .legend li {
     display: block;
-    font-size: 19px;
+    font-size: 12px;
     list-style: none;
     vertical-align: top;
     text-align: left;
 }
 .legend li span {
-    width: 17px;
-    height: 17px;
+    width: 12px;
+    height: 12px;
     background: #000;
     display: inline-block;
 }
@@ -575,6 +577,9 @@ span.my_toggle i {
 }
 .card-content {
   line-height: normal;
+}
+span, li , a, p, div {
+    font-family: 'Arial';
 }
 /****/
 @media screen and (max-width:767px){

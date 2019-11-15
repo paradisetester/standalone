@@ -279,7 +279,9 @@ $('.chart_container').hide();
 
     jQuery(document).on('change', '#states', function () {
         var val = jQuery(this).val();
+		if(val){
         checkJson(val);
+		}
     });
 
     jQuery('body').on('click', 'a[href*="#"]', function (e) {

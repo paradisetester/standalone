@@ -51,8 +51,9 @@ function createStates(arr) {
 
 jQuery(document).on('change', '#states', function(){
     var val = jQuery(this).val();
+	if(val){
     checkJson(val);     
-   
+	}
 });
 
 function checkJson(abb){

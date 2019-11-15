@@ -2,7 +2,9 @@
 body{
 	margin:0;
 	background: #fff;
+	font-family: 'Arial';
 }
+li, a , p, div, span {font-family: 'Arial';}
 img{
 	max-width:100%;
 }
@@ -155,7 +157,7 @@ li.timeline-sec ,li.timelinee{
 li.timeline-sec ul li {
     padding: 4px 6px;
     text-align: left;
-	    font-size: 16px;
+    font-size: 12px;
 }
 .data-sec {
     background: #ffffff;
@@ -168,6 +170,7 @@ li.timeline-sec ul li {
     vertical-align:middle;
     font-weight: 400;
     color: #000;
+    font-size: 12px;
 }
 .timeline-table {
     padding: 10px 20px;
@@ -299,7 +302,7 @@ svg.circliful {
     width: 49%;
     text-align: left;
     padding: 3px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
 }
 .hover-content {
@@ -397,6 +400,7 @@ svg.circliful {
 }
 .label-year {
     font-weight: 600;
+    font-size: 15px;
 }
 .graph {
     margin: 40px -12px;
@@ -405,6 +409,7 @@ svg.circliful {
     width: 33%;
     padding: 0 10px;
     font-weight: normal;
+    color: #212;
 }
 
 .footer-list.col-md-12 {
@@ -433,7 +438,7 @@ ul.list-second a {
     display: block;
 }
 .single-card-iner ul li {
-    font-size: 14px;
+    font-size: 12px;
 }
 .mob-ul {
     display: none;
@@ -450,6 +455,8 @@ ul.list-second a {
 .legend ul li {
     list-style: none;
     padding: 3px 0;
+    font-size: 12px;
+    font-family: arial;
 }
 .legend ul {
     padding: 0;
@@ -502,6 +509,9 @@ a.charttt {
 a.charttt i {
     padding-right: 5px;
     vertical-align: text-bottom;
+}
+ul.list-heading li {
+    font-size: 15px;
 }
 /******responsive******/
 @media (max-width:767px){

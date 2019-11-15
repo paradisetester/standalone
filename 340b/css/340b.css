@@ -6,7 +6,7 @@ body {
 p, ul, li, a {
     font-family: 'Arial' !important;
     color: #4b4b4b !important;
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 .mdl-data-table .approved th {
@@ -284,7 +284,7 @@ span.my_togglee {
 .ques_ans table tr td {
     padding: 15px 12px;
     width: 25% !important;
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 .active_source a {
@@ -490,7 +490,7 @@ li.nav-item a {
     padding: 4px 10px;
     margin-bottom: 0 !important;
     font-weight: 600;
-    font-size: 14px !important;
+    font-size: 12px !important;
     margin-right: 5px !important;
     letter-spacing: 1px;
 }
@@ -600,13 +600,15 @@ select#states:focus, .select#states:active, .select#states:hover {
 table#example th, table#example td {
     border-right: 1px solid rgba(0,0,0,.12);
     font-family: 'Arial' !important;
-    font-size: 14px;
+    font-size: 12px;
 }
-
+h6 {
+    font-size: 12px !important;
+}
 .table-responsive tr td:first-child {
     font-weight: 600 !important;
     color: #4b4b4b !important;
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 .table-responsive tr th {
@@ -811,7 +813,7 @@ section#section {
     background: #77c398;
     box-shadow: 1px 1px 3px #888383;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .inner_data h6 {
@@ -1233,4 +1235,7 @@ span.my_toggle {
 
 td ul, td ol {
     padding: 0 15px;
+}
+.chart_outr.content_outr td h6 {
+    font-size: 12px !important;
 }

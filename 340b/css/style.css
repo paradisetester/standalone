@@ -835,5 +835,5 @@ p, ul, li, a {
 @media screen and (min-width:992px) and (max-width:1200px) {
     .container {
         padding: 0;
-        margin: 20px auto !important;
+        margin: 6px auto !important;
     }

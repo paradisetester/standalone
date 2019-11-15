@@ -251,7 +251,7 @@ jQuery(function(){
 	/*****************************************************/	
 	function _stateBind(stateData){
 				STATES.length = 0;
-	            STATES.push('<option>Select State</option>');
+	            STATES.push('<option value="">Select State</option>');
         		for (var i = 0; i < stateData.length; i++) {
         			createStates(stateData[i]);		
         		}	
@@ -275,9 +275,12 @@ jQuery(function(){
 
 	/************select drop down value***************/ 
 	jQuery(document).on('change', '#states', function() {
-		 jQuery("#category option").prop('selected', false);
-		var val = jQuery(this).val();			
-		checkJson(val);
+		
+		var val = jQuery(this).val();
+		if(val){
+			checkJson(val);
+			jQuery("#category option").prop('selected', false);
+		}
 	});
 		
 	

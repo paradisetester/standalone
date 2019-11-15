@@ -535,6 +535,7 @@ th.cell100.column {
     font-weight: 600;
     font-size: 30px;
     padding-bottom: 4px;
+    font-size: 13px !important;
 }
 
 .state-head h6 {

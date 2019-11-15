@@ -293,3 +293,13 @@ table.table tr {
 table.table tr td, table.table tr th {
     width: 35%;
 }
+
+
+/*****11/14/19*****/
+p,div,span,li,td,a {
+    font-size: 12px !important;
+    font-family: 'arial' !important;
+}
+b {
+    font-size: 16px !important;
+}
