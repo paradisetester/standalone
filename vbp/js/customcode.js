@@ -12,8 +12,8 @@ year.push(i)
 const API_BASE_Data = 'https://script.google.com/macros/s/AKfycbws32hX3t5Ze0ES4Sv7morqYW9Z1H0Eja0Yezv2Ha9Qq90CPBJH/exec';
 const API_KEY = 'abcdef';
 
-var url = API_BASE_Data+'?key=' + API_KEY;
-//var url = 'json/vbp.json';
+//var url = API_BASE_Data+'?key=' + API_KEY;
+var url = 'json/vbp.json';
 
 		
 	
